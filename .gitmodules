@@ -40,3 +40,60 @@
 [submodule "repos/tau2-bench"]
 	path = repos/tau2-bench
 	url = https://github.com/sierra-research/tau2-bench.git
+[submodule "repos/supplement/agentspec"]
+	path = repos/supplement/agentspec
+	url = https://github.com/haoyuwang99/AgentSpec.git
+[submodule "repos/supplement/camel-prompt-injection"]
+	path = repos/supplement/camel-prompt-injection
+	url = https://github.com/google-research/camel-prompt-injection.git
+[submodule "repos/supplement/fides"]
+	path = repos/supplement/fides
+	url = https://github.com/microsoft/fides.git
+[submodule "repos/supplement/pfi"]
+	path = repos/supplement/pfi
+	url = https://github.com/compsec-snu/pfi.git
+[submodule "repos/supplement/cuga-agent"]
+	path = repos/supplement/cuga-agent
+	url = https://github.com/cuga-project/cuga-agent.git
+[submodule "repos/supplement/toolsafe"]
+	path = repos/supplement/toolsafe
+	url = https://github.com/MurrayTom/ToolSafe.git
+	ignore = dirty
+[submodule "repos/supplement/agent-c"]
+	path = repos/supplement/agent-c
+	url = https://github.com/structuredllm/agent-c.git
+[submodule "repos/supplement/harnessaudit"]
+	path = repos/supplement/harnessaudit
+	url = https://github.com/UCSB-AI/HarnessAudit.git
+[submodule "repos/supplement/tool-forge"]
+	path = repos/supplement/tool-forge
+	url = https://github.com/nextmoca/tool-forge.git
+[submodule "repos/supplement/mcp-pep-agent-security"]
+	path = repos/supplement/mcp-pep-agent-security
+	url = https://github.com/wilesanGH/mcp-pep-agent-security.git
+[submodule "repos/supplement/trustagent"]
+	path = repos/supplement/trustagent
+	url = https://github.com/agiresearch/TrustAgent.git
+	ignore = dirty
+[submodule "repos/supplement/invariant"]
+	path = repos/supplement/invariant
+	url = https://github.com/invariantlabs-ai/invariant.git
+[submodule "repos/supplement/agentguard"]
+	path = repos/supplement/agentguard
+	url = https://github.com/WhitzardAgent/AgentGuard.git
+[submodule "repos/supplement/agent-policy-guard"]
+	path = repos/supplement/agent-policy-guard
+	url = https://github.com/agent-policy/guard.git
+[submodule "repos/supplement/google-adk-python"]
+	path = repos/supplement/google-adk-python
+	url = https://github.com/google/adk-python.git
+[submodule "repos/supplement/microsoft-agent-framework"]
+	path = repos/supplement/microsoft-agent-framework
+	url = https://github.com/microsoft/agent-framework.git
+[submodule "repos/supplement/pydantic-ai"]
+	path = repos/supplement/pydantic-ai
+	url = https://github.com/pydantic/pydantic-ai.git
+	ignore = dirty
+[submodule "repos/supplement/guardrails-ai"]
+	path = repos/supplement/guardrails-ai
+	url = https://github.com/guardrails-ai/guardrails.git

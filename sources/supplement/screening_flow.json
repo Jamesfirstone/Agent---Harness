@@ -1,0 +1,13 @@
+{
+  "database_records_retrieved": 650,
+  "duplicates_removed": 104,
+  "unique_database_records": 546,
+  "formal_rule_pass": 84,
+  "formal_title_abstract_excluded": 462,
+  "supplementary_candidates_assessed": 35,
+  "supplementary_overlap_with_rule_pass": 6,
+  "supplementary_additions_or_rescues": 29,
+  "detailed_assessment_pool": 113,
+  "included_studies": 16,
+  "excluded_after_detailed_assessment": 97
+}

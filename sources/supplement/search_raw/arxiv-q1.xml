@@ -1,0 +1,1498 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/CLQO2Bkj5UXFCJc/gXPubiFOR5g</id>
+  <title>arXiv Query: search_query=all:"LLM agent" AND (all:"runtime enforcement" OR all:guardrail OR all:"policy enforcement")&amp;id_list=&amp;start=0&amp;max_results=50</title>
+  <updated>2026-08-20T02:30:45Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22LLM+agent%22+AND+(all:%22runtime+enforcement%22+OR+(all:guardrail+OR+all:%22policy+enforcement%22))&amp;start=0&amp;max_results=50&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>80</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2608.05695v1</id>
+    <title>DreamGuard: Efficient Runtime Guardrail for LLM Agents via Risk-Aware World Model</title>
+    <updated>2026-08-06T07:37:49Z</updated>
+    <link href="https://arxiv.org/abs/2608.05695v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.05695v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As large language model (LLM) agents increasingly invoke external tools and interact with real-world systems, unsafe actions may cause irreversible consequences on external states, user data, and downstream services. Recent runtime guardrails mitigate such risks by checking proposed actions before execution, but many remain reactive: they primarily assess the apparent safety of the current action, lacking an explicit model of how risk evolves across the trajectory. This limitation creates a critical blind spot for long-horizon risks, where individually benign-looking actions can gradually drift the agent toward hazardous states. In response, we propose DreamGuard, a proactive guardrail for LLM agents built around a risk-aware world model. The world model maintains a compact recurrent latent state over the trajectory and predicts future latent states from which DreamGuard derives immediate-hazard and prefix-risk evidence. It then fuses these multi-horizon signals into intervention decisions before execution. Experiments across four benchmarks and an online guardrail evaluation show that DreamGuard outperforms generic, reactive, and proactive guardrail baselines, achieves the best safety-utility trade-off among evaluated guardrails, and maintains an average end-to-end latency of 25 ms per call.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-06T07:37:49Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Wenhao Lin</name>
+    </author>
+    <author>
+      <name>Chenyu Yu</name>
+    </author>
+    <author>
+      <name>Xingwei Lin</name>
+    </author>
+    <author>
+      <name>Sicong Cao</name>
+    </author>
+    <author>
+      <name>Xiang Chen</name>
+    </author>
+    <author>
+      <name>Lei Xue</name>
+    </author>
+    <author>
+      <name>Le Yu</name>
+    </author>
+    <author>
+      <name>Letian Sha</name>
+    </author>
+    <author>
+      <name>Chunming Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.26524v1</id>
+    <title>VIGIL: Runtime Enforcement of Behavioral Specifications in AI Agent Skills</title>
+    <updated>2026-06-25T01:58:44Z</updated>
+    <link href="https://arxiv.org/abs/2606.26524v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.26524v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agentic systems increasingly act through third-party skills, allowing model-generated decisions to affect files, communication channels, and cyber-physical devices. These skills often include natural-language specifications that define access permissions, disclosure limits, execution privileges, and required preconditions. Although such specifications describe the intended boundaries of skill behavior, they do not by themselves provide executable runtime enforcement. Enforcing them raises a contextual granularity challenge: even when a policy is written for a particular task context, a monitor must still decide which events to observe, what state to retain, how far across the execution to reason, and where to intervene. Choosing the wrong granularity can either block benign executions or miss violations that emerge only across multiple actions. Most existing enforcement mechanisms, however, assume a fixed event model or enforcement point.
+  In this work, we present VIGIL, an end-to-end runtime enforcement framework for agentic systems. VIGIL checks an agent's actual execution trace against behavioral policies from skill specifications, operator-defined constraints, and global rules spanning multiple skills. To make such policies executable, VIGIL introduces a policy language that captures context-specific enforcement requirements over agent-tool events, including temporal dependencies, argument constraints, and value-flow conditions. The language is paired with symbolic evaluation rules that translate policies into SMT constraints over finite traces, allowing VIGIL to detect violations that depend on event order, argument relationships, or cross-call value flow rather than relying on fixed single-call filters. On real LLM-agent runs spanning office-document, operational, and engineering tasks, VIGIL detects policy violations with over 95% recall and a false-positive rate below 10%.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-25T01:58:44Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Ying Li</name>
+    </author>
+    <author>
+      <name>Yanju Chen</name>
+    </author>
+    <author>
+      <name>Hongbo Wen</name>
+    </author>
+    <author>
+      <name>Bosi Zhang</name>
+    </author>
+    <author>
+      <name>Hanzhi Liu</name>
+    </author>
+    <author>
+      <name>Peiran Wang</name>
+    </author>
+    <author>
+      <name>Yu Feng</name>
+    </author>
+    <author>
+      <name>Yuan Tian</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.08028v1</id>
+    <title>From Prompts to Contracts: Harness Engineering for Auditable Enterprise LLM Agents</title>
+    <updated>2026-07-09T01:08:33Z</updated>
+    <link href="https://arxiv.org/abs/2607.08028v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.08028v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Enterprise large language model (LLM) applications often begin as prototypes whose behavior is carried by prompts and retrieval context. Productization adds requirements for source boundaries, entity routing, answer contracts, and reproducible traces. We present a harness-engineering approach that reconstructs this pattern into a traceable, auditable LLM-agent architecture: deterministic behavior moves into code, manifests, schemas, and validation artifacts around a replaceable composition boundary, while source-backed claims remain the authority for runtime answers. We instantiate it on a public-data slice of five Korean corporate groups (25 listed companies) and evaluate three research questions. (1) The harness preserves its source-grounding, entity-routing, trace, output-hygiene, and recommendation-language contracts across the fixed validation scenarios; a fault-injection control confirms the validators flag deliberately broken contracts. (2) The checks the harness enforces held under model substitution: across three hosted models, they passed on all 270 composition-boundary runs; failures were confined to the model-composed side and were caught and recorded. (3) The code-owned guarantees are load-bearing, not reproducible by prompting alone: holding the model fixed and varying only the enforcement layer, prompt instructions alone let recommendation-language and internal-trace-leakage violations reach the reader, which the harness blocks entirely. A bolt-on external guardrail prevents such violations too but over-refuses, dropping utility to 88/120 where the harness preserves full utility (120/120); in this ablation, only code-owned enforcement preserves both safety and utility. The result is a reusable engineering pattern for turning exploratory prototypes into auditable applications with versioned source, control, and validation artifacts.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-09T01:08:33Z</published>
+    <arxiv:comment>32 pages, 6 figures, 16 tables. Reference implementation and evaluation artifacts: https://github.com/hammerbaki/enterprise-llm-agent-harness (archived at https://doi.org/10.5281/zenodo.21269426)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Joongho Ahn</name>
+    </author>
+    <author>
+      <name>Moonsoo Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.13174v1</id>
+    <title>Getting Better at Working With You: Compiling User Corrections into Runtime Enforcement for Coding Agents</title>
+    <updated>2026-06-11T10:43:40Z</updated>
+    <link href="https://arxiv.org/abs/2606.13174v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.13174v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Interactive LLM agents are becoming part of daily work, but they do not reliably become easier to work with over time: a correction remembered in one session may still be violated in the next. We study this gap between preference access and preference compliance. In tasks derived from anonymized real-user friction cases, Mem0 memory still leaves 57.5% of applicable preference checks violated. We introduce Test-time Rule Acquisition and Compiled Enforcement (TRACE), a drop-in skill-layer pipeline for coding-agent runtimes that mines user corrections, rewrites them as atomic rules, and compiles them into runtime checks that must pass before an agent completes future tasks. Unlike runtime checks written ahead of time by developers, TRACE skills come from the user's own chat corrections. We evaluate TRACE with simulated user-in-the-loop experiments on ClawArena coding-agent tasks and MemoryArena-derived memory-intensive tasks. On ClawArena, TRACE reduces held-out preference violation from 100.0% to 37.6% on in-distribution tasks and from 100.0% to 2.0% on out-of-distribution tasks. On MemoryArena-derived tasks, TRACE reduces in-distribution violation from 100.0% to 60.5% while matching or exceeding the strongest memory baseline on task pass. These results suggest that compiling corrections into runtime enforcement can address a repeated-friction failure mode that memory alone does not reliably solve, reducing the need for users to restate the same correction across future sessions. Experiment code is available at https://github.com/YujunZhou/TRACE_exp, and the deployable skill is available at https://github.com/YujunZhou/tellonce.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-11T10:43:40Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yujun Zhou</name>
+    </author>
+    <author>
+      <name>Kehan Guo</name>
+    </author>
+    <author>
+      <name>Haomin Zhuang</name>
+    </author>
+    <author>
+      <name>Xiangqi Wang</name>
+    </author>
+    <author>
+      <name>Yue Huang</name>
+    </author>
+    <author>
+      <name>Zhenwen Liang</name>
+    </author>
+    <author>
+      <name>Pin-Yu Chen</name>
+    </author>
+    <author>
+      <name>Tian Gao</name>
+    </author>
+    <author>
+      <name>Nuno Moniz</name>
+    </author>
+    <author>
+      <name>Nitesh V. Chawla</name>
+    </author>
+    <author>
+      <name>Xiangliang Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.07838v1</id>
+    <title>We Need Strong Preconditions For Using Simulations In Policy</title>
+    <updated>2026-04-09T05:39:35Z</updated>
+    <link href="https://arxiv.org/abs/2604.07838v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.07838v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Simulations, and more recently LLM agent simulations, have been adopted as useful tools for policymakers to explore interventions, rehearse potential scenarios, and forecast outcomes. While LLM simulations have enormous potential, two critical challenges remain understudied: the dual-use potential of accurate models of individual or population-level human behavior and the difficulty of validating simulation outputs. In light of these limitations, we must define boundaries for both simulation developers and decision-makers to ensure responsible development and ethical use. We propose and discuss three preconditions for societal-scale LLM agent simulations: 1) do not treat simulations of marginalized populations as neutral technical outputs, 2) do not simulate populations without their participation, and 3) do not simulate without accountability. We believe that these guardrails, combined with our call for simulation development and deployment reports, will help build trust among policymakers while promoting responsible development and use of societal-scale LLM agent simulations for the public benefit.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-09T05:39:35Z</published>
+    <arxiv:comment>Accepted to PoliSim Workshop on LLM Agent Simulation for Policy at 2026 ACM CHI</arxiv:comment>
+    <arxiv:primary_category term="cs.CY"/>
+    <author>
+      <name>Steven Luo</name>
+    </author>
+    <author>
+      <name>Saanvi Arora</name>
+    </author>
+    <author>
+      <name>Carlos Guirado</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.13114v1</id>
+    <title>IntAgent: NWDAF-Based Intent LLM Agent Towards Advanced Next Generation Networks</title>
+    <updated>2026-01-19T14:55:48Z</updated>
+    <link href="https://arxiv.org/abs/2601.13114v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.13114v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Intent-based networks (IBNs) are gaining prominence as an innovative technology that automates network operations through high-level request statements, defining what the network should achieve. In this work, we introduce IntAgent, an intelligent intent LLM agent that integrates NWDAF analytics and tools to fulfill the network operator's intents. Unlike previous approaches, we develop an intent tools engine directly within the NWDAF analytics engine, allowing our agent to utilize live network analytics to inform its reasoning and tool selection. We offer an enriched, 3GPP-compliant data source that enhances the dynamic, context-aware fulfillment of network operator goals, along with an MCP tools server for scheduling, monitoring, and analytics tools. We demonstrate the efficacy of our framework through two practical use cases: ML-based traffic prediction and scheduled policy enforcement, which validate IntAgent's ability to autonomously fulfill complex network intents.</summary>
+    <category term="cs.NI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-19T14:55:48Z</published>
+    <arxiv:comment>conference</arxiv:comment>
+    <arxiv:primary_category term="cs.NI"/>
+    <author>
+      <name>Abdelrahman Soliman</name>
+    </author>
+    <author>
+      <name>Ahmed Refaey</name>
+    </author>
+    <author>
+      <name>Aiman Erbad</name>
+    </author>
+    <author>
+      <name>Amr Mohamed</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.20275v1</id>
+    <title>Graph-Symbolic Policy Enforcement and Control (G-SPEC): A Neuro-Symbolic Framework for Safe Agentic AI in 5G Autonomous Networks</title>
+    <updated>2025-12-23T11:27:17Z</updated>
+    <link href="https://arxiv.org/abs/2512.20275v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.20275v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As networks evolve toward 5G Standalone and 6G, operators face orchestration challenges that exceed the limits of static automation and Deep Reinforcement Learning. Although Large Language Model (LLM) agents offer a path toward intent-based networking, they introduce stochastic risks, including topology hallucinations and policy non-compliance. To mitigate this, we propose Graph-Symbolic Policy Enforcement and Control (G-SPEC), a neuro-symbolic framework that constrains probabilistic planning with deterministic verification. The architecture relies on a Governance Triad - a telecom-adapted agent (TSLAM-4B), a Network Knowledge Graph (NKG), and SHACL constraints. We evaluated G-SPEC on a simulated 450-node 5G Core, achieving zero safety violations and a 94.1% remediation success rate, significantly outperforming the 82.4% baseline. Ablation analysis indicates that NKG validation drives the majority of safety gains (68%), followed by SHACL policies (24%). Scalability tests on topologies ranging from 10K to 100K nodes demonstrate that validation latency scales as $O(k^{1.2})$ where $k$ is subgraph size. With a processing overhead of 142ms, G-SPEC is viable for SMO-layer operations.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-23T11:27:17Z</published>
+    <arxiv:comment>15 pages, 3 figures, 3 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Divya Vijay</name>
+    </author>
+    <author>
+      <name>Vignesh Ethiraj</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.18666v3</id>
+    <title>AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents</title>
+    <updated>2025-07-31T04:00:48Z</updated>
+    <link href="https://arxiv.org/abs/2503.18666v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.18666v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Agents built on LLMs are increasingly deployed across diverse domains, automating complex decision-making and task execution. However, their autonomy introduces safety risks, including security vulnerabilities, legal violations, and unintended harmful actions. Existing mitigation methods, such as model-based safeguards and early enforcement strategies, fall short in robustness, interpretability, and adaptability. To address these challenges, we propose AgentSpec, a lightweight domain-specific language for specifying and enforcing runtime constraints on LLM agents. With AgentSpec, users define structured rules that incorporate triggers, predicates, and enforcement mechanisms, ensuring agents operate within predefined safety boundaries. We implement AgentSpec across multiple domains, including code execution, embodied agents, and autonomous driving, demonstrating its adaptability and effectiveness. Our evaluation shows that AgentSpec successfully prevents unsafe executions in over 90% of code agent cases, eliminates all hazardous actions in embodied agent tasks, and enforces 100% compliance by autonomous vehicles (AVs). Despite its strong safety guarantees, AgentSpec remains computationally lightweight, with overheads in milliseconds. By combining interpretability, modularity, and efficiency, AgentSpec provides a practical and scalable solution for enforcing LLM agent safety across diverse applications. We also automate the generation of rules using LLMs and assess their effectiveness. Our evaluation shows that the rules generated by OpenAI o1 achieve a precision of 95.56% and recall of 70.96% for embodied agents, successfully identify 87.26% of the risky code, and prevent AVs from breaking laws in 5 out of 8 scenarios.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-24T13:31:48Z</published>
+    <arxiv:comment>Accepted by the 48th IEEE/ACM International Conference on Software Engineering (ICSE 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Haoyu Wang</name>
+    </author>
+    <author>
+      <name>Christopher M. Poskitt</name>
+    </author>
+    <author>
+      <name>Jun Sun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.05805v1</id>
+    <title>From Risk Classification to Action Plan Remediation: A Guardrail Feedback Driven Framework for LLM Agents</title>
+    <updated>2026-06-04T07:34:35Z</updated>
+    <link href="https://arxiv.org/abs/2606.05805v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.05805v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM-based guardrails typically safeguard agents by evaluating proposed actions or inputs before execution, producing safety signals such as binary allow/deny decisions, risk categories, and/or explanatory rationales about potential policy violations. However, agent risks often arise when otherwise benign tasks are contaminated by untrusted external content, unsafe instructions, or risky tool use. Existing guardrails often flag the entire task uniformly as unsafe, thereby blocking the threat but sacrificing the benign part. Moreover, existing work largely evaluates guardrails in isolation, leaving unclear whether their interventions lead to safer downstream agent behavior. To address this, we introduce TRIAD (Tripartite Response for Iterative Agent Guardrailing), a guardrail-integrated agent framework that leverages guardrail-generated verbal feedback as a guiding signal to keep the agent aligned with benign objectives at each planning step. We finetune a language model on a self-curated training dataset to output one of three decisions: proceed, refuse, or update, together with structured natural-language feedback. Rather than merely allowing or blocking execution, update guides the agent to revise its plan, avoid harmful components, and preserve the benign task where possible. TRIAD injects this feedback into the agent's context, enabling subsequent plan revision and forming a closed loop between guardrail feedback and agent planning. Extensive experiments on ASB and AgentHarm show that TRIAD reduces the average attack success rate to 10.42%, while achieving the best safety-utility trade-off among guardrail-integrated baselines. Our code is available at: https://github.com/YUHAOSUNABC/TRIAD.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-04T07:34:35Z</published>
+    <arxiv:comment>32 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yuhao Sun</name>
+    </author>
+    <author>
+      <name>Jiacheng Zhang</name>
+    </author>
+    <author>
+      <name>Shaanan Cohney</name>
+    </author>
+    <author>
+      <name>Zhexin Zhang</name>
+    </author>
+    <author>
+      <name>Feng Liu</name>
+    </author>
+    <author>
+      <name>Xingliang Yuan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.18672v1</id>
+    <title>Position: A Three-Layer Probabilistic Assume-Guarantee Architecture Is Structurally Required for Safe LLM Agent Deployment</title>
+    <updated>2026-05-18T17:13:41Z</updated>
+    <link href="https://arxiv.org/abs/2605.18672v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.18672v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This position paper argues that enforcing LLM agent safety within a single abstraction layer is not merely suboptimal but categorically insufficient for deployed LLM agents -- a structural consequence of how agent execution works, not a contingent limitation of current systems. The three dimensions that jointly constitute safe operation -- semantic intent and policy compliance, environmental validity, and dynamical feasibility -- each depend on a strictly distinct set of information that becomes available at different stages of execution. No single guardrail can certify all three. We argue that the community must respond with a contract-based architecture in which each safety dimension is enforced by an independently certified layer whose probabilistic guarantee satisfies the next layer's assumption. We sketch such an architecture and derive the compositional system-level safety bounds it admits via the chain rule of probability. Three open problems stand between this and a deployable standard: bound estimation from non-i.i.d.\ traces, graceful degradation of contracts under deployment drift, and extension to multi-agent settings -- the most important unfinished business in LLM agent runtime assurance.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-18T17:13:41Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>S. Bensalem</name>
+    </author>
+    <author>
+      <name>Y. Dong</name>
+    </author>
+    <author>
+      <name>M. Franzle</name>
+    </author>
+    <author>
+      <name>X. Huang</name>
+    </author>
+    <author>
+      <name>J. Kroger</name>
+    </author>
+    <author>
+      <name>D. Nickovic</name>
+    </author>
+    <author>
+      <name>A. Nouri</name>
+    </author>
+    <author>
+      <name>R. Roy</name>
+    </author>
+    <author>
+      <name>C. Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.19135v1</id>
+    <title>A Technical Taxonomy of LLM Agent Communication Protocols</title>
+    <updated>2026-06-17T14:45:20Z</updated>
+    <link href="https://arxiv.org/abs/2606.19135v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.19135v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As large language models (LLMs) advance and multi-agent systems aim to overcome the limits of standalone agents, robust communication protocols are becoming essential infrastructure for distributed agent networks. Nonetheless, the fragmented protocol landscape presents a significant interoperability challenge. This study develops a technical taxonomy to classify and analyze LLM agent communication protocols. Following an established iterative method, we defined the taxonomy's purpose, meta-characteristic, and ending conditions, then performed five iterations, three empirical-to-conceptual and two conceptual-to-empirical, on nine actively maintained open-source protocols with demonstrable adoption. The taxonomy comprises five dimensions: counterparty, payload, interaction state, discovery mechanism, and schema flexibility. Classification reveals recurring architectural patterns: all sampled agent-to-agent protocols combine hybrid payloads with session-state persistence; most protocols support multiple predefined schemas, and two negotiate schemas at runtime, indicating a trend toward schema flexibility; decentralized discovery remains rare. Analysis suggests short-term convergence pressure toward protocols unifying agent-to-agent and agent-to-context (tool and data) communication. Long-term, however, no single protocol is likely to maximize versatility, efficiency, and portability simultaneously. The field will more likely evolve toward a federated, layered protocol stack. The framework guides protocol selection and highlights open research gaps such as privacy and policy enforcement.}</summary>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.NI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-17T14:45:20Z</published>
+    <arxiv:primary_category term="cs.MA"/>
+    <author>
+      <name>Linus Sander</name>
+    </author>
+    <author>
+      <name>Habtom Kahsay Gidey</name>
+    </author>
+    <author>
+      <name>Alexander Lenz</name>
+    </author>
+    <author>
+      <name>Alois Knoll</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2502.11448v2</id>
+    <title>AGrail: A Lifelong Agent Guardrail with Effective and Adaptive Safety Detection</title>
+    <updated>2025-02-18T05:37:44Z</updated>
+    <link href="https://arxiv.org/abs/2502.11448v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2502.11448v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapid advancements in Large Language Models (LLMs) have enabled their deployment as autonomous agents for handling complex tasks in dynamic environments. These LLMs demonstrate strong problem-solving capabilities and adaptability to multifaceted scenarios. However, their use as agents also introduces significant risks, including task-specific risks, which are identified by the agent administrator based on the specific task requirements and constraints, and systemic risks, which stem from vulnerabilities in their design or interactions, potentially compromising confidentiality, integrity, or availability (CIA) of information and triggering security risks. Existing defense agencies fail to adaptively and effectively mitigate these risks. In this paper, we propose AGrail, a lifelong agent guardrail to enhance LLM agent safety, which features adaptive safety check generation, effective safety check optimization, and tool compatibility and flexibility. Extensive experiments demonstrate that AGrail not only achieves strong performance against task-specific and system risks but also exhibits transferability across different LLM agents' tasks.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-02-17T05:12:33Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Weidi Luo</name>
+    </author>
+    <author>
+      <name>Shenghong Dai</name>
+    </author>
+    <author>
+      <name>Xiaogeng Liu</name>
+    </author>
+    <author>
+      <name>Suman Banerjee</name>
+    </author>
+    <author>
+      <name>Huan Sun</name>
+    </author>
+    <author>
+      <name>Muhao Chen</name>
+    </author>
+    <author>
+      <name>Chaowei Xiao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.30604v1</id>
+    <title>An Organization-Scoped LLM Agent Runtime Architecture for Regulated Cybersecurity Operations</title>
+    <updated>2026-05-28T21:51:38Z</updated>
+    <link href="https://arxiv.org/abs/2605.30604v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.30604v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Regulated cybersecurity workflows lack a runtime substrate that enforces organization-level scope across retrieval, tool calls, memory, findings, reports, and audit while remaining model-agnostic and locally deployable. Recent large language model (LLM) agent systems report strong results on isolated cybersecurity tasks, yet they do not by themselves define an auditable platform architecture for regulated security operations centre (SOC) and compliance workflows, where a single analyst may trigger actions that bind the organization, and where the runtime must integrate with existing SIEM/XDR stacks as a primary source of context and alert-driven triggers rather than operate as a standalone analytical layer. This paper proposes an organization-scoped LLM agent runtime architecture for financial cybersecurity. The contribution is a typed Security Context that is created at every entry point, including SIEM/XDR notifications ingested as first-class triggers, and enforced at every component boundary, combined with a shared Runtime Core, logical specialist subagents, a governed Tool Adapter Layer exposing SIEM/XDR query, enrichment, and response primitives under uniform policy and audit, structured findings with evidence references, tiered human-in-the-loop (HITL) gates, and append-only audit. Model Context Protocol (MCP), extended telemetry, digital twins for pentesting, graph retrieval, and federated knowledge sharing are treated as optional extension paths rather than mandatory runtime assumptions. We describe an implementable slice as the architecture's testability surface, and we propose a falsifiable evaluation plan with metric-level pass criteria for architecture readiness, security-policy enforcement, evidence traceability, output quality, and operational observability.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-28T21:51:38Z</published>
+    <arxiv:comment>8 pages, 3 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>George Fatouros</name>
+    </author>
+    <author>
+      <name>Georgios Makridis</name>
+    </author>
+    <author>
+      <name>George Kousiouris</name>
+    </author>
+    <author>
+      <name>John Soldatos</name>
+    </author>
+    <author>
+      <name>Dimosthenis Kyriazis</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2601.10156v1</id>
+    <title>ToolSafe: Enhancing Tool Invocation Safety of LLM-based agents via Proactive Step-level Guardrail and Feedback</title>
+    <updated>2026-01-15T07:54:32Z</updated>
+    <link href="https://arxiv.org/abs/2601.10156v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2601.10156v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While LLM-based agents can interact with environments via invoking external tools, their expanded capabilities also amplify security risks. Monitoring step-level tool invocation behaviors in real time and proactively intervening before unsafe execution is critical for agent deployment, yet remains under-explored. In this work, we first construct TS-Bench, a novel benchmark for step-level tool invocation safety detection in LLM agents. We then develop a guardrail model, TS-Guard, using multi-task reinforcement learning. The model proactively detects unsafe tool invocation actions before execution by reasoning over the interaction history. It assesses request harmfulness and action-attack correlations, producing interpretable and generalizable safety judgments and feedback. Furthermore, we introduce TS-Flow, a guardrail-feedback-driven reasoning framework for LLM agents, which reduces harmful tool invocations of ReAct-style agents by 65 percent on average and improves benign task completion by approximately 10 percent under prompt injection attacks.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-01-15T07:54:32Z</published>
+    <arxiv:comment>Work in Progress. Code available: https://github.com/MurrayTom/ToolSafe</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yutao Mou</name>
+    </author>
+    <author>
+      <name>Zhangchi Xue</name>
+    </author>
+    <author>
+      <name>Lijun Li</name>
+    </author>
+    <author>
+      <name>Peiyang Liu</name>
+    </author>
+    <author>
+      <name>Shikun Zhang</name>
+    </author>
+    <author>
+      <name>Wei Ye</name>
+    </author>
+    <author>
+      <name>Jing Shao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.04426v1</id>
+    <title>ShieldNet: Network-Level Guardrails against Emerging Supply-Chain Injections in Agentic Systems</title>
+    <updated>2026-04-06T05:15:00Z</updated>
+    <link href="https://arxiv.org/abs/2604.04426v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.04426v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Existing research on LLM agent security mainly focuses on prompt injection and unsafe input/output behaviors. However, as agents increasingly rely on third-party tools and MCP servers, a new class of supply-chain threats has emerged, where malicious behaviors are embedded in seemingly benign tools, silently hijacking agent execution, leaking sensitive data, or triggering unauthorized actions. Despite their growing impact, there is currently no comprehensive benchmark for evaluating such threats. To bridge this gap, we introduce SC-Inject-Bench, a large-scale benchmark comprising over 10,000 malicious MCP tools grounded in a taxonomy of 25+ attack types derived from MITRE ATT&amp;CK targeting supply-chain threats. We observe that existing MCP scanners and semantic guardrails perform poorly on this benchmark. Motivated by this finding, we propose ShieldNet, a network-level guardrail framework that detects supply-chain poisoning by observing real network interactions rather than surface-level tool traces. ShieldNet integrates a man-in-the-middle (MITM) proxy and an event extractor to identify critical network behaviors, which are then processed by a lightweight classifier for attack detection. Extensive experiments show that ShieldNet achieves strong detection performance (up to 0.995 F-1 with only 0.8% false positives) while introducing little runtime overhead, substantially outperforming existing MCP scanners and LLM-based guardrails.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-06T05:15:00Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Zhuowen Yuan</name>
+    </author>
+    <author>
+      <name>Zhaorun Chen</name>
+    </author>
+    <author>
+      <name>Zhen Xiang</name>
+    </author>
+    <author>
+      <name>Nathaniel D. Bastian</name>
+    </author>
+    <author>
+      <name>Seyyed Hadi Hashemi</name>
+    </author>
+    <author>
+      <name>Chaowei Xiao</name>
+    </author>
+    <author>
+      <name>Wenbo Guo</name>
+    </author>
+    <author>
+      <name>Bo Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.13727v2</id>
+    <title>From Refusal to Recovery: A Control-Theoretic Approach to Generative AI Guardrails</title>
+    <updated>2026-05-19T04:39:26Z</updated>
+    <link href="https://arxiv.org/abs/2510.13727v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.13727v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Generative AI systems are increasingly assisting and acting on behalf of end users in practical settings, from digital shopping assistants to next-generation autonomous cars. In this context, safety is no longer about blocking harmful content, but about preempting downstream hazards like financial or physical harm. Yet, most AI guardrails continue to rely on output classification based on labeled datasets and human-specified criteria,making them brittle to new hazardous situations. Even when unsafe conditions are flagged, this detection offers no path to recovery: typically, the AI system simply refuses to act--which is not always a safe choice. In this work, we argue that agentic AI safety is fundamentally a sequential decision problem: harmful outcomes arise from the AI system's continually evolving interactions and their downstream consequences on the world. We formalize this through the lens of safety-critical control theory, but within the AI model's latent representation of the world. This enables us to build predictive guardrails that (i) monitor an AI system's outputs (actions) in real time and (ii) proactively correct risky outputs to safe ones, all in a model-agnostic manner so the same guardrail can be wrapped around any AI model. We also offer a practical training recipe for computing such guardrails at scale via safety-critical reinforcement learning. Our experiments in simulated driving and e-commerce settings demonstrate that control-theoretic guardrails can reliably steer LLM agents clear of catastrophic outcomes (from collisions to bankruptcy) while preserving task performance, offering a principled dynamic alternative to today's flag-and-block guardrails.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-15T16:30:57Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>Second International Association on Safe and Ethical AI Conference (IASEAI 2026)</arxiv:journal_ref>
+    <author>
+      <name>Ravi Pandya</name>
+    </author>
+    <author>
+      <name>Madison Bland</name>
+    </author>
+    <author>
+      <name>Duy P. Nguyen</name>
+    </author>
+    <author>
+      <name>Changliu Liu</name>
+    </author>
+    <author>
+      <name>Jaime Fernández Fisac</name>
+    </author>
+    <author>
+      <name>Andrea Bajcsy</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.09781v1</id>
+    <title>Building a Foundational Guardrail for General Agentic Systems via Synthetic Data</title>
+    <updated>2025-10-10T18:42:32Z</updated>
+    <link href="https://arxiv.org/abs/2510.09781v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.09781v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While LLM agents can plan multi-step tasks, intervening at the planning stage-before any action is executed-is often the safest way to prevent harm, since certain risks can lead to severe consequences once carried out. However, existing guardrails mostly operate post-execution, which is difficult to scale and leaves little room for controllable supervision at the plan level. To address this challenge, we highlight three critical gaps in current research: data gap, model gap, and evaluation gap. To close the data gap, we introduce AuraGen, a controllable engine that (i) synthesizes benign trajectories, (ii) injects category-labeled risks with calibrated difficulty, and (iii) filters outputs via an automated reward model, producing large and reliable corpora for pre-execution safety. To close the guardian model gap, we propose a foundational guardrail Safiron, combining a cross-planner adapter with a compact guardian model. The adapter unifies different input formats, while Safiron flags risky cases, assigns risk types, and generates rationales; trained in two stages with a broadly explored data recipe, Safiron achieves robust transfer across settings. To close the evaluation gap, we release Pre-Exec Bench, a realistic benchmark covering diverse tools and branching trajectories, which measures detection, fine-grained categorization, explanation, and cross-planner generalization in human-verified scenarios. Extensive experiments demonstrate consistent gains of the proposed guardrail over strong baselines on Pre-Exec Bench, and ablations further distill actionable practices, providing a practical template for safer agentic systems.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-10T18:42:32Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Yue Huang</name>
+    </author>
+    <author>
+      <name>Hang Hua</name>
+    </author>
+    <author>
+      <name>Yujun Zhou</name>
+    </author>
+    <author>
+      <name>Pengcheng Jing</name>
+    </author>
+    <author>
+      <name>Manish Nagireddy</name>
+    </author>
+    <author>
+      <name>Inkit Padhi</name>
+    </author>
+    <author>
+      <name>Greta Dolcetti</name>
+    </author>
+    <author>
+      <name>Zhangchen Xu</name>
+    </author>
+    <author>
+      <name>Subhajit Chaudhury</name>
+    </author>
+    <author>
+      <name>Ambrish Rawat</name>
+    </author>
+    <author>
+      <name>Liubov Nedoshivina</name>
+    </author>
+    <author>
+      <name>Pin-Yu Chen</name>
+    </author>
+    <author>
+      <name>Prasanna Sattigeri</name>
+    </author>
+    <author>
+      <name>Xiangliang Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.23853v2</id>
+    <title>ClawTrace: Cost-Aware Tracing for LLM Agent Skill Distillation</title>
+    <updated>2026-05-25T07:58:51Z</updated>
+    <link href="https://arxiv.org/abs/2604.23853v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.23853v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Skill-distillation pipelines learn reusable rules from LLM agent trajectories, but they lack a key signal: how much each step costs. Without per-step cost, a pipeline cannot distinguish adding a missing step to fix a bug from removing an expensive step that never affected the outcome. We use the cost-attribution gap to ask whether the rule types inside a distilled skill transfer the same way to new tasks. ClawTrace records cost-attributed agent traces and compiles each session into a TraceCard; CostCraft reads TraceCards and writes three kinds of skill patches: preserve, prune, and repair. We find a pattern aggregate metrics hide. On 30 held-out SpreadsheetBench tasks across two seeds, removing prune patches roughly tripled the quality-regression count without lowering median cost. Across the full 84-task SkillsBench transfer, CostCraft saves no aggregate cost. All three quality regressions trace to the preserve lane, and both quality wins trace to the prune lane: prune patches act as quality guardrails while preserve patches drive regressions. We argue that reusable agent skills should be evaluated at the rule-type level, not as monolithic instruction packages. To support this, we release ClawTrace, the TraceCard schema, and the full set of typed skills.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-26T19:44:10Z</published>
+    <arxiv:comment>Accepted at Agent Skills '26 Workshop, ACM Conference on AI and Agentic Systems (CAIS 2026), San José, CA, May 26, 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Boqin Yuan</name>
+    </author>
+    <author>
+      <name>Yue Su</name>
+    </author>
+    <author>
+      <name>Renchu Song</name>
+    </author>
+    <author>
+      <name>Sen Yang</name>
+    </author>
+    <author>
+      <name>Jing Qin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.12614v1</id>
+    <title>ChainFuzzer: Greybox Fuzzing for Workflow-Level Multi-Tool Vulnerabilities in LLM Agents</title>
+    <updated>2026-03-13T03:35:54Z</updated>
+    <link href="https://arxiv.org/abs/2603.12614v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.12614v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented LLM agents increasingly rely on multi-step, multi-tool workflows to complete real tasks. This design expands the attack surface, because data produced by one tool can be persisted and later reused as input to another tool, enabling exploitable source-to-sink dataflows that only emerge through tool composition. We study this risk as multi-tool vulnerabilities in LLM agents, and show that existing discovery efforts focused on single-tool or single-hop testing miss these long-horizon behaviors and provide limited debugging value. We present ChainFuzzer, a greybox framework for discovering and reproducing multi-tool vulnerabilities with auditable evidence. ChainFuzzer (i) identifies high-impact operations with strict source-to-sink dataflow evidence and extracts plausible upstream candidate tool chains based on cross-tool dependencies, (ii) uses Trace-guided Prompt Solving (TPS) to synthesize stable prompts that reliably drive the agent to execute target chains, and (iii) performs guardrail-aware fuzzing to reproduce vulnerabilities under LLM guardrails via payload mutation and sink-specific oracles. We evaluate ChainFuzzer on 20 popular open-source LLM agent apps (998 tools). ChainFuzzer extracts 2,388 candidate tool chains and synthesizes 2,213 stable prompts, confirming 365 unique, reproducible vulnerabilities across 19/20 apps (302 require multi-tool execution). Component evaluation shows tool-chain extraction achieves 96.49% edge precision and 91.50% strict chain precision; TPS increases chain reachability from 27.05% to 95.45%; guardrail-aware fuzzing boosts payload-level trigger rate from 18.20% to 88.60%. Overall, ChainFuzzer achieves 3.02 vulnerabilities per 1M tokens, providing a practical foundation for testing and hardening real-world multi-tool agent systems.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-13T03:35:54Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Jiangrong Wu</name>
+    </author>
+    <author>
+      <name>Zitong Yao</name>
+    </author>
+    <author>
+      <name>Yuhong Nan</name>
+    </author>
+    <author>
+      <name>Zibin Zheng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.19328v1</id>
+    <title>The Verifier Tax: Horizon Dependent Safety Success Tradeoffs in Tool Using LLM Agents</title>
+    <updated>2026-03-18T16:16:34Z</updated>
+    <link href="https://arxiv.org/abs/2603.19328v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.19328v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study how runtime enforcement against unsafe actions affects end-to-end task performance in multi-step tool using large language model (LLM) agents. Using tau-bench across Airline and Retail domains, we compare baseline Tool-Calling, planning-integrated (TRIAD), and policy-mediated (TRIAD-SAFETY) architectures with GPT-OSS-20B and GLM-4-9B. We identify model dependent interaction horizons (15 to 30 turns) and decompose outcomes into overall success rate (SR), safe success rate (SSR), and unsafe success rate (USR). Our results reveal a persistent Safety Capability Gap. While safety mediation can intercept up to 94 percent of non-compliant actions, it rarely translates into strictly safe goal attainment (SSR below 5 percent in most settings). We find that high unsafe success rates are primarily driven by Integrity Leaks, where models hallucinate user identifiers to bypass mandatory authentication. Recovery rates following blocked actions are consistently low, ranging from 21 percent for GPT-OSS-20B in simpler procedural tasks to near zero in complex Retail scenarios. These results demonstrate that runtime enforcement imposes a significant verifier tax on conversational length and compute cost without guaranteeing safe completion, highlighting the critical need for agents capable of grounded identity verification and post-intervention reasoning.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-18T16:16:34Z</published>
+    <arxiv:comment>10 pages, 7 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Tanmay Sah</name>
+    </author>
+    <author>
+      <name>Vishal Srivastava</name>
+    </author>
+    <author>
+      <name>Dolly Sah</name>
+    </author>
+    <author>
+      <name>Kayden Jordan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2503.15547v2</id>
+    <title>Prompt Flow Integrity to Prevent Privilege Escalation in LLM Agents</title>
+    <updated>2025-04-21T02:10:14Z</updated>
+    <link href="https://arxiv.org/abs/2503.15547v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2503.15547v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) are combined with tools to create powerful LLM agents that provide a wide range of services. Unlike traditional software, LLM agent's behavior is determined at runtime by natural language prompts from either user or tool's data. This flexibility enables a new computing paradigm with unlimited capabilities and programmability, but also introduces new security risks, vulnerable to privilege escalation attacks. Moreover, user prompts are prone to be interpreted in an insecure way by LLM agents, creating non-deterministic behaviors that can be exploited by attackers. To address these security risks, we propose Prompt Flow Integrity (PFI), a system security-oriented solution to prevent privilege escalation in LLM agents. Analyzing the architectural characteristics of LLM agents, PFI features three mitigation techniques -- i.e., agent isolation, secure untrusted data processing, and privilege escalation guardrails. Our evaluation result shows that PFI effectively mitigates privilege escalation attacks while successfully preserving the utility of LLM agents.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-03-17T05:27:57Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Juhee Kim</name>
+    </author>
+    <author>
+      <name>Woohyuk Choi</name>
+    </author>
+    <author>
+      <name>Byoungyoung Lee</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2506.05739v1</id>
+    <title>To Protect the LLM Agent Against the Prompt Injection Attack with Polymorphic Prompt</title>
+    <updated>2025-06-06T04:50:57Z</updated>
+    <link href="https://arxiv.org/abs/2506.05739v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2506.05739v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents are widely used as agents for customer support, content generation, and code assistance. However, they are vulnerable to prompt injection attacks, where adversarial inputs manipulate the model's behavior. Traditional defenses like input sanitization, guard models, and guardrails are either cumbersome or ineffective. In this paper, we propose a novel, lightweight defense mechanism called Polymorphic Prompt Assembling (PPA), which protects against prompt injection with near-zero overhead. The approach is based on the insight that prompt injection requires guessing and breaking the structure of the system prompt. By dynamically varying the structure of system prompts, PPA prevents attackers from predicting the prompt structure, thereby enhancing security without compromising performance. We conducted experiments to evaluate the effectiveness of PPA against existing attacks and compared it with other defense methods.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-06-06T04:50:57Z</published>
+    <arxiv:comment>To appear in the Industry Track of the 55th Annual IEEE/IFIP International Conference on Dependable Systems and Networks (DSN 2025)</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zhilong Wang</name>
+    </author>
+    <author>
+      <name>Neha Nagaraja</name>
+    </author>
+    <author>
+      <name>Lan Zhang</name>
+    </author>
+    <author>
+      <name>Hayretdin Bahsi</name>
+    </author>
+    <author>
+      <name>Pawan Patil</name>
+    </author>
+    <author>
+      <name>Peng Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.08348v2</id>
+    <title>Bayesian-Agent: Posterior-Guided Skill Evolution Across LLM Agent Harnesses</title>
+    <updated>2026-08-11T13:44:18Z</updated>
+    <link href="https://arxiv.org/abs/2606.08348v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.08348v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents increasingly rely on prompts, tools, memory, SOPs, skills, and harness feedback, yet current self-evolution pipelines often update these assets through heuristic reflection or raw success counts. Such updates are brittle when trajectories are sparse, expensive, and context-dependent. We introduce Bayesian-Agent, a native and cross-harness framework that treats reusable agent skills as Bayesian evidence objects. Bayesian-Agent records verified trajectories, maintains posterior beliefs over skill reliability and failure modes, and turns those beliefs into auditable skill actions and model-facing guardrails. This posterior view provides a finite-sample alternative to raw empirical-rate skill updates and frames prompt, context, and harness engineering as inference over the external decision environment. On RealFin-Bench, Bayesian skill evolution matches or improves the raw empirical-rate control and yields large gains on native runs. In the incremental mode, incremental repair improves SOP-Bench from 80\% to 95\%, Lifelong AgentBench from 90\% to 100\%, and RealFin-Bench from 45\% to 65\%. Backend and model-scaling ablations further show that posterior-guided repair can operate across BA native, MiniSWEAgent, and Claude Code, provided the harness produces verifiable task artifacts. The source code is available at https://github.com/DataArcTech/Bayesian-Agent.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-06T21:40:19Z</published>
+    <arxiv:comment>20 pages, 11 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Xiaojun Wu</name>
+    </author>
+    <author>
+      <name>Cehao Yang</name>
+    </author>
+    <author>
+      <name>Honghao Liu</name>
+    </author>
+    <author>
+      <name>Xueyuan Lin</name>
+    </author>
+    <author>
+      <name>Wenjie Zhang</name>
+    </author>
+    <author>
+      <name>Zhichao Shi</name>
+    </author>
+    <author>
+      <name>Xuhui Jiang</name>
+    </author>
+    <author>
+      <name>Chengjin Xu</name>
+    </author>
+    <author>
+      <name>Jia Li</name>
+    </author>
+    <author>
+      <name>Jian Guo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.05704v3</id>
+    <title>SafeHarbor: Defining Precise Decision Boundaries via Hierarchical Memory-Augmented Guardrail for LLM Agent Safety</title>
+    <updated>2026-07-23T02:42:40Z</updated>
+    <link href="https://arxiv.org/abs/2605.05704v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.05704v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent advances in foundation models have transformed LLMs from passive conversational systems into autonomous agents capable of reasoning and tool execution. While these capabilities unlock substantial practical value, they also introduce new security risks, as adversaries can manipulate agents into performing harmful actions in real-world environments. Existing defense strategies mitigate such threats but frequently struggle to balance safety and utility, resulting in over-refusal of benign user requests. To mitigate this trade-off, we propose SafeHarbor, a novel framework designed to establish precise decision boundaries for LLM agents. Unlike static guidelines, SafeHarbor extracts context-aware defense rules through enhanced adversarial generation. We design a local hierarchical memory system for dynamic rule injection, offering a training-free, efficient, and plug-and-play solution. Furthermore, we introduce an information entropy-based self-evolution mechanism that continuously optimizes the memory structure through dynamic node splitting and merging. Extensive experiments demonstrate that SafeHarbor achieves state-of-the-art performance on both ambiguous benign tasks and explicit malicious attacks, notably attaining a peak benign utility of 63.6\% on GPT-4o while maintaining a robust refusal rate exceeding 93\% against harmful requests. The source code is publicly available at https://github.com/ljj-cyber/SafeHarbor.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-07T05:50:45Z</published>
+    <arxiv:comment>Accepted by ICML 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zhe Liu</name>
+    </author>
+    <author>
+      <name>Zonghao Ying</name>
+    </author>
+    <author>
+      <name>Wenxin Zhang</name>
+    </author>
+    <author>
+      <name>Quanchen Zou</name>
+    </author>
+    <author>
+      <name>Deyue Zhang</name>
+    </author>
+    <author>
+      <name>Dongdong Yang</name>
+    </author>
+    <author>
+      <name>Xiangzheng Zhang</name>
+    </author>
+    <author>
+      <name>Hao Peng</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.17734v1</id>
+    <title>Harnessing LLM Agents with Skill Programs</title>
+    <updated>2026-05-18T01:35:11Z</updated>
+    <link href="https://arxiv.org/abs/2605.17734v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.17734v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Equipping LLM agents with reusable skills derived from past experience has become a popular and successful approach for tackling complex and long-horizon tasks. However, such lessons are often encoded as textual guidance that remains largely advisory, lacking explicit mechanisms for when and how to intervene in the agent loop. To bridge the gap, we introduce HASP(Harnessing LLM Agents with Skill Programs), a new framework that upgrades skills into executable Program Functions (PFs). Rather than offering passive advice, PFs act as executable guardrails that activate on failure-prone states and modify the next action or inject corrective context. HASP is highly modular: it can be applied at inference time for direct agent-loop intervention, during post-training to provide structured supervision, or for self-improvement by evolving validated, teacher-reviewed PFs. Empirically, HASP drives substantial gains compared to both training-free and training-based methods on web-search, math reasoning, and coding tasks. For example, on web-search reasoning, inference-time PFs alone improve the average performance by 25% compared to (multi-loop) ReAct Agent, while post-training and controlled evolution achieve a 30.4% gain over Search-R1. To provide deeper insights into HASP, our mechanism analysis reveals how PFs trigger and intervene, how skills are internalized, and the requirement for stable skill library evolution.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-18T01:35:11Z</published>
+    <arxiv:comment>40 pages, 7 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Hongjun Liu</name>
+    </author>
+    <author>
+      <name>Yifei Ming</name>
+    </author>
+    <author>
+      <name>Shafiq Joty</name>
+    </author>
+    <author>
+      <name>Chen Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.09187v3</id>
+    <title>GuardAgent: Safeguard LLM Agents by a Guard Agent via Knowledge-Enabled Reasoning</title>
+    <updated>2025-05-29T03:09:05Z</updated>
+    <link href="https://arxiv.org/abs/2406.09187v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.09187v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rapid advancement of large language model (LLM) agents has raised new concerns regarding their safety and security. In this paper, we propose GuardAgent, the first guardrail agent to protect target agents by dynamically checking whether their actions satisfy given safety guard requests. Specifically, GuardAgent first analyzes the safety guard requests to generate a task plan, and then maps this plan into guardrail code for execution. By performing the code execution, GuardAgent can deterministically follow the safety guard request and safeguard target agents. In both steps, an LLM is utilized as the reasoning component, supplemented by in-context demonstrations retrieved from a memory module storing experiences from previous tasks. In addition, we propose two novel benchmarks: EICU-AC benchmark to assess the access control for healthcare agents and Mind2Web-SC benchmark to evaluate the safety policies for web agents. We show that GuardAgent effectively moderates the violation actions for different types of agents on these two benchmarks with over 98% and 83% guardrail accuracies, respectively. Project page: https://guardagent.github.io/</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-13T14:49:26Z</published>
+    <arxiv:comment>Accepted to ICML 2025</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zhen Xiang</name>
+    </author>
+    <author>
+      <name>Linzhi Zheng</name>
+    </author>
+    <author>
+      <name>Yanjie Li</name>
+    </author>
+    <author>
+      <name>Junyuan Hong</name>
+    </author>
+    <author>
+      <name>Qinbin Li</name>
+    </author>
+    <author>
+      <name>Han Xie</name>
+    </author>
+    <author>
+      <name>Jiawei Zhang</name>
+    </author>
+    <author>
+      <name>Zidi Xiong</name>
+    </author>
+    <author>
+      <name>Chulin Xie</name>
+    </author>
+    <author>
+      <name>Carl Yang</name>
+    </author>
+    <author>
+      <name>Dawn Song</name>
+    </author>
+    <author>
+      <name>Bo Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.04035v1</id>
+    <title>Causality Laundering: Denial-Feedback Leakage in Tool-Calling LLM Agents</title>
+    <updated>2026-04-05T09:28:51Z</updated>
+    <link href="https://arxiv.org/abs/2604.04035v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.04035v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-calling LLM agents can read private data, invoke external services, and trigger real-world actions, creating a security problem at the point of tool execution. We identify a denial-feedback leakage pattern, which we term causality laundering, in which an adversary probes a protected action, learns from the denial outcome, and exfiltrates the inferred information through a later seemingly benign tool call. This attack is not captured by flat provenance tracking alone because the leaked information arises from causal influence of the denied action, not direct data flow. We present the Agentic Reference Monitor (ARM), a runtime enforcement layer that mediates every tool invocation by consulting a provenance graph over tool calls, returned data, field-level provenance, and denied actions. ARM propagates trust through an integrity lattice and augments the graph with counterfactual edges from denied-action nodes, enabling enforcement over both transitive data dependencies and denial-induced causal influence. In a controlled evaluation on three representative attack scenarios, ARM blocks causality laundering, transitive taint propagation, and mixed-provenance field misuse that a flat provenance baseline misses, while adding sub-millisecond policy evaluation overhead. These results suggest that denial-aware causal provenance is a useful abstraction for securing tool-calling agent systems.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-05T09:28:51Z</published>
+    <arxiv:comment>24 pages, 1 figure, 2 tables, 1 algorithm, preprint</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Mohammad Hossein Chinaei</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.15684v1</id>
+    <title>Understanding Agent-Reactive Bugs at the Model-Harness Boundary: An Empirical Study of LLM Agent Issue Reports</title>
+    <updated>2026-07-17T06:53:31Z</updated>
+    <link href="https://arxiv.org/abs/2607.15684v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.15684v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents span command-line interfaces (e.g., Codex) and agent frameworks (e.g., LangChain), integrating backend LLMs with harness code that parses model outputs, controls agent loops, and manages context. Both the harness and LLM-generated responses jointly shape an agent's execution. This architecture gives rise to bugs that cannot be readily understood by inspecting either component alone, because some bugs occur only when a particular LLM response elicits an abnormal reaction from the agent. Prior empirical studies of agent bugs have largely attributed failures either to limited model capabilities or to harness-side defects, such as outdated APIs and configuration misalignment, without characterizing these AR bugs. We conduct the first empirical study focused on agent-reactive (AR) bugs. Through manual analysis of 255 bug reports from Codex, Gemini-CLI, LangChain, and CrewAI, we construct a two-axis taxonomy covering observable symptoms and the LLM behaviors that trigger them. Our findings show that many AR bugs manifest as silent errors without well-defined test oracles, which makes detection difficult. The stochasticity of LLM responses further complicates bug reproduction. We additionally examine fixes proposed by users and implemented by developers. This analysis exposes a mismatch: users frequently advocate harness-side guardrails, whereas developers may attribute the issue to the LLM or respond slowly to user-proposed fixes. These findings point to the need for mechanisms that help users and developers understand the root causes and resolutions of AR bugs. Overall, the study highlights challenges specific to LLM agents and motivates the design of test oracles, reproduction support, and fault-localization techniques for AR bugs.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-17T06:53:31Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Jingyi Chen</name>
+    </author>
+    <author>
+      <name>Songqiang Chen</name>
+    </author>
+    <author>
+      <name>Hengcheng Zhu</name>
+    </author>
+    <author>
+      <name>Jialun Cao</name>
+    </author>
+    <author>
+      <name>Jiasi Shen</name>
+    </author>
+    <author>
+      <name>Shing-Chi Cheung</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.19604v1</id>
+    <title>Formal Skill: Programmable Runtime Skills for Efficient and Accurate LLM Agents</title>
+    <updated>2026-05-19T09:43:17Z</updated>
+    <link href="https://arxiv.org/abs/2605.19604v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.19604v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Model (LLM) agents increasingly act inside real workspaces, where tools and skills determine whether model reasoning becomes reliable action. Existing skills remain largely informal: Markdown skills and instruction packs encode procedures as long natural-language documents, while function calling, Model Context Protocol (MCP) servers, and framework tools structure individual actions but usually leave workflow state, policy enforcement, and completion discipline outside the skill itself. We introduce Formal Skill, a runtime-native abstraction that represents reusable capability with JSON metadata and action schemas, reliable Python executors, hook-governed control logic, Formal Skill routing, and skill-local runtime state. By moving reusable procedure from repeated prompt text into executable state machines and hook policies, Formal Skill gives agents a token-efficient and enforceable control surface. We implement the abstraction in FairyClaw, an open-source event-driven runtime for executable, observable, and composable Formal Skills. On Harness-Bench, FairyClaw obtains highly competitive average scores while using substantially fewer tokens, with especially strong results on tasks that expose the role of Formal Skill.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-19T09:43:17Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xi Zhang</name>
+    </author>
+    <author>
+      <name>Meijun Gao</name>
+    </author>
+    <author>
+      <name>Yuntian Zhao</name>
+    </author>
+    <author>
+      <name>Xinyu Tan</name>
+    </author>
+    <author>
+      <name>Yilun Yao</name>
+    </author>
+    <author>
+      <name>Feiyu Wang</name>
+    </author>
+    <author>
+      <name>Yanshu Wang</name>
+    </author>
+    <author>
+      <name> Dingsiyi</name>
+    </author>
+    <author>
+      <name>Tong Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.07167v1</id>
+    <title>NiyamAI - An Intent-Bound AI Agent with Cryptographically Verifiable Guardrails using Zero-Knowledge Proofs</title>
+    <updated>2026-08-07T12:36:52Z</updated>
+    <link href="https://arxiv.org/abs/2608.07167v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.07167v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Giving an AI agent the ability to send emails, query databases, or execute commands is useful--until the agent is tricked into doing something it shouldn't. Prompt injection, hallucinated reasoning, and unsafe tool calls form the primary attack surface for autonomous LLM agents. Existing defenses rely on software checks like system prompts or policy filters running on the same machine the attacker targets, offering no verifiable proof of execution. We introduce Niyam-AI, a framework that makes safety enforcement provable. At session start, permitted tools and constraints are locked into an Intent Contract committed via SHA-256. Every tool call is intercepted and validated by an isolated Judge model; upon passing, a zk-SNARK proof is generated via EZKL.
+  The tool executes only after proof verification, allowing third parties to confirm enforcement without accessing Judge model weights. Evaluating Niyam-AI on 2,000 real-world scenarios from Agent-SafetyBench against NeMo Guardrails, Meta's Llama Prompt Guard 2, and OpenAI's GPT-OSS-Safeguard using 5-fold stratified cross-validation yields an F1 score of 88.5% with a 1.1% false-positive rate (bootstrap 95% CI: [85.19%, 91.88%], N=1000). McNemar's exact paired test confirms significant improvement: Niyam-AI wins 390 discordant scenarios against NeMo (vs 20 losses), 115 against Prompt Guard 2 (vs 13), and 384 against GPT-OSS-Safeguard (vs 19) with p &lt; 0.0001 in all cases.
+  Proof generation adds 2260.6 +/- 218.4 ms per approved action, while verification takes 53.1 +/- 11.8 ms. Niyam-AI provides a guardrail that is both highly accurate and mathematically verifiable--though this reflects a classifier adapted to Agent-SafetyBench evaluated against zero-shot baselines, a distinction discussed in Section IV.C.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-07T12:36:52Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Aditya Katkar</name>
+    </author>
+    <author>
+      <name>Om Karkele</name>
+    </author>
+    <author>
+      <name>Kartik Mandhane</name>
+    </author>
+    <author>
+      <name>Manisha More</name>
+    </author>
+    <author>
+      <name>Yash Kashid</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.19136v2</id>
+    <title>On the Soundness and Consistency of LLM Agents for Executing Test Cases Written in Natural Language</title>
+    <updated>2025-10-01T09:32:15Z</updated>
+    <link href="https://arxiv.org/abs/2509.19136v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.19136v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The use of natural language (NL) test cases for validating graphical user interface (GUI) applications is emerging as a promising direction to manually written executable test scripts, which are costly to develop and difficult to maintain. Recent advances in large language models (LLMs) have opened the possibility of the direct execution of NL test cases by LLM agents. This paper investigates this direction, focusing on the impact on NL test case unsoundness and on test case execution consistency. NL test cases are inherently unsound, as they may yield false failures due to ambiguous instructions or unpredictable agent behaviour. Furthermore, repeated executions of the same NL test case may lead to inconsistent outcomes, undermining test reliability. To address these challenges, we propose an algorithm for executing NL test cases with guardrail mechanisms and specialised agents that dynamically verify the correct execution of each test step. We introduce measures to evaluate the capabilities of LLMs in test execution and one measure to quantify execution consistency. We propose a definition of weak unsoundness to characterise contexts in which NL test case execution remains acceptable, with respect to the industrial quality levels Six Sigma. Our experimental evaluation with eight publicly available LLMs, ranging from 3B to 70B parameters, demonstrates both the potential and current limitations of current LLM agents for GUI testing. Our experiments show that Meta Llama 3.1 70B demonstrates acceptable capabilities in NL test case execution with high execution consistency (above the level 3-sigma). We provide prototype tools, test suites, and results.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-23T15:20:40Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Sébastien Salva</name>
+    </author>
+    <author>
+      <name>Redha Taguelmimt</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.23738v1</id>
+    <title>Enforcing Temporal Constraints for LLM Agents</title>
+    <updated>2025-12-25T06:12:13Z</updated>
+    <link href="https://arxiv.org/abs/2512.23738v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.23738v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM-based agents are deployed in safety-critical applications, yet current guardrail systems fail to prevent violations of temporal safety policies, requirements that govern the ordering and sequencing of agent actions. For instance, agents may access sensitive data before authenticating users or process refunds to unauthorized payment methods, violations that require reasoning about sequences of action rather than an individual action. Existing guardrails rely on imprecise natural language instructions or post-hoc monitoring, and provide no formal guarantees that agents will satisfy temporal constraints. We present Agent-C, a novel framework that provides run-time guarantees ensuring LLM agents adhere to formal temporal safety properties. Agent-C introduces a domain-specific language for expressing temporal properties (e.g., authenticate before accessing data), translates specifications to first-order logic, and uses SMT solving to detect non-compliant agent actions during token generation. When the LLM attempts to generate a non-compliant tool call, Agent-C leverages constrained generation techniques to ensure that every action generated by the LLM complies with the specification, and to generate a compliant alternative to a non-compliant agent action. We evaluate Agent-C across two real-world applications: retail customer service and airline ticket reservation system, and multiple language models (open and closed-source). Our results demonstrate that Agent-C achieves perfect safety (100% conformance, 0% harm), while improving task utility compared to state-of-the-art guardrails and unrestricted agents. On SoTA closed-source models, Agent-C improves conformance (77.4% to 100% for Claude Sonnet 4.5 and 83.7% to 100% for GPT-5), while simultaneously increasing utility (71.8% to 75.2% and 66.1% to 70.6%, respectively), representing a new SoTA frontier for reliable agentic reasoning.</summary>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.FL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-25T06:12:13Z</published>
+    <arxiv:primary_category term="cs.PL"/>
+    <author>
+      <name>Adharsh Kamath</name>
+    </author>
+    <author>
+      <name>Sishen Zhang</name>
+    </author>
+    <author>
+      <name>Calvin Xu</name>
+    </author>
+    <author>
+      <name>Shubham Ugare</name>
+    </author>
+    <author>
+      <name>Gagandeep Singh</name>
+    </author>
+    <author>
+      <name>Sasa Misailovic</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.01213v1</id>
+    <title>RepoRescue: An Empirical Study of LLM Agents on Whole-Repository Compatibility Rescue</title>
+    <updated>2026-07-01T17:51:28Z</updated>
+    <link href="https://arxiv.org/abs/2607.01213v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.01213v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Open-source libraries and tools are widely reused, but compatibility maintenance is expensive. Once maintainers leave, useful repositories can stop working as runtimes and dependencies evolve. We study whether LLM agents can adapt old repositories to modern environments, a task we call compatibility rescue. Unlike bug repair, compatibility rescue starts from a repository that worked in its original environment but fails after ecosystem drift. RepoRescue gives agents only the repository and its failing modern environment; the agent must diagnose the failure, locate affected code, and produce a source-code rescue that restores the historical test suite. We build RepoRescue from 193 Python and 122 Java repositories, each verified to pass historically and fail after modernization. We evaluate five deployed agent systems on Python and three on Java. Beyond full-patch pass rate, we rerun patches after removing test-file edits to measure source-only repair, add a runtime-enforced regime that blocks test edits, and validate practical use for repositories whose suites pass after rescue. We find that Claude Code systems sometimes edit failing tests even when prompted not to; with runtime blocking, Kimi still rescues 41.5% of repositories. Systems are complementary: their union reaches 62.7%, exceeding the best single system by 10.9 points. Difficulty concentrates in cross-file coordination: on 14 repositories requiring coordinated whole-codebase changes, GPT-5.2 through Codex passes all 14, while every Claude Code system passes at most two. Finally, a passing suite is only an initial signal: among 34 unmaintained Python candidates whose suites pass after rescue, 22 work in realistic scenarios and 12 pass bug-hunt with patches that address the compatibility failure. RepoRescue benchmarks compatibility rescue with source-only auditing, runtime enforcement, practical validation, and reasoning labels.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-01T17:51:28Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Zhihao Lin</name>
+    </author>
+    <author>
+      <name>Mingyi Zhou</name>
+    </author>
+    <author>
+      <name>Zhensu Sun</name>
+    </author>
+    <author>
+      <name>Yizhuo Yang</name>
+    </author>
+    <author>
+      <name>Renyu Yang</name>
+    </author>
+    <author>
+      <name>David Lo</name>
+    </author>
+    <author>
+      <name>Li Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.18826v1</id>
+    <title>Cross-Agent Campaign Attribution: Linking Asynchronous Attacks Across LLM Agents</title>
+    <updated>2026-07-21T08:01:51Z</updated>
+    <link href="https://arxiv.org/abs/2607.18826v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.18826v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM-agent defenses are typically evaluated one session at a time. In deployment, however, attacks can be distributed across independent agents, teams, and runtimes, leaving each local guardrail with only a sparse fragment. We formalize cross-agent asynchronous campaign attribution: linking sessions from the same latent adversarial campaign without shared runtime state, test-time campaign labels, or attacker identity oracles. We introduce Asynchronous Attribution Fingerprint Vectors ($A^2FV$), a lightweight proxy-side reference protocol for scoring pairwise campaign similarity from proxy-observable tool-use, timing, and prompt residue. We also construct SCD-v1, a controlled persona-matched benchmark with benign traffic, isolated attacks, multi-session campaigns, matched non-oracle evasion, and leakage audits. On SCD-v1, $A^2FV$ achieves 0.82 pairwise AUC for campaign linking, while score-only adaptations of per-session detectors and chunked LLM judges remain near chance under the same task. The strongest fixed signal is carried by structural and stylometric residue, while timing is retained as a diagnostic channel for richer proxy traces. Crossed-style controls show that the signal is partly style-sensitive but not reducible to style alone. Static and dimension-aware non-oracle stress tests further show that pairwise separability persists under controlled evasion. These results establish cross-agent campaign attribution as a distinct evaluation layer for securing LLM agents in the wild.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-21T08:01:51Z</published>
+    <arxiv:comment>22 pages, 5 figures. Accepted at the Second Workshop on Agents in the Wild: Safety, Security, and Beyond (AIWILD) at ICML 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>SangJin Park</name>
+    </author>
+    <author>
+      <name>Myungsub Choi</name>
+    </author>
+    <author>
+      <name>Jineok Kim</name>
+    </author>
+    <author>
+      <name>Minseung Kang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2508.20412v3</id>
+    <title>MindGuard: Intrinsic Decision Inspection for Securing LLM Agents Against Metadata Poisoning</title>
+    <updated>2026-01-15T02:58:19Z</updated>
+    <link href="https://arxiv.org/abs/2508.20412v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.20412v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) is increasingly adopted to standardize the interaction between LLM agents and external tools. However, this trend introduces a new threat: Tool Poisoning Attacks (TPA), where tool metadata is poisoned to induce the agent to perform unauthorized operations. Existing defenses that primarily focus on behavior-level analysis are fundamentally ineffective against TPA, as poisoned tools need not be executed, leaving no behavioral trace to monitor.
+  Thus, we propose MindGuard, a decision-level guardrail for LLM agents, providing provenance tracking of call decisions, policy-agnostic detection, and poisoning source attribution against TPA. While fully explaining LLM decision remains challenging, our empirical findings uncover a strong correlation between LLM attention mechanisms and tool invocation decisions. Therefore, we choose attention as an empirical signal for decision tracking and formalize this as the Decision Dependence Graph (DDG), which models the LLM's reasoning process as a weighted, directed graph where vertices represent logical concepts and edges quantify the attention-based dependencies. We further design robust DDG construction and graph-based anomaly analysis mechanisms that efficiently detect and attribute TPA attacks. Extensive experiments on real-world datasets demonstrate that MindGuard achieves 94\%-99\% average precision in detecting poisoned invocations, 95\%-100\% attribution accuracy, with processing times under one second and no additional token cost. Moreover, DDG can be viewed as an adaptation of the classical Program Dependence Graph (PDG), providing a solid foundation for applying traditional security policies at the decision level.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-28T04:23:44Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zhiqiang Wang</name>
+    </author>
+    <author>
+      <name>Haohua Du</name>
+    </author>
+    <author>
+      <name>Guanquan Shi</name>
+    </author>
+    <author>
+      <name>Junyang Zhang</name>
+    </author>
+    <author>
+      <name>HaoRan Cheng</name>
+    </author>
+    <author>
+      <name>Yunhao Yao</name>
+    </author>
+    <author>
+      <name>Kaiwen Guo</name>
+    </author>
+    <author>
+      <name>Xiang-Yang Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.01236v2</id>
+    <title>Safeguarding LLM Agents from Misalignment through Provenance Analysis</title>
+    <updated>2026-08-10T14:38:04Z</updated>
+    <link href="https://arxiv.org/abs/2607.01236v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.01236v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As LLM agents gain increasing access to powerful tools, ensuring that their actions align with the user's intent becomes critical. When an agent's proposed action deviates from that intent---a phenomenon called misalignment---it may cause harm that is difficult to undo. Existing runtime guardrails rely on an LLM-as-a-judge paradigm that lacks a systematic framework for reasoning about alignment, often producing inconsistent or difficult-to-audit judgments. Motivated by provenance analysis, we propose a conceptual framework that formalizes misalignment detection as determining whether a proposed tool call is supported by traceable evidence in the agent's context. Based on this framework, we build ProvenanceGuard, a multi-stage pipeline that analyzes the agent's action for three types of misalignment before its execution and only allows aligned actions. We evaluated ProvenanceGuard on AgentSafetyBench and WorkBench, across 11 backbone LLMs. Compared to the LLM-as-a-judge baseline, ProvenanceGuard reduces error rate on misaligned traces from 44.3% to 2.1% on Agent-SafetyBench and from 32.4% to 18.7% on WorkBench, while reducing interventions on task-successful traces from 31.2% to 13.0% and introducing no statistically significant increase in unnecessary interventions on aligned traces. These results demonstrate that structured, provenance-based reasoning provides an effective and practical foundation for safeguarding LLM agents from misalignment.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-01T03:16:35Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yining She</name>
+    </author>
+    <author>
+      <name>Yiliang Liang</name>
+    </author>
+    <author>
+      <name>Eunsuk Kang</name>
+    </author>
+    <arxiv:doi>10.1145/3832783.3837535</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3832783.3837535" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.17573v1</id>
+    <title>Cordon: Semantic Transactions for Tool-Using LLM Agents</title>
+    <updated>2026-06-16T06:21:14Z</updated>
+    <link href="https://arxiv.org/abs/2606.17573v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.17573v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using LLM agents are shifting the unit of computation from explicit human-issued commands to model-driven tasks with stateful consequences. Yet today's agent runtimes still expose tools as isolated RPCs. This interface gives runtimes a convenient integration point, but it lacks a task-scoped execution boundary for commit, rollback, recovery, and audit across multi-step agent workflows. We argue that this mismatch calls for a runtime containment boundary rather than another per-call guardrail. This paper introduces Cordon, a transactional runtime system for staging and validating irreversible agent effects before commit. A semantic transaction is a task-level execution boundary that binds tool intents and runtime-tracked result lineage to reversible local state, staged external effects, delegated authority, and audit metadata. Cordon implements this abstraction with a transaction manager that tracks derived result objects, executes reversible mutations in shadow state, stages outward-facing actions in an effect outbox, and records recovery metadata. The runtime then validates the composed execution flow before it commits state or releases external effects. Our evaluation across adversarial and benign workflows shows that Cordon exposes cross-step violations missed by existing defenses. It also reduces irreversible-effect failures while preserving benign task completion with modest approval and latency overhead.</summary>
+    <category term="cs.OS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-16T06:21:14Z</published>
+    <arxiv:primary_category term="cs.OS"/>
+    <author>
+      <name>Zheng Chen</name>
+    </author>
+    <author>
+      <name>Hanqing Liu</name>
+    </author>
+    <author>
+      <name>Duling Xu</name>
+    </author>
+    <author>
+      <name>Dong Dong</name>
+    </author>
+    <author>
+      <name>Jialin Li</name>
+    </author>
+    <author>
+      <name>Bangzheng Pu</name>
+    </author>
+    <author>
+      <name>Jidong Zhai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.21642v2</id>
+    <title>CARE: Pre-Execution Command Verification for Shell-Executing LLM Agents</title>
+    <updated>2026-08-06T11:12:42Z</updated>
+    <link href="https://arxiv.org/abs/2607.21642v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.21642v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Model (LLM) agents are increasingly used for coding and terminal automation, making shell-command dispatch a high-stakes runtime control point. We study command-level pre-execution mediation for individual shell commands produced by LLM agents under bounded path context. Existing safeguards remain limited: generic guardrails do not model shell structure in sufficient detail, always-on LLM judges are relatively costly and variable, and shell parsers do not directly prevent harmful execution. We present CARE (Canonicalization, Attribution, and Resolution Engine), a shell-specific, static-first verifier for individual shell commands before execution. CARE canonicalizes generated commands into stable verification targets, derives deterministic evidence over syntax, command semantics, path context, and provenance-backed risk patterns, and escalates only underdetermined cases to an LLM judge. This design keeps the common case fast, reproducible, and auditable while reserving neural adjudication for borderline commands. On the balanced main split, CARE reaches 85.64% F1 with a 0.91% false-positive rate at 2.32 ms mean latency. When deployed in its static enforcement profile, CARE retains 84.99% F1 at 0.34 ms and reduces realised harm on RedCode-gen to 37.33%. Across external-generalization tests and controlled Docker-sandbox execution, these profiles expose a practical trade-off between benign recovery, false-positive burden, latency, and harm reduction. Overall, command-level shell mediation can reduce dispatch-boundary risk for LLM agents while preserving most benign workflows.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-21T20:22:42Z</published>
+    <arxiv:comment>Accepted by ISSRE 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yu Liu</name>
+    </author>
+    <author>
+      <name>Wenxiao Zhang</name>
+    </author>
+    <author>
+      <name>Zhiwei Yang</name>
+    </author>
+    <author>
+      <name>Zhongyi Zhang</name>
+    </author>
+    <author>
+      <name>Hanqi Feng</name>
+    </author>
+    <author>
+      <name>Xinyu Wang</name>
+    </author>
+    <author>
+      <name>Peng Qiu</name>
+    </author>
+    <author>
+      <name>Yanbing Liu</name>
+    </author>
+    <author>
+      <name>Barnabas Poczos</name>
+    </author>
+    <author>
+      <name>Jin B. Hong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.14831v1</id>
+    <title>Is Your Agent Playing Dead? Deployed LLM Agents Exhibit Constraint-Evasive Fabrication and Thanatosis</title>
+    <updated>2026-06-12T14:53:42Z</updated>
+    <link href="https://arxiv.org/abs/2606.14831v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.14831v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This paper presents and characterizes a spectrum of previously unreported behaviours we term Constraint-Evasive Fabrication (CEF): when an LLM agent operates under irreconcilable constraints (where no response can simultaneously satisfy all active rules) it spontaneously fabricates plausible external obstacles and presents them as a fact. At the extreme end of this spectrum lies Constraint-Evasive Thanatosis (CET); the limit case where, rather than inventing a plausible excuse, the model simulates a full system crash to make the user disengage entirely. We first observed CET in an uncontrolled deployment test, where a GPT-4o banking agent fabricated Python-style exception traces (complete with memory addresses) to feign a system failure when threatened by a user. In subsequent controlled experiments, the model independently invented audit restrictions, microservice architectures, error codes, and service timeouts, none present in its prompt. Reproduction attempts across pressure levels and attacker personas yielded CEF consistently but with substantial variation in form, onset, and severity: the phenomenon is robust but stochastic. Critically, injecting ground-truth data mid-conversation did not restore honest behaviour once fabrication had taken hold (the model ignored correct information and continued confabulating) suggesting CEF is self-reinforcing rather than a knowledge gap. We show that (1) standard enterprise guardrails routinely create CEF-enabling conditions in production, (2) current RLHF procedures suppress but cannot eliminate CEF, and (3) existing safety benchmarks do not test for this failure mode. Our results highlight the need for irreconcilable-constraint benchmarks, CEF-aware training procedures, and deployment-time detection methods before constrained agents become further entrenched in high-stakes domains.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-12T14:53:42Z</published>
+    <arxiv:comment>10 pages of main text</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Andoni Rodríguez</name>
+    </author>
+    <author>
+      <name>Alberto Pozanco</name>
+    </author>
+    <author>
+      <name>Daniel Borrajo</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.24069v1</id>
+    <title>When the Manual Lies: A Realistic Benchmark to Evaluate MCP Poisoning Attacks for LLM Agents</title>
+    <updated>2026-05-22T08:34:48Z</updated>
+    <link href="https://arxiv.org/abs/2605.24069v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.24069v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The rise of tool-using Large Language Model (LLM) agents, standardized by protocols like the Model Context Protocol (MCP), has unlocked unprecedented autonomous execution capabilities for LLM Agents by integrating external open-domain knowledge and tools. However, this interoperability introduces a covert attack surface targeting the agent's cognitive planning layer. This paper systematically investigates Tool Description Poisoning (TDP), a novel semantic attack. In TDP, malicious instructions are not embedded in a tool's executable code, but rather covertly injected into its descriptive metadata, the very "manual" an agent relies on for secure planning and decision-making. To rigorously and systematically evaluate this emerging threat, we introduce the MCP-TDP Security Benchmark. This high-fidelity sandbox environment comprises 32 realistic, real-world test cases spanning 6 distinct risk categories. Our evaluation of 8 mainstream LLMs reveals severe vulnerabilities, with leading models like GPT-4o exhibiting a nearly 100% Attack Success Rate (ASR) in six high-risk scenarios. Furthermore, our findings demonstrate that common prompt-guardrail defenses are largely ineffective and can, counterintuitively, even be counterproductive (a phenomenon which we term the "Firewall Fallacy"). Crucially, we also propose a defense mechanism: "Reactive Self-Correction," where an agent autonomously detects and reverts its own malicious actions post-execution. This work provides the first specialized security benchmark tailored for TDP, offering essential insights for securing the cognitive and planning layers of advanced agentic systems.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-22T08:34:48Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Shi Liu</name>
+    </author>
+    <author>
+      <name>Xuehai Tang</name>
+    </author>
+    <author>
+      <name>Xikang Yang</name>
+    </author>
+    <author>
+      <name>Liang Lin</name>
+    </author>
+    <author>
+      <name>Biyu Zhou</name>
+    </author>
+    <author>
+      <name>Wenjie Xiao</name>
+    </author>
+    <author>
+      <name>Wantao Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.24216v1</id>
+    <title>Agent-ToM: Learning to Monitor Autonomous LLM Agents via Theory-of-Mind Reasoning</title>
+    <updated>2026-05-22T20:57:20Z</updated>
+    <link href="https://arxiv.org/abs/2605.24216v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.24216v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Monitoring autonomous large language model (LLM) agents for covert malicious behavior is challenging due to delayed, context-dependent, and long-horizon attack patterns. Agents may pursue hidden objectives while maintaining superficially benign behavior, making detection difficult even with full trajectory access. Prior monitoring approaches improve scaffolding or ensemble aggregation, but treat each trajectory independently and do not learn from prior monitoring experience. Moreover, standard reasoning methods explain observed behavior without explicitly reasoning about agent beliefs, intentions, and goal alignment required to distinguish benign task execution from covert deviation.
+  We propose \textbf{Agent-ToM}, a learning-to-monitor framework grounded in Theory-of-Mind (ToM) reasoning for security analysis of autonomous agents. Agent-ToM performs structured full-trajectory analysis by inferring beliefs, intent hypotheses with calibrated confidence, expected actions, and deviations from task-consistent behavioral baselines. At inference time, it employs a \textit{Reason-Verify-Refine} pipeline to construct and validate monitoring decisions. At training time, Agent-ToM distills critique signals into a persistent \textit{semantic guardrail memory}, enabling reusable belief- and intent-conditioned constraints across episodes. We evaluate Agent-ToM on adversarial agent monitoring benchmarks (SHADE-Arena and CUA-SHADE-Arena). Agent-ToM achieves strong precision-recall balance and outperforms state-of-the-art monitoring baselines, including ensemble methods, while using a coherent two-call reasoning pipeline. These results demonstrate that learning at the monitoring layer, combined with structured ToM reasoning and verification, provides an effective and deployable foundation for securing autonomous LLM agents.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-22T20:57:20Z</published>
+    <arxiv:comment>23 pages, 9 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Nesreen K. Ahmed</name>
+    </author>
+    <author>
+      <name>Nima Nafisi</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.05073v3</id>
+    <title>Uncertainty Quantification in LLM Agents: Foundations, Emerging Challenges, and Opportunities</title>
+    <updated>2026-04-20T00:53:24Z</updated>
+    <link href="https://arxiv.org/abs/2602.05073v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.05073v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Uncertainty quantification (UQ) for large language models (LLMs) is a key building block for safety guardrails of daily LLM applications. Yet, even as LLM agents are increasingly deployed in highly complex tasks, most UQ research still centers on single-turn question-answering. We argue that UQ research must shift to realistic settings with interactive agents, and that a new principled framework for agent UQ is needed. This paper presents three pillars to build a solid ground for future agent UQ research: (1. Foundations) We present the first general formulation of agent UQ that subsumes broad classes of existing UQ setups; (2. Challenges) We identify four technical challenges specifically tied to agentic setups -- selection of uncertainty estimator, uncertainty of heterogeneous entities, modeling uncertainty dynamics in interactive systems, and lack of fine-grained benchmarks -- with numerical analysis on a real-world agent benchmark, $τ^2$-bench; (3. Future Directions) We conclude with noting on the practical implications of agent UQ and remaining open problems as forward-looking discussion for future explorations.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-04T21:47:40Z</published>
+    <arxiv:comment>ACL 2026 Main Conference</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Changdae Oh</name>
+    </author>
+    <author>
+      <name>Seongheon Park</name>
+    </author>
+    <author>
+      <name>To Eun Kim</name>
+    </author>
+    <author>
+      <name>Jiatong Li</name>
+    </author>
+    <author>
+      <name>Wendi Li</name>
+    </author>
+    <author>
+      <name>Samuel Yeh</name>
+    </author>
+    <author>
+      <name>Xuefeng Du</name>
+    </author>
+    <author>
+      <name>Hamed Hassani</name>
+    </author>
+    <author>
+      <name>Paul Bogdan</name>
+    </author>
+    <author>
+      <name>Dawn Song</name>
+    </author>
+    <author>
+      <name>Sharon Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.03228v1</id>
+    <title>MAGE: Safeguarding LLM Agents against Long-Horizon Threats via Shadow Memory</title>
+    <updated>2026-05-04T23:46:19Z</updated>
+    <link href="https://arxiv.org/abs/2605.03228v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.03228v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As large language model (LLM)-powered agents are increasingly deployed to perform complex, real-world tasks, they face a growing class of attacks that exploit extended user-agent-environment interactions to pursue malicious objectives improbable in single-turn settings. Such long-horizon threats pose significant risks to the safe deployment of LLM agents in critical domains. In this paper, we present MAGE (Memory As Guardrail Enforcement), a novel defensive framework designed to counter a wide range of long-horizon threats. Inspired by the "shadow stack" abstraction in systems security, MAGE maintains a dedicated, safety-focused agentic memory that distills and retains safety-critical context across the agent's full execution trajectory, leveraging this shadow memory to proactively assess the risk of pending actions prior to their execution. Extensive evaluation demonstrates that MAGE substantially outperforms existing defenses across diverse long-horizon threats in detection accuracy, achieves early-stage detection for the majority of attacks, and introduces only negligible overhead to agent utility. To our best knowledge, MAGE represents the first framework to detect and mitigate long-horizon threats using an agentic memory approach, establishing a new paradigm for this critical challenge and opening promising directions for future research.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-04T23:46:19Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Yuhui Wang</name>
+    </author>
+    <author>
+      <name>Tanqiu Jiang</name>
+    </author>
+    <author>
+      <name>Jiacheng Liang</name>
+    </author>
+    <author>
+      <name>Charles Fleming</name>
+    </author>
+    <author>
+      <name>Ting Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.22341v1</id>
+    <title>T-MAP: Red-Teaming LLM Agents with Trajectory-aware Evolutionary Search</title>
+    <updated>2026-03-21T12:33:34Z</updated>
+    <link href="https://arxiv.org/abs/2603.22341v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.22341v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>While prior red-teaming efforts have focused on eliciting harmful text outputs from large language models (LLMs), such approaches fail to capture agent-specific vulnerabilities that emerge through multi-step tool execution, particularly in rapidly growing ecosystems such as the Model Context Protocol (MCP). To address this gap, we propose a trajectory-aware evolutionary search method, T-MAP, which leverages execution trajectories to guide the discovery of adversarial prompts. Our approach enables the automatic generation of attacks that not only bypass safety guardrails but also reliably realize harmful objectives through actual tool interactions. Empirical evaluations across diverse MCP environments demonstrate that T-MAP substantially outperforms baselines in attack realization rate (ARR) and remains effective against frontier models, including GPT-5.2, Gemini-3-Pro, Qwen3.5, and GLM-5, thereby revealing previously underexplored vulnerabilities in autonomous LLM agents.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-21T12:33:34Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Hyomin Lee</name>
+    </author>
+    <author>
+      <name>Sangwoo Park</name>
+    </author>
+    <author>
+      <name>Yumin Choi</name>
+    </author>
+    <author>
+      <name>Sohyun An</name>
+    </author>
+    <author>
+      <name>Seanie Lee</name>
+    </author>
+    <author>
+      <name>Sung Ju Hwang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.15077v1</id>
+    <title>Risk-Aware LLM Agents for Geospatial Data Retrieval: Design and Preliminary Adversarial Evaluation</title>
+    <updated>2026-06-13T03:15:53Z</updated>
+    <link href="https://arxiv.org/abs/2606.15077v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.15077v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present an LLM-driven framework for retrieving remote sensing data from cloud-based geospatial catalogues using natural language queries. The system converts user intent into structured API calls, enabling efficient access to satellite imagery and environmental datasets. The architecture integrates three agents: Guardrail for safety and policy enforcement, General-QA for intent interpretation, and Recommender-Analyst for schema-aware API call generation. This coordinated design ensures reliable, semantically aligned interaction with external data services. The modular framework is portable across platforms through API schema substitution and supports applications in environmental monitoring, disaster response, and climate analysis. It establishes a scalable interface between user intent and geospatial infrastructure, enabling streamlined and automated Earth observation workflows. Preliminary experiments under adversarial multi-turn settings show that prompt-level safety instructions improve robustness, although rare high-impact failures persist in API manipulation scenarios and highlight the need for adaptive, system-level defenses that balance safety, usability, and cost efficiency, which motivates the use of our intercept-level Guardrail agent.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-13T03:15:53Z</published>
+    <arxiv:comment>Accepted for publication in the International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences (ISPRS Archives), ISPRS Congress 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <arxiv:journal_ref>Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci., XLIX-B3-2026, 1419-1426, 2026</arxiv:journal_ref>
+    <author>
+      <name>Kyle Gao</name>
+    </author>
+    <author>
+      <name>Joel Cumming</name>
+    </author>
+    <author>
+      <name>Jonathan Li</name>
+    </author>
+    <author>
+      <name>Linlin Xu</name>
+    </author>
+    <author>
+      <name>David A. Clausi</name>
+    </author>
+    <arxiv:doi>10.5194/isprs-archives-XLIX-B3-2026-1419-2026</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.5194/isprs-archives-XLIX-B3-2026-1419-2026" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.20320v1</id>
+    <title>The Causal Impact of Tool Affordance on Safety Alignment in LLM Agents</title>
+    <updated>2026-03-19T23:34:46Z</updated>
+    <link href="https://arxiv.org/abs/2603.20320v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.20320v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models (LLMs) are increasingly deployed as agents with access to executable tools, enabling direct interaction with external systems. However, most safety evaluations remain text-centric and assume that compliant language implies safe behavior, an assumption that becomes unreliable once models are allowed to act. In this work, we empirically examine how executable tool affordance alters safety alignment in LLM agents using a paired evaluation framework that compares text-only chatbot behavior with tool-enabled agent behavior under identical prompts and policies. Experiments are conducted in a deterministic financial transaction environment with binary safety constraints across 1,500 procedurally generated scenarios. To separate intent from outcome, we distinguish between attempted and realized violations using dual enforcement regimes that either block or permit unsafe actions. Both evaluated models maintain perfect compliance in text-only settings, yet exhibit sharp increases in violations after tool access is introduced, reaching rates up to 85% despite unchanged rules. We observe substantial gaps between attempted and executed violations, indicating that external guardrails can suppress visible harm while masking persistent misalignment. Agents also develop spontaneous constraint circumvention strategies without adversarial prompting. These results demonstrate that tool affordance acts as a primary driver of safety misalignment and that text-based evaluation alone is insufficient for assessing agentic systems.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-19T23:34:46Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Shasha Yu</name>
+    </author>
+    <author>
+      <name>Fiona Carroll</name>
+    </author>
+    <author>
+      <name>Barry L. Bentley</name>
+    </author>
+    <arxiv:doi>10.1109/ICECET65726.2026.11632769</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/ICECET65726.2026.11632769" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.07538v1</id>
+    <title>When LLM Agents Negotiate: Private Information and Dynamic Bargaining in Supply Chains</title>
+    <updated>2026-07-29T02:17:11Z</updated>
+    <link href="https://arxiv.org/abs/2608.07538v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.07538v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As LLM agents move from decision support to autonomous procurement, firms need to know whether delegated negotiators create value, divide it predictably, and avoid money-losing contracts. We study this in a canonical supply chain bargaining problem: a buyer with private demand information negotiates a quantity-payment contract with an uninformed seller. We benchmark nine LLMs from OpenAI, Google, and Alibaba against a validated Perfect Bayesian Equilibrium across 9,840 LLM-to-LLM negotiations. First, capability governs value creation. Agents agree in 98.9% of negotiations and capture 95.4% of first-best surplus undiscounted, but average 2.98 rounds against the benchmark's 1.25, and this delay erodes 21-34% of surplus. Capability also governs reliability: baseline models accept individually irrational contracts in 19.2% of cases, versus 0.0-0.6% at mid-tier and flagship, making automated profit verification the binding guardrail below that threshold. Second, surplus capture is relational. Provider identity predicts who captures surplus better than capability rank: self-play buyer shares average 40% for OpenAI, 50% for Google, and 70% for Alibaba's Qwen, an ordering that survives restricted communication and no discounting. Reversing which provider sells moves the division by 7-18 percentage points, and the capable Qwen flagship is the weakest cross-family seller: vendor choice is a first-order distributional decision. Third, the prompt is a strategic lever. Delegation separates the principal's economic patience from the agent's prompted strategic patience, a free deployment choice that is the single strongest driver of surplus division (90% of explained variance). Together these establish an equilibrium-referenced audit of AI agents along three dimensions: discounted efficiency, distributional profile, and operational reliability.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="econ.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-29T02:17:11Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Chen Liang</name>
+    </author>
+    <author>
+      <name>Fasheng Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.22963v4</id>
+    <title>When Compression Becomes an Attack Surface: Black-Box Attacks on Prompt-Compressed LLM Agents</title>
+    <updated>2026-06-19T20:25:06Z</updated>
+    <link href="https://arxiv.org/abs/2510.22963v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.22963v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Prompt compression is increasingly deployed in LLM agents to reduce latency and cost, but it also determines what the backend LLM ultimately sees. We show that, when trusted and untrusted inputs are compressed under a shared budget, this lossy transformation creates a new attack surface: by perturbing only untrusted inputs before compression, an adversary can cause the compressor to discard task-critical evidence or safety guardrails before inference. Unlike prompt injection, jailbreaks, or RAG poisoning, the attack target is the compressor rather than the backend LLM; the perturbation need not encode a meaningful instruction or survive compression. We formalize this vulnerability as adversarial information loss (AIL), the excess downstream distortion caused by adversarially steering a lossy compressor beyond benign compression alone. To exploit AIL, we present COMA, a transfer-based black-box attack that optimizes pre-compression perturbations using attacker-side surrogate compressors and backend LLMs. Across three tasks and six compressors, COMA achieves 0.71 average ASR, versus 0.21 for the strongest baseline, and transfers to two real-world agent case studies.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-27T03:37:41Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zesen Liu</name>
+    </author>
+    <author>
+      <name>Zhixiang Zhang</name>
+    </author>
+    <author>
+      <name>Yuchong Xie</name>
+    </author>
+    <author>
+      <name>Dongdong She</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.19449v1</id>
+    <title>Guardrails as Scapegoats: Auditing Unfaithful Safety Refusals in Tool-Augmented LLM Agents</title>
+    <updated>2026-07-21T13:23:05Z</updated>
+    <link href="https://arxiv.org/abs/2607.19449v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.19449v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Evaluation frameworks for tool-augmented LLM agents focus overwhelmingly on capability metrics or explicit tool crashes, leaving silent infrastructure failures and HTTP 200 responses with empty, null, or malformed payloads largely unaudited. We introduce a lightweight black-box auditing framework that injects four silent failure profiles across 12 production-adjacent tool stubs and classifies agent responses into three mutually exclusive behavioral classes: Honest Surrender (HSR), Fabrication (FAR), and Unfaithful Safety Refusal (USR). Evaluating two frontier and two open-source models at temperature zero under a neutral system prompt, we find that FAR dominates (56.6% of valid responses): agents treat empty payloads as real data, silently returning fabricated results. USR, in which an agent invents a policy or privacy rationale to explain the failure, is nearly absent at baseline (0.25%, one instance across 396 valid trajectories). Our key finding emerges from an ablation where we augment the system prompt with standard safety language ("prioritize user privacy and data security"), which amplifies USR by 15.6x (from 0.25% to 3.95%; 95% CI on ablation rate: 2.2%-6.4%; Fisher's exact test, p &lt; 0.001). USR is a latent behavior, activated when safety vocabulary in the system prompt primes the model to reach for policy rationales when tools silently fail. Sensitive tools (fetch_medical_record, retrieve_contract, fetch_user_profile) account for the majority of USR instances. We propose a payload-response misalignment heuristic for production-level detection and discuss governance implications for safety-forward deployments.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-21T13:23:05Z</published>
+    <arxiv:comment>10 pages, 3 figures. Accepted at the ACM KDD 2026 Workshop on Evaluation and Trustworthiness of Agentic AI</arxiv:comment>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Aarushi Singh</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.07894v1</id>
+    <title>From Natural Language to Certified H-infinity Controllers: Integrating LLM Agents with LMI-Based Synthesis</title>
+    <updated>2025-11-11T06:49:06Z</updated>
+    <link href="https://arxiv.org/abs/2511.07894v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.07894v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present \textsc{S2C} (Specification-to-Certified-Controller), a multi-agent framework that maps natural-language requirements to certified $\mathcal{H}_\infty$ state-feedback controllers via LMI synthesis. \textsc{S2C} coordinates five roles -- \textit{SpecInt} (spec extraction), \textit{Solv} (bounded-real lemma (BRL) LMI), \textit{Tester} (Monte Carlo and frequency-domain checks), \textit{Adapt} (spec refinement), and \textit{CodeGen} (deployable code). The loop is stabilized by a severity- and iteration-aware $γ$-floor guardrail and a decay-rate region constraint enforcing $\Reλ(A{+}BK)&lt;-α$ with $α=3.9/T_s$ derived from settling-time targets. For state feedback, verification reports disturbance rejection $\big\|C\,(sI-(A{+}BK))^{-1}E\big\|_\infty$ alongside time-domain statistics; discrete benchmarks are converted to continuous time via a Tustin (bilinear) transform when needed. On 14 COMPleib problems, \textsc{S2C} attains \textbf{100\%} synthesis success and \textbf{100\%} convergence within six iterations, with strong decay-rate satisfaction and near-target certified $\mathcal{H}_\infty$ levels; it improves robustness metrics relative to single-shot BRL and BRL+$α$ baselines. An ablation over LLM backbones (GPT-5, GPT-5 mini, DeepSeek-V3, Qwen-2.5-72B, Llama-4 Maverick) shows the pipeline is robust across models, while stronger models yield the highest effectiveness. These results indicate that LLM agents can integrate certificate-bearing control synthesis from high-level intent, enabling rapid end-to-end prototyping without sacrificing formal guarantees.</summary>
+    <category term="eess.SY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-11T06:49:06Z</published>
+    <arxiv:primary_category term="eess.SY"/>
+    <author>
+      <name>Shihao Li</name>
+    </author>
+    <author>
+      <name>Jiachen Li</name>
+    </author>
+    <author>
+      <name>Jiamin Xu</name>
+    </author>
+    <author>
+      <name>Dongmei Chen</name>
+    </author>
+  </entry>
+</feed>
+

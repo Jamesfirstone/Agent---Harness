@@ -1,0 +1,84 @@
+{
+  "counts": [
+    {
+      "database": "openalex",
+      "query_id": "q1",
+      "reported": 1270,
+      "retrieved": 50
+    },
+    {
+      "database": "openalex",
+      "query_id": "q2",
+      "reported": 879,
+      "retrieved": 50
+    },
+    {
+      "database": "openalex",
+      "query_id": "q3",
+      "reported": 1947,
+      "retrieved": 50
+    },
+    {
+      "database": "openalex",
+      "query_id": "q4",
+      "reported": 524,
+      "retrieved": 50
+    },
+    {
+      "database": "crossref",
+      "query_id": "q1",
+      "reported": 697500,
+      "retrieved": 50
+    },
+    {
+      "database": "crossref",
+      "query_id": "q2",
+      "reported": 1490644,
+      "retrieved": 50
+    },
+    {
+      "database": "crossref",
+      "query_id": "q3",
+      "reported": 2273477,
+      "retrieved": 50
+    },
+    {
+      "database": "crossref",
+      "query_id": "q4",
+      "reported": 576267,
+      "retrieved": 50
+    },
+    {
+      "database": "arxiv",
+      "query_id": "q1",
+      "reported": 80,
+      "retrieved": 50
+    },
+    {
+      "database": "arxiv",
+      "query_id": "q2",
+      "reported": 54,
+      "retrieved": 50
+    },
+    {
+      "database": "arxiv",
+      "query_id": "q3",
+      "reported": 1657,
+      "retrieved": 50
+    },
+    {
+      "database": "arxiv",
+      "query_id": "q4",
+      "reported": 108,
+      "retrieved": 50
+    },
+    {
+      "database": "semantic-scholar",
+      "query_id": "q1",
+      "reported": 683,
+      "retrieved": 50
+    }
+  ],
+  "raw_records": 650,
+  "deduplicated": 546
+}

@@ -1,0 +1,36 @@
+title,decision,reason
+Runtime Policy Enforcement for MCP-Based LLM Agents,include,Peer-reviewed runtime PEP with public replication repository
+Governance by Construction for Generalist Agents,include,Published governance checkpoints with public implementation
+Securing AI Agents with Information-Flow Control,include,Deterministic IFC mechanism with public artifact
+Defeating Prompt Injections by Design,include,Control/data-flow separation with public artifact
+Prompt Flow Integrity to Prevent Privilege Escalation in LLM Agents,include,Privilege and flow enforcement with public artifact
+NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails,include,Peer-reviewed programmable runtime rails with mature code
+ToolSafe: Enhancing Tool Invocation Safety of LLM-based Agents via Proactive Step-level Guardrail and Feedback,include,Peer-reviewed pre-tool guard and recovery feedback
+AgentRx: Diagnosing AI Agent Failures from Execution Trajectories,exclude,Diagnostic framework rather than instruction-compliance enforcement
+Tool Forge: A Validation-Carrying Toolchain for Governed Agentic Execution,include,Validation-carrying tools and scoped routing with code
+LlamaFirewall: An open source guardrail system for building secure AI agents,include,Runtime scanners and replay/HITL implementation
+ShieldAgent: Shielding Agents via Verifiable Safety Policy Reasoning,include,Peer-reviewed verifiable policy reasoning; retained as paper-only contrast
+AgentArmor: Enforcing Program Analysis on Agent Runtime Trace to Defend Against Prompt Injection,exclude,Relevant preprint but no verified public implementation
+RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage,exclude,Relevant preprint but no verified public implementation
+CaMeLs Can Use Computers Too: System-level Security for Computer Use Agents,exclude,CUA-specific extension outside the selected tool-agent scope
+AirGapAgent: Protecting Privacy-Conscious Conversational Agents,exclude,Privacy isolation is adjacent but not general instruction compliance
+AIOS: LLM Agent Operating System,exclude,General agent operating system without focused compliance evaluation
+XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models,exclude,Syntax conformance alone does not enforce semantic authorization
+AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents,exclude,Evaluation benchmark already covered by the PPT-adjacent repository set
+Agent-SafetyBench: Evaluating the Safety of LLM Agents,exclude,Evaluation benchmark rather than runtime enforcement
+OpenHands: An Open Platform for AI Software Developers as Generalist Agents,exclude,General harness platform without focused policy gate contribution
+SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering,exclude,Agent interface design rather than runtime compliance control
+TrustAgent: Towards Safe and Trustworthy LLM-based Agents through Agent Constitution,include,Published three-stage constitutional inspection baseline
+ToolEmu: Identifying the Risks of LM Agents with an LM-Emulated Sandbox,exclude,Evaluator/emulator rather than runtime enforcement
+ToolSandbox: A Stateful Conversational Interactive Evaluation Benchmark for LLM Tool Use Capabilities,exclude,Evaluation benchmark rather than runtime enforcement
+tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains,exclude,Evaluation benchmark and already represented in current repository set
+AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation,exclude,General framework with no hard authorization boundary
+Design Patterns for Securing LLM Agents against Prompt Injections,exclude,Design-pattern synthesis without a single auditable runtime artifact
+Agent Operating Systems (AOS): Integrating Agentic Control Planes into and Beyond Traditional Operating Systems,exclude,Conceptual architecture without verified implementation
+Towards Verifiably Safe Tool Use for LLM Agents,exclude,High-value method paper without a verified runtime artifact
+AgentXploit: End-to-End Redteaming of Black-Box AI Agents,exclude,Red-team method rather than compliance enforcement
+IsolateGPT: An Execution Isolation Architecture for LLM-Based Agentic Systems,include,Peer-reviewed execution isolation and capability boundary
+AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents,include,Peer-reviewed policy DSL and runtime enforcement artifact
+Progent: Securing AI Agents with Privilege Control,include,Fine-grained programmable tool privilege control
+Enforcing Temporal Constraints for LLM Agents,include,Temporal policy DSL and constrained-generation runtime
+Auditing Agent Harness Safety,include,Direct harness implementation audit with public artifact

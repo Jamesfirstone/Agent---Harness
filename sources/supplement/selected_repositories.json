@@ -1,0 +1,20 @@
+[
+  {"id":"agentspec","category":"paper","url":"https://github.com/haoyuwang99/AgentSpec.git"},
+  {"id":"camel-prompt-injection","category":"paper","url":"https://github.com/google-research/camel-prompt-injection.git"},
+  {"id":"fides","category":"paper","url":"https://github.com/microsoft/fides.git"},
+  {"id":"pfi","category":"paper","url":"https://github.com/compsec-snu/pfi.git"},
+  {"id":"cuga-agent","category":"paper","url":"https://github.com/cuga-project/cuga-agent.git"},
+  {"id":"toolsafe","category":"paper","url":"https://github.com/MurrayTom/ToolSafe.git"},
+  {"id":"agent-c","category":"paper","url":"https://github.com/structuredllm/agent-c.git"},
+  {"id":"harnessaudit","category":"paper","url":"https://github.com/UCSB-AI/HarnessAudit.git"},
+  {"id":"tool-forge","category":"paper","url":"https://github.com/nextmoca/tool-forge.git"},
+  {"id":"mcp-pep-agent-security","category":"paper","url":"https://github.com/wilesanGH/mcp-pep-agent-security.git"},
+  {"id":"trustagent","category":"paper","url":"https://github.com/agiresearch/TrustAgent.git"},
+  {"id":"invariant","category":"practice","url":"https://github.com/invariantlabs-ai/invariant.git"},
+  {"id":"agentguard","category":"practice","url":"https://github.com/WhitzardAgent/AgentGuard.git"},
+  {"id":"agent-policy-guard","category":"practice","url":"https://github.com/agent-policy/guard.git"},
+  {"id":"google-adk-python","category":"practice","url":"https://github.com/google/adk-python.git"},
+  {"id":"microsoft-agent-framework","category":"practice","url":"https://github.com/microsoft/agent-framework.git"},
+  {"id":"pydantic-ai","category":"practice","url":"https://github.com/pydantic/pydantic-ai.git"},
+  {"id":"guardrails-ai","category":"practice","url":"https://github.com/guardrails-ai/guardrails.git"}
+]

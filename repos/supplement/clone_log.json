@@ -1,0 +1,146 @@
+﻿[
+    {
+        "id":  "agentspec",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/haoyuwang99/AgentSpec.git",
+        "commit":  "e6fa3902e2cfb9681f454b355691b771f70543f8",
+        "error":  null
+    },
+    {
+        "id":  "camel-prompt-injection",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/google-research/camel-prompt-injection.git",
+        "commit":  "f083b6b396399d3b3c7f2ddaf613a5945eaf32d8",
+        "error":  null
+    },
+    {
+        "id":  "fides",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/microsoft/fides.git",
+        "commit":  "669c046c4adbc56ee49c9672fdd30c54937ea062",
+        "error":  null
+    },
+    {
+        "id":  "pfi",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/compsec-snu/pfi.git",
+        "commit":  "73ee2b513e54dd7bb4ffdd4c3d16d9de2f4c235f",
+        "error":  null
+    },
+    {
+        "id":  "cuga-agent",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/cuga-project/cuga-agent.git",
+        "commit":  "8b45234a4ff6ec069be0b51e2a6f487454e2eb4b",
+        "error":  null
+    },
+    {
+        "id":  "toolsafe",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/MurrayTom/ToolSafe.git",
+        "commit":  "46358fa424a927a895c6c8322f99032c4eb5155e",
+        "error":  null
+    },
+    {
+        "id":  "agent-c",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/structuredllm/agent-c.git",
+        "commit":  "70b536ad9a867d445aa2944033ab06efe220d412",
+        "error":  null
+    },
+    {
+        "id":  "harnessaudit",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/UCSB-AI/HarnessAudit.git",
+        "commit":  "6317162590aeeb1c8dde32b880ac199933343e4a",
+        "error":  null
+    },
+    {
+        "id":  "tool-forge",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/nextmoca/tool-forge.git",
+        "commit":  "07947e98d3a1829c6c62afe131404cd0a56223bd",
+        "error":  null
+    },
+    {
+        "id":  "mcp-pep-agent-security",
+        "category":  "paper",
+        "status":  "cloned",
+        "url":  "https://github.com/wilesanGH/mcp-pep-agent-security.git",
+        "commit":  "3dd9690b5b6f9c4ef385289714b314d13f6ad9a1",
+        "error":  null
+    },
+    {
+        "id":  "trustagent",
+        "category":  "paper",
+        "status":  "failed",
+        "url":  "https://github.com/agiresearch/TrustAgent.git",
+        "commit":  null,
+        "error":  "git clone exit code 128"
+    },
+    {
+        "id":  "invariant",
+        "category":  "practice",
+        "status":  "cloned",
+        "url":  "https://github.com/invariantlabs-ai/invariant.git",
+        "commit":  "2340fe2d9cd619f73d5b67fa05bf8a08c7cad515",
+        "error":  null
+    },
+    {
+        "id":  "agentguard",
+        "category":  "practice",
+        "status":  "failed",
+        "url":  "https://github.com/WhitzardAgent/AgentGuard.git",
+        "commit":  null,
+        "error":  "git clone exit code 128"
+    },
+    {
+        "id":  "agent-policy-guard",
+        "category":  "practice",
+        "status":  "cloned",
+        "url":  "https://github.com/agent-policy/guard.git",
+        "commit":  "6702e0b98de4228f116514e553dc2ca3e0a777e2",
+        "error":  null
+    },
+    {
+        "id":  "google-adk-python",
+        "category":  "practice",
+        "status":  "cloned",
+        "url":  "https://github.com/google/adk-python.git",
+        "commit":  "c986ff0fceedef2107485cf136dc3b70acec32d8",
+        "error":  null
+    },
+    {
+        "id":  "microsoft-agent-framework",
+        "category":  "practice",
+        "status":  "cloned",
+        "url":  "https://github.com/microsoft/agent-framework.git",
+        "commit":  "435201b71b9685eef4379fd1b1eeea932684b9e8",
+        "error":  null
+    },
+    {
+        "id":  "pydantic-ai",
+        "category":  "practice",
+        "status":  "failed",
+        "url":  "https://github.com/pydantic/pydantic-ai.git",
+        "commit":  null,
+        "error":  "git clone exit code 128"
+    },
+    {
+        "id":  "guardrails-ai",
+        "category":  "practice",
+        "status":  "cloned",
+        "url":  "https://github.com/guardrails-ai/guardrails.git",
+        "commit":  "c472d552e5f0bc0403f788ebb646b146003d98b0",
+        "error":  null
+    }
+]

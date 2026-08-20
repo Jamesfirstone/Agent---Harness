@@ -1,0 +1,156 @@
+{
+  "executed_at": "2026-08-20T10:31:21.7834377+08:00",
+  "date_range": "2019-01-01/2026-08-20",
+  "queries": [
+    {
+      "id": "q1",
+      "text": "LLM agent runtime policy enforcement guardrail",
+      "arxiv": "all:\"LLM agent\" AND (all:\"runtime enforcement\" OR all:guardrail OR all:\"policy enforcement\")"
+    },
+    {
+      "id": "q2",
+      "text": "LLM agent tool call authorization privilege control",
+      "arxiv": "all:\"LLM agent\" AND (all:\"tool call\" OR all:\"function calling\") AND (all:authorization OR all:privilege OR all:policy)"
+    },
+    {
+      "id": "q3",
+      "text": "language model agent execution isolation sandbox capability",
+      "arxiv": "(all:\"language model agent\" OR all:\"LLM agent\") AND (all:isolation OR all:sandbox OR all:capability)"
+    },
+    {
+      "id": "q4",
+      "text": "LLM agent runtime monitoring invariant contract",
+      "arxiv": "all:\"LLM agent\" AND (all:\"runtime monitoring\" OR all:invariant OR all:contract)"
+    }
+  ],
+  "requests": [
+    {
+      "database": "openalex",
+      "query_id": "q1",
+      "url": "https://api.openalex.org/works?search=LLM%20agent%20runtime%20policy%20enforcement%20guardrail&filter=from_publication_date:2019-01-01,to_publication_date:2026-08-20,has_abstract:true&sort=relevance_score:desc&per_page=50&mailto=23302010052@m.fudan.edu.cn",
+      "status": 200,
+      "bytes": 879911,
+      "error": null
+    },
+    {
+      "database": "crossref",
+      "query_id": "q1",
+      "url": "https://api.crossref.org/works?query=LLM%20agent%20runtime%20policy%20enforcement%20guardrail&filter=from-pub-date:2019-01-01,until-pub-date:2026-08-20&rows=50&select=DOI,title,author,published,container-title,type,is-referenced-by-count,URL,link&mailto=23302010052@m.fudan.edu.cn",
+      "status": 200,
+      "bytes": 37952,
+      "error": null
+    },
+    {
+      "database": "semantic-scholar",
+      "query_id": "q1",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=LLM%20agent%20runtime%20policy%20enforcement%20guardrail&fields=paperId,externalIds,url,title,abstract,venue,year,citationCount,isOpenAccess,openAccessPdf,publicationDate,authors&limit=50&year=2019-2026",
+      "status": 200,
+      "bytes": 128977,
+      "error": null
+    },
+    {
+      "database": "arxiv",
+      "query_id": "q1",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22LLM%20agent%22%20AND%20%28all%3A%22runtime%20enforcement%22%20OR%20all%3Aguardrail%20OR%20all%3A%22policy%20enforcement%22%29&start=0&max_results=50&sortBy=relevance&sortOrder=descending",
+      "status": 200,
+      "bytes": 127547,
+      "error": null
+    },
+    {
+      "database": "openalex",
+      "query_id": "q2",
+      "url": "https://api.openalex.org/works?search=LLM%20agent%20tool%20call%20authorization%20privilege%20control&filter=from_publication_date:2019-01-01,to_publication_date:2026-08-20,has_abstract:true&sort=relevance_score:desc&per_page=50&mailto=23302010052@m.fudan.edu.cn",
+      "status": 200,
+      "bytes": 856034,
+      "error": null
+    },
+    {
+      "database": "crossref",
+      "query_id": "q2",
+      "url": "https://api.crossref.org/works?query=LLM%20agent%20tool%20call%20authorization%20privilege%20control&filter=from-pub-date:2019-01-01,until-pub-date:2026-08-20&rows=50&select=DOI,title,author,published,container-title,type,is-referenced-by-count,URL,link&mailto=23302010052@m.fudan.edu.cn",
+      "status": 200,
+      "bytes": 39627,
+      "error": null
+    },
+    {
+      "database": "semantic-scholar",
+      "query_id": "q2",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=LLM%20agent%20tool%20call%20authorization%20privilege%20control&fields=paperId,externalIds,url,title,abstract,venue,year,citationCount,isOpenAccess,openAccessPdf,publicationDate,authors&limit=50&year=2019-2026",
+      "status": null,
+      "bytes": 0,
+      "error": "Response status code does not indicate success: 429 ()."
+    },
+    {
+      "database": "arxiv",
+      "query_id": "q2",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22LLM%20agent%22%20AND%20%28all%3A%22tool%20call%22%20OR%20all%3A%22function%20calling%22%29%20AND%20%28all%3Aauthorization%20OR%20all%3Aprivilege%20OR%20all%3Apolicy%29&start=0&max_results=50&sortBy=relevance&sortOrder=descending",
+      "status": 200,
+      "bytes": 129096,
+      "error": null
+    },
+    {
+      "database": "openalex",
+      "query_id": "q3",
+      "url": "https://api.openalex.org/works?search=language%20model%20agent%20execution%20isolation%20sandbox%20capability&filter=from_publication_date:2019-01-01,to_publication_date:2026-08-20,has_abstract:true&sort=relevance_score:desc&per_page=50&mailto=23302010052@m.fudan.edu.cn",
+      "status": 200,
+      "bytes": 1110644,
+      "error": null
+    },
+    {
+      "database": "crossref",
+      "query_id": "q3",
+      "url": "https://api.crossref.org/works?query=language%20model%20agent%20execution%20isolation%20sandbox%20capability&filter=from-pub-date:2019-01-01,until-pub-date:2026-08-20&rows=50&select=DOI,title,author,published,container-title,type,is-referenced-by-count,URL,link&mailto=23302010052@m.fudan.edu.cn",
+      "status": 200,
+      "bytes": 46881,
+      "error": null
+    },
+    {
+      "database": "semantic-scholar",
+      "query_id": "q3",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=language%20model%20agent%20execution%20isolation%20sandbox%20capability&fields=paperId,externalIds,url,title,abstract,venue,year,citationCount,isOpenAccess,openAccessPdf,publicationDate,authors&limit=50&year=2019-2026",
+      "status": null,
+      "bytes": 0,
+      "error": "Response status code does not indicate success: 429 ()."
+    },
+    {
+      "database": "arxiv",
+      "query_id": "q3",
+      "url": "https://export.arxiv.org/api/query?search_query=%28all%3A%22language%20model%20agent%22%20OR%20all%3A%22LLM%20agent%22%29%20AND%20%28all%3Aisolation%20OR%20all%3Asandbox%20OR%20all%3Acapability%29&start=0&max_results=50&sortBy=relevance&sortOrder=descending",
+      "status": 200,
+      "bytes": 130001,
+      "error": null
+    },
+    {
+      "database": "openalex",
+      "query_id": "q4",
+      "url": "https://api.openalex.org/works?search=LLM%20agent%20runtime%20monitoring%20invariant%20contract&filter=from_publication_date:2019-01-01,to_publication_date:2026-08-20,has_abstract:true&sort=relevance_score:desc&per_page=50&mailto=23302010052@m.fudan.edu.cn",
+      "status": 200,
+      "bytes": 878664,
+      "error": null
+    },
+    {
+      "database": "crossref",
+      "query_id": "q4",
+      "url": "https://api.crossref.org/works?query=LLM%20agent%20runtime%20monitoring%20invariant%20contract&filter=from-pub-date:2019-01-01,until-pub-date:2026-08-20&rows=50&select=DOI,title,author,published,container-title,type,is-referenced-by-count,URL,link&mailto=23302010052@m.fudan.edu.cn",
+      "status": 200,
+      "bytes": 42534,
+      "error": null
+    },
+    {
+      "database": "semantic-scholar",
+      "query_id": "q4",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/search?query=LLM%20agent%20runtime%20monitoring%20invariant%20contract&fields=paperId,externalIds,url,title,abstract,venue,year,citationCount,isOpenAccess,openAccessPdf,publicationDate,authors&limit=50&year=2019-2026",
+      "status": null,
+      "bytes": 0,
+      "error": "Response status code does not indicate success: 429 ()."
+    },
+    {
+      "database": "arxiv",
+      "query_id": "q4",
+      "url": "https://export.arxiv.org/api/query?search_query=all%3A%22LLM%20agent%22%20AND%20%28all%3A%22runtime%20monitoring%22%20OR%20all%3Ainvariant%20OR%20all%3Acontract%29&start=0&max_results=50&sortBy=relevance&sortOrder=descending",
+      "status": 200,
+      "bytes": 123597,
+      "error": null
+    }
+  ]
+}

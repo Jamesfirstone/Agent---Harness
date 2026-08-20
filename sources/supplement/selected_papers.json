@@ -1,0 +1,150 @@
+[
+  {
+    "id": "nemo_guardrails_2023",
+    "title": "NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails",
+    "year": 2023,
+    "venue": "EMNLP System Demonstrations",
+    "doi": "10.18653/v1/2023.emnlp-demo.40",
+    "url": "https://aclanthology.org/2023.emnlp-demo.40.pdf",
+    "fallback_url": "https://arxiv.org/pdf/2310.10501",
+    "repo": "https://github.com/NVIDIA-NeMo/Guardrails"
+  },
+  {
+    "id": "isolategpt_ndss_2025",
+    "title": "IsolateGPT: An Execution Isolation Architecture for LLM-Based Agentic Systems",
+    "year": 2025,
+    "venue": "NDSS",
+    "doi": "10.14722/ndss.2025.241131",
+    "url": "https://arxiv.org/pdf/2403.04960",
+    "repo": null
+  },
+  {
+    "id": "trustagent_2024",
+    "title": "TrustAgent: Towards Safe and Trustworthy LLM-based Agents through Agent Constitution",
+    "year": 2024,
+    "venue": "Findings of EMNLP",
+    "doi": "10.18653/v1/2024.findings-emnlp.585",
+    "url": "https://aclanthology.org/2024.findings-emnlp.585.pdf",
+    "fallback_url": "https://arxiv.org/pdf/2402.01586",
+    "repo": "https://github.com/agiresearch/TrustAgent"
+  },
+  {
+    "id": "shieldagent_icml_2025",
+    "title": "ShieldAgent: Shielding Agents via Verifiable Safety Policy Reasoning",
+    "year": 2025,
+    "venue": "ICML",
+    "doi": "10.48550/arXiv.2503.22738",
+    "url": "https://arxiv.org/pdf/2503.22738",
+    "repo": null
+  },
+  {
+    "id": "agentspec_icse_2026",
+    "title": "AgentSpec: Customizable Runtime Enforcement for Safe and Reliable LLM Agents",
+    "year": 2026,
+    "venue": "ICSE",
+    "doi": "10.48550/arXiv.2503.18666",
+    "url": "https://arxiv.org/pdf/2503.18666",
+    "repo": "https://github.com/haoyuwang99/AgentSpec"
+  },
+  {
+    "id": "progent_2025",
+    "title": "Progent: Securing AI Agents with Privilege Control",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "doi": "10.48550/arXiv.2504.11703",
+    "url": "https://arxiv.org/pdf/2504.11703",
+    "repo": null
+  },
+  {
+    "id": "camel_2025",
+    "title": "Defeating Prompt Injections by Design",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "doi": "10.48550/arXiv.2503.18813",
+    "url": "https://arxiv.org/pdf/2503.18813",
+    "repo": "https://github.com/google-research/camel-prompt-injection"
+  },
+  {
+    "id": "fides_ifc_2025",
+    "title": "Securing AI Agents with Information-Flow Control",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "doi": "10.48550/arXiv.2505.23643",
+    "url": "https://arxiv.org/pdf/2505.23643",
+    "repo": "https://github.com/microsoft/fides"
+  },
+  {
+    "id": "pfi_2025",
+    "title": "Prompt Flow Integrity to Prevent Privilege Escalation in LLM Agents",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "doi": "10.48550/arXiv.2503.15547",
+    "url": "https://arxiv.org/pdf/2503.15547",
+    "repo": "https://github.com/compsec-snu/pfi"
+  },
+  {
+    "id": "llamafirewall_2025",
+    "title": "LlamaFirewall: An Open Source Guardrail System for Building Secure AI Agents",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "doi": "10.48550/arXiv.2505.03574",
+    "url": "https://arxiv.org/pdf/2505.03574",
+    "repo": "https://github.com/meta-llama/PurpleLlama"
+  },
+  {
+    "id": "mcp_runtime_policy_2026",
+    "title": "Runtime Policy Enforcement for MCP-Based LLM Agents",
+    "year": 2026,
+    "venue": "Electronics",
+    "doi": "10.3390/electronics15132829",
+    "url": "https://www.mdpi.com/2079-9292/15/13/2829/pdf",
+    "fallback_url": "https://mdpi-res.com/d_attachment/electronics/electronics-15-02829/article_deploy/electronics-15-02829.pdf",
+    "repo": "https://github.com/wilesanGH/mcp-pep-agent-security"
+  },
+  {
+    "id": "cuga_2026",
+    "title": "Governance by Construction for Generalist Agents",
+    "year": 2026,
+    "venue": "ACM CAIS",
+    "doi": "10.1145/3786335.3813192",
+    "url": "https://arxiv.org/pdf/2605.20874",
+    "repo": "https://github.com/cuga-project/cuga-agent"
+  },
+  {
+    "id": "toolsafe_acl_2026",
+    "title": "ToolSafe: Enhancing Tool Invocation Safety of LLM-based Agents via Proactive Step-level Guardrail and Feedback",
+    "year": 2026,
+    "venue": "Findings of ACL",
+    "doi": "10.18653/v1/2026.findings-acl.1850",
+    "url": "https://aclanthology.org/2026.findings-acl.1850.pdf",
+    "fallback_url": "https://arxiv.org/pdf/2601.10156",
+    "repo": "https://github.com/MurrayTom/ToolSafe"
+  },
+  {
+    "id": "agent_c_2025",
+    "title": "Enforcing Temporal Constraints for LLM Agents",
+    "year": 2025,
+    "venue": "arXiv preprint",
+    "doi": "10.48550/arXiv.2512.23738",
+    "url": "https://arxiv.org/pdf/2512.23738",
+    "repo": "https://github.com/structuredllm/agent-c"
+  },
+  {
+    "id": "harnessaudit_2026",
+    "title": "Auditing Agent Harness Safety",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": "10.48550/arXiv.2605.14271",
+    "url": "https://arxiv.org/pdf/2605.14271",
+    "repo": "https://github.com/UCSB-AI/HarnessAudit"
+  },
+  {
+    "id": "tool_forge_2026",
+    "title": "Tool Forge: A Validation-Carrying Toolchain for Governed Agentic Execution",
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "doi": "10.48550/arXiv.2605.28000",
+    "url": "https://arxiv.org/pdf/2605.28000",
+    "repo": "https://github.com/nextmoca/tool-forge"
+  }
+]

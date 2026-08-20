@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">PRISMA-style screening flow</title>
+  <desc id="desc">650 database records, 104 duplicates, 546 unique records, 84 rule-pass records, 35 supplementary candidates, 29 additions or rescues, 113 detailed assessments, and 16 included studies.</desc>
+  <defs>
+    <style>
+      .bg { fill:#f8fafc; }
+      .header { fill:#0b2f5b; stroke:#0b2f5b; stroke-width:3; rx:16; }
+      .box { fill:#ffffff; stroke:#0b2f5b; stroke-width:3; rx:14; }
+      .teal { fill:#e9f7f5; stroke:#0f766e; stroke-width:3; rx:14; }
+      .exclude { fill:#fff7ed; stroke:#c2410c; stroke-width:3; rx:14; }
+      .included { fill:#dff5e7; stroke:#177245; stroke-width:4; rx:14; }
+      .h { font:700 34px Arial, sans-serif; fill:#fff; text-anchor:middle; }
+      .t { font:600 27px Arial, sans-serif; fill:#102a43; text-anchor:middle; }
+      .s { font:500 22px Arial, sans-serif; fill:#334e68; text-anchor:middle; }
+      .n { font:700 34px Arial, sans-serif; fill:#0b2f5b; text-anchor:middle; }
+      .arrow { stroke:#102a43; stroke-width:5; fill:none; marker-end:url(#arrow); }
+      .branch { stroke:#c2410c; stroke-width:4; fill:none; marker-end:url(#arrowOrange); }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#102a43"/></marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#c2410c"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="1500"/>
+
+  <rect class="header" x="190" y="40" width="820" height="88" rx="16"/>
+  <text class="h" x="600" y="96">Identification and screening</text>
+
+  <rect class="box" x="90" y="180" width="470" height="130" rx="14"/>
+  <text class="t" x="325" y="228">Formal database search</text>
+  <text class="n" x="325" y="276">650 records</text>
+
+  <rect class="teal" x="640" y="180" width="470" height="130" rx="14"/>
+  <text class="t" x="875" y="228">Citation / repository search</text>
+  <text class="n" x="875" y="276">35 candidates assessed</text>
+
+  <path class="arrow" d="M325 310 L325 390"/>
+  <rect class="exclude" x="630" y="360" width="480" height="120" rx="14"/>
+  <text class="t" x="870" y="407">Duplicates removed</text>
+  <text class="n" x="870" y="451">104</text>
+  <path class="branch" d="M560 245 L600 245 L600 420 L630 420"/>
+
+  <rect class="box" x="90" y="390" width="470" height="130" rx="14"/>
+  <text class="t" x="325" y="438">Unique database records</text>
+  <text class="n" x="325" y="486">546</text>
+
+  <path class="arrow" d="M325 520 L325 605"/>
+  <rect class="box" x="90" y="605" width="470" height="145" rx="14"/>
+  <text class="t" x="325" y="650">Rule-assisted title / abstract screen</text>
+  <text class="n" x="325" y="707">84 passed</text>
+
+  <rect class="exclude" x="640" y="605" width="470" height="145" rx="14"/>
+  <text class="t" x="875" y="650">Excluded at title / abstract</text>
+  <text class="n" x="875" y="707">462</text>
+  <path class="branch" d="M560 677 L640 677"/>
+
+  <path class="arrow" d="M875 310 L875 845 L710 845"/>
+  <rect class="teal" x="640" y="790" width="470" height="140" rx="14"/>
+  <text class="t" x="875" y="835">After overlap with rule-pass set</text>
+  <text class="n" x="875" y="885">29 additions / rescues</text>
+  <text class="s" x="875" y="916">6 overlapped the 84 rule-pass records</text>
+
+  <path class="arrow" d="M325 750 L325 1005 L510 1005"/>
+  <path class="arrow" d="M875 930 L875 1005 L690 1005"/>
+  <rect class="teal" x="300" y="975" width="600" height="150" rx="14"/>
+  <text class="t" x="600" y="1026">Detailed metadata, full-text,</text>
+  <text class="t" x="600" y="1062">and artifact assessment</text>
+  <text class="n" x="600" y="1106">113 records</text>
+
+  <path class="arrow" d="M600 1125 L600 1240"/>
+  <rect class="exclude" x="705" y="1188" width="405" height="125" rx="14"/>
+  <text class="t" x="908" y="1235">Excluded after assessment</text>
+  <text class="n" x="908" y="1284">97</text>
+  <path class="branch" d="M600 1188 L705 1188"/>
+
+  <rect class="included" x="90" y="1240" width="510" height="150" rx="14"/>
+  <text class="t" x="345" y="1290">Included studies</text>
+  <text class="n" x="345" y="1347">16</text>
+
+  <text class="s" x="600" y="1450">Search date: 20 Aug 2026 · Full decisions: sources/supplement/screening_decisions.csv</text>
+</svg>

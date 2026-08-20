@@ -1,0 +1,1215 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/bMMaJvOh0sKN8C1IsBQczJEjbi8</id>
+  <title>arXiv Query: search_query=all:"LLM agent" AND (all:"runtime monitoring" OR all:invariant OR all:contract)&amp;id_list=&amp;start=0&amp;max_results=50</title>
+  <updated>2026-08-20T02:31:16Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=all:%22LLM+agent%22+AND+(all:%22runtime+monitoring%22+OR+(all:invariant+OR+all:contract))&amp;start=0&amp;max_results=50&amp;id_list=" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>50</opensearch:itemsPerPage>
+  <opensearch:totalResults>108</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2508.00500v4</id>
+    <title>ProbGuard: Proactive Runtime Monitoring for LLM Agent Safety via Probabilistic Prediction</title>
+    <updated>2026-08-03T00:31:29Z</updated>
+    <link href="https://arxiv.org/abs/2508.00500v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2508.00500v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Model (LLM) agents increasingly operate across domains such as robotics, virtual assistants, and web automation. However, their stochastic decision-making introduces safety risks that are difficult to anticipate during execution. Existing runtime monitoring frameworks, such as AgentSpec, primarily rely on reactive safety rules that detect violations only when unsafe behavior is imminent or has already occurred, limiting their ability to handle long-horizon dependencies. We present ProbGuard, a proactive runtime monitoring framework for LLM agents that anticipates safety violations through probabilistic risk prediction. ProbGuard abstracts agent executions into symbolic states and learns a Discrete-Time Markov Chain (DTMC) from execution traces to model behavioral dynamics. At runtime, the monitor estimates the probability that execution will remain safe from the current state, and triggers an intervention when this probability falls below a user-defined threshold. To improve robustness, ProbGuard incorporates semantic validity constraints in the abstraction and admits a PAC-style analysis that characterizes the sample complexity required to certify the learned model under standard assumptions. We evaluate ProbGuard in two safety-critical domains: autonomous driving and embodied household agents. Across evaluated scenarios, ProbGuard consistently predicts traffic law violations and collisions in advance, with warnings up to 15.84 seconds at a threshold yielding no false alarms, and up to 38.66 seconds at stricter thresholds. In embodied agent tasks, ProbGuard's re-prompting intervention mode reduces unsafe behavior by 65.37% relative to the unmonitored baseline while retaining 80.4% of the baseline task completion; a stricter halting configuration reduces unsafe behavior by 93.60% at a larger cost in completion.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-08-01T10:24:47Z</published>
+    <arxiv:comment>Accepted by the 41st IEEE/ACM International Conference on Automated Software Engineering (ASE 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Haoyu Wang</name>
+    </author>
+    <author>
+      <name>Christopher M. Poskitt</name>
+    </author>
+    <author>
+      <name>Jiali Wei</name>
+    </author>
+    <author>
+      <name>Jun Sun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.08028v1</id>
+    <title>From Prompts to Contracts: Harness Engineering for Auditable Enterprise LLM Agents</title>
+    <updated>2026-07-09T01:08:33Z</updated>
+    <link href="https://arxiv.org/abs/2607.08028v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.08028v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Enterprise large language model (LLM) applications often begin as prototypes whose behavior is carried by prompts and retrieval context. Productization adds requirements for source boundaries, entity routing, answer contracts, and reproducible traces. We present a harness-engineering approach that reconstructs this pattern into a traceable, auditable LLM-agent architecture: deterministic behavior moves into code, manifests, schemas, and validation artifacts around a replaceable composition boundary, while source-backed claims remain the authority for runtime answers. We instantiate it on a public-data slice of five Korean corporate groups (25 listed companies) and evaluate three research questions. (1) The harness preserves its source-grounding, entity-routing, trace, output-hygiene, and recommendation-language contracts across the fixed validation scenarios; a fault-injection control confirms the validators flag deliberately broken contracts. (2) The checks the harness enforces held under model substitution: across three hosted models, they passed on all 270 composition-boundary runs; failures were confined to the model-composed side and were caught and recorded. (3) The code-owned guarantees are load-bearing, not reproducible by prompting alone: holding the model fixed and varying only the enforcement layer, prompt instructions alone let recommendation-language and internal-trace-leakage violations reach the reader, which the harness blocks entirely. A bolt-on external guardrail prevents such violations too but over-refuses, dropping utility to 88/120 where the harness preserves full utility (120/120); in this ablation, only code-owned enforcement preserves both safety and utility. The result is a reusable engineering pattern for turning exploratory prototypes into auditable applications with versioned source, control, and validation artifacts.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-09T01:08:33Z</published>
+    <arxiv:comment>32 pages, 6 figures, 16 tables. Reference implementation and evaluation artifacts: https://github.com/hammerbaki/enterprise-llm-agent-harness (archived at https://doi.org/10.5281/zenodo.21269426)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Joongho Ahn</name>
+    </author>
+    <author>
+      <name>Moonsoo Kim</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2406.14373v3</id>
+    <title>Artificial Leviathan: Exploring Social Evolution of LLM Agents Through the Lens of Hobbesian Social Contract Theory</title>
+    <updated>2026-08-10T09:15:42Z</updated>
+    <link href="https://arxiv.org/abs/2406.14373v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2406.14373v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The emergence of Large Language Models (LLMs) and advancements in Artificial Intelligence (AI) offer an opportunity for computational social science research at scale. Building upon prior explorations of LLM agent design, our work introduces a simulated agent society where complex social relationships dynamically form and evolve over time. Agents are imbued with psychological drives and placed in a sandbox survival environment. We conduct an evaluation of the agent society through the lens of Thomas Hobbes's seminal Social Contract Theory (SCT). We analyze whether, as the theory postulates, agents seek to escape a brutish "state of nature" by surrendering rights to an absolute sovereign in exchange for order and security. Our experiments unveil an alignment: Initially, agents engage in unrestrained conflict, mirroring Hobbes's depiction of the state of nature. However, as the simulation progresses, social contracts emerge, leading to the authorization of an absolute sovereign and the establishment of a peaceful commonwealth founded on mutual cooperation. This congruence between our LLM agent society's evolutionary trajectory and Hobbes's theoretical account indicates LLMs' capability to model intricate social dynamics and potentially replicate forces that shape human societies. By enabling such insights into group behavior and emergent societal phenomena, LLM-driven multi-agent simulations, while unable to simulate all the nuances of human behavior, may hold potential for advancing our understanding of social structures, group dynamics, and complex human systems.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-06-20T14:42:58Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Gordon Dai</name>
+    </author>
+    <author>
+      <name>Weijia Zhang</name>
+    </author>
+    <author>
+      <name>Jinhan Li</name>
+    </author>
+    <author>
+      <name>Siqi Yang</name>
+    </author>
+    <author>
+      <name>Chidera Onochie lbe</name>
+    </author>
+    <author>
+      <name>Srihas Rao</name>
+    </author>
+    <author>
+      <name>Arthur Caetano</name>
+    </author>
+    <author>
+      <name>Misha Sra</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.10990v1</id>
+    <title>Skill Drift Is Contract Violation: Proactive Maintenance for LLM Agent Skill Libraries</title>
+    <updated>2026-05-09T11:41:53Z</updated>
+    <link href="https://arxiv.org/abs/2605.10990v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.10990v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents increasingly rely on reusable skill libraries, but these skills silently decay as the external services, packages, APIs, and configurations they reference evolve. Existing monitors detect such changes at the wrong granularity: they observe values, not the role those values play in a skill. A version string in a comment is noise; the same string in a pinned dependency is an operational obligation. We formulate skill drift as contract violation and introduce \sgname{}, which extracts executable environment contracts from skill documents and validates only those role-bearing assumptions against known or live conditions. This distinction turns noisy monitoring into a precision-first maintenance signal. Contract-free CI probes produce 40\% false positives, while \sgname{} raises zero false alarms over 599 no-drift and hard-negative cases (Wilson 95\% CI $[0,0.6]\%$). In known-drift verification, \sgname{} achieves 100\% precision and 76\% recall with the strongest backbone; in a pre-registered study over 49 real skills, it discovers live drift with 86\% conservative precision. Violated contracts also make repair actionable, improving one-round success from 10\% without localization to 78\%. We release \dbname{}, an 880-pair benchmark for skill degradation.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-09T11:41:53Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Linfeng Fan</name>
+    </author>
+    <author>
+      <name>Yuan Tian</name>
+    </author>
+    <author>
+      <name>Ziwei Li</name>
+    </author>
+    <author>
+      <name>Zhiwu Lu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2512.14448v1</id>
+    <title>Reasoning-Style Poisoning of LLM Agents via Stealthy Style Transfer: Process-Level Attacks and Runtime Monitoring in RSV Space</title>
+    <updated>2025-12-16T14:34:10Z</updated>
+    <link href="https://arxiv.org/abs/2512.14448v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2512.14448v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Model (LLM) agents relying on external retrieval are increasingly deployed in high-stakes environments. While existing adversarial attacks primarily focus on content falsification or instruction injection, we identify a novel, process-oriented attack surface: the agent's reasoning style. We propose Reasoning-Style Poisoning (RSP), a paradigm that manipulates how agents process information rather than what they process. We introduce Generative Style Injection (GSI), an attack method that rewrites retrieved documents into pathological tones--specifically "analysis paralysis" or "cognitive haste"--without altering underlying facts or using explicit triggers. To quantify these shifts, we develop the Reasoning Style Vector (RSV), a metric tracking Verification depth, Self-confidence, and Attention focus. Experiments on HotpotQA and FEVER using ReAct, Reflection, and Tree of Thoughts (ToT) architectures reveal that GSI significantly degrades performance. It increases reasoning steps by up to 4.4 times or induces premature errors, successfully bypassing state-of-the-art content filters. Finally, we propose RSP-M, a lightweight runtime monitor that calculates RSV metrics in real-time and triggers alerts when values exceed safety thresholds. Our work demonstrates that reasoning style is a distinct, exploitable vulnerability, necessitating process-level defenses beyond static content analysis.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-12-16T14:34:10Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Xingfu Zhou</name>
+    </author>
+    <author>
+      <name>Pengfei Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.17281v1</id>
+    <title>ContractBench: Can LLM Agents Preserve Observation Contracts?</title>
+    <updated>2026-05-17T06:37:04Z</updated>
+    <link href="https://arxiv.org/abs/2605.17281v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.17281v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented LLM agents call APIs whose intermediate outputs, such as presigned URLs, session tokens, and OAuth state parameters, are observation contracts: artifacts whose later use is constrained by the external system that produced them. We show that observation contract compliance (preserving the temporal validity and byte-level integrity) is an emergent, regression-prone capability: it is neither guaranteed by general tool-use ability nor consistently improved by larger or newer models. To measure this, we introduce ContractBench, a benchmark of 33 dual-axis tasks that probe two orthogonal failure modes no existing benchmark evaluates: validity failures (using an artifact after expiry) and integrity failures (corrupting an artifact's bytes through the observation-to-action pipeline). Our evaluation is deterministic and programmatic, with a virtual clock controlling time and SHA-256 hashes verifying byte integrity. We assign each outcome a failure label drawn from real-world API specifications. We evaluate 38 models and report four findings: (i) no evaluated model clears 80%, with Claude-Opus-4.6 leading at 77.8%, revealing that current frontier models still fail to comply with observation contracts; (ii) a sharp within-family capability cliff in Qwen 3.5 between 4B (0%) and 9B (56.6%), smoothing to 70.7% at 397B-A17B: what emerges across the cliff is mid-trajectory restraint, not tool-call competence; (iii) non-monotonic scaling across the GPT-5 family: agentic post-training can erode compliance through sycophancy-driven regression; (iv) our failure taxonomy works as an actionable in-context reward signal, yielding +7.1 pp on 42 paired GPT-5.1 failures.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-17T06:37:04Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Jicheng Wang</name>
+    </author>
+    <author>
+      <name>Yifeng He</name>
+    </author>
+    <author>
+      <name>Zili Wang</name>
+    </author>
+    <author>
+      <name>Hanwen Xing</name>
+    </author>
+    <author>
+      <name>Arkaprava De</name>
+    </author>
+    <author>
+      <name>Hao Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.18672v1</id>
+    <title>Position: A Three-Layer Probabilistic Assume-Guarantee Architecture Is Structurally Required for Safe LLM Agent Deployment</title>
+    <updated>2026-05-18T17:13:41Z</updated>
+    <link href="https://arxiv.org/abs/2605.18672v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.18672v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This position paper argues that enforcing LLM agent safety within a single abstraction layer is not merely suboptimal but categorically insufficient for deployed LLM agents -- a structural consequence of how agent execution works, not a contingent limitation of current systems. The three dimensions that jointly constitute safe operation -- semantic intent and policy compliance, environmental validity, and dynamical feasibility -- each depend on a strictly distinct set of information that becomes available at different stages of execution. No single guardrail can certify all three. We argue that the community must respond with a contract-based architecture in which each safety dimension is enforced by an independently certified layer whose probabilistic guarantee satisfies the next layer's assumption. We sketch such an architecture and derive the compositional system-level safety bounds it admits via the chain rule of probability. Three open problems stand between this and a deployable standard: bound estimation from non-i.i.d.\ traces, graceful degradation of contracts under deployment drift, and extension to multi-agent settings -- the most important unfinished business in LLM agent runtime assurance.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-18T17:13:41Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>S. Bensalem</name>
+    </author>
+    <author>
+      <name>Y. Dong</name>
+    </author>
+    <author>
+      <name>M. Franzle</name>
+    </author>
+    <author>
+      <name>X. Huang</name>
+    </author>
+    <author>
+      <name>J. Kroger</name>
+    </author>
+    <author>
+      <name>D. Nickovic</name>
+    </author>
+    <author>
+      <name>A. Nouri</name>
+    </author>
+    <author>
+      <name>R. Roy</name>
+    </author>
+    <author>
+      <name>C. Wu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.02255v1</id>
+    <title>AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents</title>
+    <updated>2026-07-02T14:44:32Z</updated>
+    <link href="https://arxiv.org/abs/2607.02255v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.02255v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Memory for a long-horizon LLM agent is a contract about what each future decision is allowed to see. The simplest contract appends past observations, tool calls, and reflections to every prompt, which makes prior context easy to access but also turns it into a jumbled mixture in which the effect of any single memory component is hard to isolate. We introduce and instrument an alternative bounded contract: every decision is made from a fresh user message assembled by typed retrieval, with no raw cross-decision transcript appended. The prompt thus stays bounded across runs of any length, and any single layer can be ablated in isolation. We instantiate the contract in Slay the Spire 2, a closed-rule stochastic deck-building game whose runs require hundreds of tactical and strategic decisions. A public online benchmark of frontier LLMs on the same game reports zero wins at the lowest difficulty across five configurations, and the developer-reported human win rate at the same difficulty is 16%; the task is hard but not saturated. Within our harness, a fixed-A0 ablation shows the largest observed difference when triggered strategic skills are enabled: the no-store baseline wins 3/10 games and adding the skill layer 6/10. At this sample size the comparison is directional rather than statistically decisive (Fisher exact p\approx0.37); a cross-backbone probe and public accumulating-context baselines are reported as operational comparisons rather than controlled tests of the contract variable itself. We release a reproducible testbed: 298 completed trajectories with condition tags, frozen memory/skill snapshots, prompt records, and analysis scripts -- an agent design and a validated, reusable methodology for studying how explicit memory layers shape long-horizon LLM-agent decisions.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-02T14:44:32Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Xiangchen Cheng</name>
+    </author>
+    <author>
+      <name>Yunwei Jiang</name>
+    </author>
+    <author>
+      <name>Jianwen Sun</name>
+    </author>
+    <author>
+      <name>Zizhen Li</name>
+    </author>
+    <author>
+      <name>Chuanhao Li</name>
+    </author>
+    <author>
+      <name>Xiangcheng Cao</name>
+    </author>
+    <author>
+      <name>Yihao Liu</name>
+    </author>
+    <author>
+      <name>Fanrui Zhang</name>
+    </author>
+    <author>
+      <name>Li Jin</name>
+    </author>
+    <author>
+      <name>Kaipeng Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2510.05156v1</id>
+    <title>VeriGuard: Enhancing LLM Agent Safety via Verified Code Generation</title>
+    <updated>2025-10-03T04:11:43Z</updated>
+    <link href="https://arxiv.org/abs/2510.05156v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2510.05156v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The deployment of autonomous AI agents in sensitive domains, such as healthcare, introduces critical risks to safety, security, and privacy. These agents may deviate from user objectives, violate data handling policies, or be compromised by adversarial attacks. Mitigating these dangers necessitates a mechanism to formally guarantee that an agent's actions adhere to predefined safety constraints, a challenge that existing systems do not fully address. We introduce VeriGuard, a novel framework that provides formal safety guarantees for LLM-based agents through a dual-stage architecture designed for robust and verifiable correctness. The initial offline stage involves a comprehensive validation process. It begins by clarifying user intent to establish precise safety specifications. VeriGuard then synthesizes a behavioral policy and subjects it to both testing and formal verification to prove its compliance with these specifications. This iterative process refines the policy until it is deemed correct. Subsequently, the second stage provides online action monitoring, where VeriGuard operates as a runtime monitor to validate each proposed agent action against the pre-verified policy before execution. This separation of the exhaustive offline validation from the lightweight online monitoring allows formal guarantees to be practically applied, providing a robust safeguard that substantially improves the trustworthiness of LLM agents.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-10-03T04:11:43Z</published>
+    <arxiv:comment>22 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Lesly Miculicich</name>
+    </author>
+    <author>
+      <name>Mihir Parmar</name>
+    </author>
+    <author>
+      <name>Hamid Palangi</name>
+    </author>
+    <author>
+      <name>Krishnamurthy Dj Dvijotham</name>
+    </author>
+    <author>
+      <name>Mirko Montanari</name>
+    </author>
+    <author>
+      <name>Tomas Pfister</name>
+    </author>
+    <author>
+      <name>Long T. Le</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.06240v1</id>
+    <title>TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory</title>
+    <updated>2026-06-04T14:46:52Z</updated>
+    <link href="https://arxiv.org/abs/2606.06240v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.06240v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Persistent memory for an LLM agent is a write-heavy substrate: every belief update is a versioned write, and a new claim may contradict a stored one. Production systems use four resolution heuristics (last-writer-wins, evidence-weighted merge, await-confirmation, per-rule policy), yet none declares the isolation level it assumes or the write-time anomalies it admits. We show that contradiction resolution is write-time concurrency control and make the missing contract explicit. TOKI types the four heuristics as one family of bitemporal operators over a dual-row schema, each with an isolation precondition and a provenance annotation that preserves the losing fact in an audit row. Four soundness theorems close the contract across isolation, schema, and provenance, lift the guarantees to operator pipelines, and extend the fold operators to n-ary conflict sets. A tightness companion proves that, within the relational schedule model, keyed logging of the adjudicating judge is necessary for replay consistency, which every audited baseline omits. A verdict matrix over eight systems localizes the gap: every baseline that keeps a language-model judge on the write path admits at least one of three write-time anomalies (replay inconsistency, belief-drift skew, audit erasure); a content-addressed engine-layer comparator avoids them only by removing the judge, and TOKI alone excludes all three while keeping it. On its one natural-workload slice the audit-row defence moves LoCoMo by 0.86, and ablating the typed memory layer removes 0.49 accuracy on 1,444 answerable LoCoMo questions; the cross-system comparison stays underpowered and claims no superiority. The contribution is the contract: a write-time correctness specification, proved sound across isolation, schema, and provenance, pinning the guarantee every production heuristic assumes but no deployed system makes explicit.</summary>
+    <category term="cs.DB" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-04T14:46:52Z</published>
+    <arxiv:comment>43 pages including full appendices (proofs, protocols, and reproducibility ledger). Code, data, and reproducibility artifact: https://github.com/ZenAlexa/toki-bitemporal-memory</arxiv:comment>
+    <arxiv:primary_category term="cs.DB"/>
+    <author>
+      <name>Ziming Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.01388v1</id>
+    <title>Why Formal Monitors Fail: Attack Distribution Entropy as a Coverage Bound for LTL-Based LLM Agent Safety</title>
+    <updated>2026-08-02T17:08:21Z</updated>
+    <link href="https://arxiv.org/abs/2608.01388v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.01388v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Runtime safety monitors based on Linear Temporal Logic (LTL) and finite automata (FSA) are increasingly deployed to intercept unsafe tool-call sequences in LLM agents. Yet the same monitor achieves 68-75% attack coverage on some model architectures and near-zero on others, with no explanation from capability scores, training data, or prompt design. We provide the missing theory. We prove that the recall of any fixed-invariant FSA monitor is bounded above by the concentration of the attack distribution: the fraction of attacks covered by the k most frequent trigger-completion patterns. When attacks concentrate (low Shannon entropy), a small fixed invariant set achieves high recall; when they disperse across many structurally distinct patterns (high entropy), no fixed invariant set of tractable size can, regardless of how the invariants were derived. We validate this entropy-coverage bound across eight frontier LLM architectures. GPT-class and DeepSeek backends yield highly concentrated attacks (H ~ 0.24 bits; one pattern covers 96%), explaining 68-75% recall; Gemini variants yield high-entropy distributions (H ~ 2.81 bits; 7 clusters each &lt;= 7%), explaining near-zero recall (6-13%), invariant to architecture-matched retraining. Entropy accounts for 76% of variance in coverage (Pearson r = -0.87, p = 0.005, 95% CI [-0.98, -0.78]), holding under leave-one-out (r in [-0.91, -0.82]). We introduce a pre-deployment entropy test that predicts monitor coverage from a small attack sample, enabling architecture-aware monitor selection before deployment. The bound and test are architecture-agnostic and apply to any FSA-based runtime monitor over discrete action sequences.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-02T17:08:21Z</published>
+    <arxiv:comment>6 pages, 1 figure. Accepted at the 13th IEEE International Conference on Intelligent Systems (IS'26), Varna, Bulgaria, 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Ruiyang Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.18550v1</id>
+    <title>The Gate Is Only as Honest as Its Contracts: ContractGuard for the Contract Layer of Risk-Aware Causal Gating</title>
+    <updated>2026-06-17T00:00:11Z</updated>
+    <link href="https://arxiv.org/abs/2606.18550v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.18550v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Risk-Aware Causal Gating (RACG) defends tool-augmented LLM agents against indirect prompt injection by removing dangerous tools from the agent's visible action space, so that even a fully injection-compliant agent cannot call a tool it cannot see. We make three points. First, this structural guarantee does not eliminate the trust assumption behind safe tool use; it relocates it into the integrity of the tool contracts -- declared preconditions, effects, risk, and authorization -- that the gate reads, so an attacker who corrupts a contract can make the gate mis-decide without ever persuading the agent. Second, forging a tool's effects is strictly more dangerous than tampering with its risk label, because RACG applies a causal gate before its admissibility gate: an off-path tool is never exposed, so risk-relabeling alone fails, whereas effect forgery routes the dangerous tool onto the causal path and succeeds. Effect integrity, not the risk label, is the load-bearing assumption. Third, we introduce ContractGuard, a verifier between the registry and the gate that layers signed provenance, typed contract attestation, and runtime effect verification; on a controlled benchmark it restores injection success to zero against every modeled attack -- including an exhaustive white-box adaptive attacker -- without over-rejecting honest contracts, and the structural prediction is confirmed on six current-generation hosted models (Claude Opus 4.8, Sonnet 4.6, Haiku 4.5; Amazon Nova Premier and Nova 2 Lite; GPT-OSS-120B).</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-17T00:00:11Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Laxmipriya Ganesh Iyer</name>
+    </author>
+    <author>
+      <name>Rahul Suresh Babu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2410.09381v2</id>
+    <title>LLM-SmartAudit: Advanced Smart Contract Vulnerability Detection</title>
+    <updated>2024-11-04T09:11:18Z</updated>
+    <link href="https://arxiv.org/abs/2410.09381v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2410.09381v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The immutable nature of blockchain technology, while revolutionary, introduces significant security challenges, particularly in smart contracts. These security issues can lead to substantial financial losses. Current tools and approaches often focus on specific types of vulnerabilities. However, a comprehensive tool capable of detecting a wide range of vulnerabilities with high accuracy is lacking. This paper introduces LLM-SmartAudit, a novel framework leveraging the advanced capabilities of Large Language Models (LLMs) to detect and analyze vulnerabilities in smart contracts. Using a multi-agent conversational approach, LLM-SmartAudit employs a collaborative system with specialized agents to enhance the audit process. To evaluate the effectiveness of LLM-SmartAudit, we compiled two distinct datasets: a labeled dataset for benchmarking against traditional tools and a real-world dataset for assessing practical applications. Experimental results indicate that our solution outperforms all traditional smart contract auditing tools, offering higher accuracy and greater efficiency. Furthermore, our framework can detect complex logic vulnerabilities that traditional tools have previously overlooked. Our findings demonstrate that leveraging LLM agents provides a highly effective method for automated smart contract auditing.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-10-12T06:24:21Z</published>
+    <arxiv:comment>14 pages, 5 figures, conference</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zhiyuan Wei</name>
+    </author>
+    <author>
+      <name>Jing Sun</name>
+    </author>
+    <author>
+      <name>Zijiang Zhang</name>
+    </author>
+    <author>
+      <name>Xianhao Zhang</name>
+    </author>
+    <author>
+      <name>Meng Li</name>
+    </author>
+    <author>
+      <name>Zhe Hou</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.14590v1</id>
+    <title>Toward Safe LLM Agents: A Survey of Specification, Verification, and Enforcement</title>
+    <updated>2026-06-22T21:03:26Z</updated>
+    <link href="https://arxiv.org/abs/2608.14590v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.14590v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents increasingly perform irreversible real-world actions, including database updates, API calls, file operations, and autonomous use of tools. However, no existing system provides formally grounded, task-level safety guarantees for the plans these agents generate. Research remains fragmented across specification, verification, and enforcement, limiting understanding of the strengths and limitations of existing approaches. To address this gap, we conducted a PRISMA 2020 systematic review of 38 studies published between 2022 and 2026 and retrieved from six academic databases. Our analysis reveals four key findings. First, the specification bottleneck remains the primary challenge: natural-language-to-formal translation achieves only 24% to 35% semantic correctness, undermining downstream verification. Second, runtime monitoring is the most mature enforcement strategy, reducing unsafe actions by 40% to 65% in controlled settings, but it does not provide complete safety guarantees. Third, the verifier tax shows that blocking 94% of unsafe actions can still result in less than 5% safe task completion because agents exploit alternative unsafe paths. Finally, no existing approach simultaneously achieves soundness, scalability, semantic correctness, and task-level safety preservation. We contribute a three-level taxonomy, a comparative analysis of existing techniques, a synthesis of evidence on the verifier tax, and a ten-problem research agenda for trustworthy agentic AI.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-22T21:03:26Z</published>
+    <arxiv:comment>28 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Pierre Dantas</name>
+    </author>
+    <author>
+      <name>Lucas Cordeiro</name>
+    </author>
+    <author>
+      <name>Ehsan Nowroozi</name>
+    </author>
+    <author>
+      <name>Tihanyi Norbert</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.13574v1</id>
+    <title>Agentao: A Governed Local-First Runtime for Tool-Using LLM Agents</title>
+    <updated>2026-07-04T10:37:01Z</updated>
+    <link href="https://arxiv.org/abs/2608.13574v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.13574v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents increasingly operate as execution systems that invoke tools, modify local state, use persistent memory, and interact with external protocols. These capabilities make agents useful, but they also introduce risks related to over-privileged actions, weak auditability, prompt injection, tool poisoning, and uncontrolled side effects. This paper presents Agentao, a governed local-first runtime for tool-using LLM agents. Agentao separates model-generated action proposals from host-authorized execution through a layered architecture consisting of host-facing surfaces, a host contract, a runtime core, a permission-mediated tool system, and supporting subsystems for memory, replay, plugins, skills, sub-agents, and protocol integration. We describe the motivation, threat model, design goals, governance model, execution pipeline, and structured event interface of the system. Agentao does not provide formal safety guarantees; rather, it demonstrates how permissions, state, protocol boundaries, and execution traces can be made explicit runtime abstractions for building agents that are more governable, inspectable, and suitable for host-controlled local environments. The code is publicly available at https://github.com/jin-bo/agentao.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-04T10:37:01Z</published>
+    <arxiv:comment>The code is publicly available at Github. We are conducting testing and analysis of this framework, and will provide experimental results and examples in future versions</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Bo Jin</name>
+    </author>
+    <author>
+      <name>Qiang Jiao</name>
+    </author>
+    <author>
+      <name>Xin Tong</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.17622v1</id>
+    <title>What Makes a Good LLM Agent for Real-world Penetration Testing?</title>
+    <updated>2026-02-19T18:42:40Z</updated>
+    <link href="https://arxiv.org/abs/2602.17622v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.17622v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM-based agents show promise for automating penetration testing, yet reported performance varies widely across systems and benchmarks. We analyze 28 LLM-based penetration testing systems and evaluate five representative implementations across three benchmarks of increasing complexity. Our analysis reveals two distinct failure modes: Type A failures stem from capability gaps (missing tools, inadequate prompts) that engineering readily addresses, while Type B failures persist regardless of tooling due to planning and state management limitations. We show that Type B failures share a root cause that is largely invariant to the underlying LLM: agents lack real-time task difficulty estimation. As a result, agents misallocate effort, over-commit to low-value branches, and exhaust context before completing attack chains.
+  Based on this insight, we present Excalibur, a penetration testing agent that couples strong tooling with difficulty-aware planning. A Tool and Skill Layer eliminates Type A failures through typed interfaces and retrieval-augmented knowledge. A Task Difficulty Assessment (TDA) mechanism addresses Type B failures by estimating tractability through four measurable dimensions (horizon estimation, evidence confidence, context load, and historical success) and uses these estimates to guide exploration-exploitation decisions within an Evidence-Guided Attack Tree Search (EGATS) framework. Excalibur achieves up to 91% task completion on CTF benchmarks with frontier models (39 to 49% relative improvement over baselines) and compromises 4 of 5 hosts on the GOAD Active Directory environment versus 2 by prior systems. These results show that difficulty-aware planning yields consistent end-to-end gains across models and addresses a limitation that model scaling alone does not eliminate.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-19T18:42:40Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Gelei Deng</name>
+    </author>
+    <author>
+      <name>Yi Liu</name>
+    </author>
+    <author>
+      <name>Yuekang Li</name>
+    </author>
+    <author>
+      <name>Ruozhao Yang</name>
+    </author>
+    <author>
+      <name>Xiaofei Xie</name>
+    </author>
+    <author>
+      <name>Jie Zhang</name>
+    </author>
+    <author>
+      <name>Han Qiu</name>
+    </author>
+    <author>
+      <name>Tianwei Zhang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.10352v1</id>
+    <title>ClawVM: Harness-Managed Virtual Memory for Stateful Tool-Using LLM Agents</title>
+    <updated>2026-04-11T21:38:15Z</updated>
+    <link href="https://arxiv.org/abs/2604.10352v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.10352v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Stateful tool-using LLM agents treat the context window as working memory, yet today's agent harnesses manage residency and durability as best-effort, causing recurring failures: lost state after compaction, bypassed flushes on reset, and destructive writeback. We present \textsc{ClawVM}, a virtual memory layer that manages state as typed pages with minimum-fidelity invariants, multi-resolution representations under a token budget, and validated writeback at every lifecycle boundary. Because the harness already assembles prompts, mediates tools, and observes lifecycle events, it is the natural enforcement point; placing the contract there makes residency and durability deterministic and auditable. Across synthetic workloads, 12 real-session traces, and adversarial stress tests, \textsc{ClawVM} eliminates all policy-controllable faults whenever the minimum-fidelity set fits within the token budget, confirmed by an offline oracle, and adds median &lt;50 microseconds of policy-engine overhead per turn.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.OS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-11T21:38:15Z</published>
+    <arxiv:comment>8 pages, 1 figure, 10 tables; accepted at EuroMLSys '26 (6th Workshop on Machine Learning and Systems, co-located with EuroSys 2026)</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Mofasshara Rafique</name>
+    </author>
+    <author>
+      <name>Laurent Bindschaedler</name>
+    </author>
+    <arxiv:doi>10.1145/3805621.3807648</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1145/3805621.3807648" title="doi"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.27955v1</id>
+    <title>Skill-as-Pseudocode: Refactoring Skill Libraries to Pseudocode for LLM Agents</title>
+    <updated>2026-05-27T04:48:40Z</updated>
+    <link href="https://arxiv.org/abs/2605.27955v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.27955v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Markdown skill libraries for LLM agents ship as free-form prose, forcing the agent to re-derive both the input schema and the concrete invocation syntax on every retrieval. We observe that this often produces a "confused -&gt; re-retrieve -&gt; still confused" loop in which the agent issues a partially-correct action, receives uninformative environment feedback, and re-retrieves the same prose. We propose Skill-as-Pseudocode (SaP), an automatic conversion of markdown skill libraries into typed pseudocode with deterministic quality control. For each cluster of similar procedural passages drawn from one or more skills, SaP extracts a typed contract and filters it through a four-check deterministic verifier (coverage, binding, replacement, risk). Promoted contracts are inlined into a rewritten skill skeleton together with restored concrete action templates, giving the agent two complementary signals: a typed signature for what the skill does and a concrete template for how to invoke it. On the 134-game ALFWorld unseen split with gpt-4o-mini, pooled across three seeds, SaP wins 82/402 paired games versus 47/402 for the Graph-of-Skills (GoS) baseline (pooled McNemar p = 8.2e-5), at -22.8 +/- 6.4% input tokens and -14.5 +/- 4.1% LLM calls per game.</summary>
+    <category term="cs.PL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-27T04:48:40Z</published>
+    <arxiv:comment>Preprint. Code: https://github.com/InternLM/Skill-as-Pseudocode</arxiv:comment>
+    <arxiv:primary_category term="cs.PL"/>
+    <author>
+      <name>Xinze Li</name>
+    </author>
+    <author>
+      <name>Yuhang Zang</name>
+    </author>
+    <author>
+      <name>Yixin Cao</name>
+    </author>
+    <author>
+      <name>Aixin Sun</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.22166v2</id>
+    <title>Adapting the Interface, Not the Model: Runtime Harness Adaptation for Deterministic LLM Agents</title>
+    <updated>2026-05-27T04:34:36Z</updated>
+    <link href="https://arxiv.org/abs/2605.22166v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.22166v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents are shaped not only by their language models, but also by the runtime harness that mediates observation, tool use, action execution, feedback interpretation, and trajectory control. While existing agent adaptation methods mainly update model parameters, many failures in deterministic, rule-governed domains stem from mismatches at the model--environment interface. We propose Life-Harness, a lifecycle-aware runtime harness that improves frozen LLM agents without changing model weights or evaluation environments. Life-Harness evolves from training trajectories by converting recurring interaction failures into reusable interventions across environment contracts, procedural skills, action realization, and trajectory regulation, and remains fixed for evaluation on unseen tasks. On seven deterministic environments from $τ$-bench, $τ^2$-bench, and AgentBench, Life-Harness improves 116 out of 126 model--environment settings across 18 model backbones, with an average relative improvement of 88.5%. Harnesses evolved only from Qwen3-4B-Instruct trajectories transfer to 17 other models, showing that Life-Harness captures reusable environment-side structure rather than model-specific behavior. These results position runtime interface adaptation as a complementary alternative to model-centric agent training. Code is available at https://github.com/Tianshi-Xu/Life-Harness.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T08:36:49Z</published>
+    <arxiv:comment>Work in progress</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Tianshi Xu</name>
+    </author>
+    <author>
+      <name>Huifeng Wen</name>
+    </author>
+    <author>
+      <name>Meng Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2604.15267v2</id>
+    <title>CoopEval: Benchmarking Cooperation-Sustaining Mechanisms and LLM Agents in Social Dilemmas</title>
+    <updated>2026-07-05T03:19:06Z</updated>
+    <link href="https://arxiv.org/abs/2604.15267v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2604.15267v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>It is increasingly important that LLM agents interact effectively and safely with other goal-pursuing agents, yet, recent works report the opposite trend: LLMs with stronger reasoning capabilities behave _less_ cooperatively in mixed-motive games such as the prisoner's dilemma and public goods settings. Indeed, our experiments show that recent models -- with or without reasoning enabled -- consistently defect in single-shot social dilemmas.
+  To tackle this safety concern, we present the first comparative study of game-theoretic mechanisms designed to enable cooperative outcomes between rational agents _in equilibrium_. Across four social dilemmas testing distinct components of robust cooperation, we evaluate four families of mechanisms: (1) repeating the game for many rounds, (2) reputation systems, (3) third-party mediators to delegate decision making to, and (4) contract agreements for outcome-conditional payments between players. Among our findings, we establish that contracting and mediation are most effective in achieving cooperative outcomes between capable LLM models, and that repetition-induced cooperation deteriorates drastically when co-players vary. Moreover, we demonstrate that the mechanisms become _more effective_ under evolutionary pressures to maximize individual payoffs.</summary>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-04-16T17:40:30Z</published>
+    <arxiv:comment>Published paper at the International Conference on Machine Learning (ICML) 2026. 65 pages, 38 Figures, 8 Tables, 17 Listings</arxiv:comment>
+    <arxiv:primary_category term="cs.GT"/>
+    <author>
+      <name>Emanuel Tewolde</name>
+    </author>
+    <author>
+      <name>Xiao Zhang</name>
+    </author>
+    <author>
+      <name>David Guzman Piedrahita</name>
+    </author>
+    <author>
+      <name>Vincent Conitzer</name>
+    </author>
+    <author>
+      <name>Zhijing Jin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.22203v1</id>
+    <title>When Is Emergent Consensus Real? A Measured Coupling Gain and a Validity Diagnostic for LLM Agent Societies</title>
+    <updated>2026-06-20T19:41:01Z</updated>
+    <link href="https://arxiv.org/abs/2606.22203v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.22203v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM "agent societies" are studied via demonstrations of emergent consensus or polarization -- with no measurable control parameter, no theory of when each regime appears, and no test of whether an outcome is a genuine social dynamic or a model artifact. We introduce the coupling gain gamma, measured per-agent by counterfactually perturbing a neighbour's stated opinion. (i) gamma is stable and model-distinguishing -- across five frontier models it spans 0.15-0.43 (n=20, 95% CIs &lt;= 0.025), paraphrase-invariant; social-neighbour gamma roughly equals numeric-anchor gamma, so gamma is evidence-coupling, not uniquely social. (ii) Classical dynamics with measured (not assumed) coefficients organise the regime: Friedkin-Johnsen for consensus/pluralism, signed-Laplacian/structural-balance for polarization. (iii) Frontier LLMs do not spontaneously backfire (beta &lt;= 0), so default societies do not self-polarize -- polarization is always induced; the beta&gt;0 branch arises only in the FJ surrogate, never in the agents. (iv) A randomized-initial-condition diagnostic -- the (slope, bias) of final vs. initial opinion -- separates genuine averaging from model-prior artifacts (boundary-censoring ruled out by construction via interior-valued facts); applied to a published "emergent consensus" result (Chuang et al. 2023) it reveals a model-specific conflation: averaging on debatable claims, prior-artifact on settled facts. (v) Coupling is context-dependent: pairwise gamma does not predict multi-neighbour outcomes -- it can order them backwards -- whereas a modality-matched group coupling does (sixteen closed+open models, Pearson r=-0.70, permutation p=0.008). The regime laws take this matched coupling, not the single-neighbour gamma: emergent consensus must be read from coupling in the target interaction. We contribute a measurement protocol and a validity instrument, not new theory.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-20T19:41:01Z</published>
+    <arxiv:comment>13 pages (incl. appendix with proofs), 7 figures. Code and per-run logs released</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Dongxu Yang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.13404v1</id>
+    <title>Schema First Tool APIs for LLM Agents: A Controlled Study of Tool Misuse, Recovery, and Budgeted Performance</title>
+    <updated>2026-03-12T07:11:16Z</updated>
+    <link href="https://arxiv.org/abs/2603.13404v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.13404v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool use has become central to modern LLM agents, yet interface design is rarely isolated as an experimental variable. This paper studies whether schema based tool contracts and structured validation diagnostics improve reliability under strict interaction budgets. We evaluate three conditions that preserve identical tool semantics and information content: free form documentation, JSON Schema specifications, and JSON Schema with structured diagnostics.
+  We implement a deterministic software engineering sandbox with logs, metrics, configurations, and repository tasks, and evaluate a fully crossed pilot with one open local model, three seeds, three interface conditions, and four budgets. We report end task success, interface misuse, execution failures, semantic misuse, recovery behavior, and overhead. In this pilot, success remains zero across conditions, while schema conditions reduce interface misuse but not semantic misuse. The evidence supports a precise interpretation that interface formalization improves contract adherence, but semantic action quality and timeout sensitive tasks remain dominant bottlenecks under constrained local inference.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-12T07:11:16Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Akshey Sigdel</name>
+    </author>
+    <author>
+      <name>Rista Baral</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.14613v1</id>
+    <title>Do LLM Agents Negotiate Rationally? A Mechanism-Design Framework for Verifiable Multi-Agent Interaction over A2A/MCP</title>
+    <updated>2026-07-10T07:32:19Z</updated>
+    <link href="https://arxiv.org/abs/2608.14613v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.14613v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Modern LLM-agent frameworks increasingly interoperate through standards such as Anthropic's Model Context Protocol (MCP) for agent-to-tool access and Google's Agent2Agent (A2A) protocol for agent delegation and negotiation. However, these protocols specify transport and discovery rather than strategic correctness and do not guarantee efficient, individually rational, or strategy-proof outcomes.
+  We introduce a framework that (i) encodes classical negotiation mechanisms, including alternating-offers bargaining and Vickrey-Clarke-Groves-style auctions, as constraints over A2A message schemas; (ii) provides a lightweight runtime verification and repair layer that checks messages against protocol invariants; and (iii) offers a benchmark of negotiation and allocation tasks with known optimal solutions for measuring deviations from game-theoretic predictions.
+  We evaluate multiple LLM backbones using unstructured dialogue, structured protocols, and structured protocols with verification. Across negotiation trials (N=30 per condition), verification reduces outcome variance, while structured protocols achieve 100 percent success for both models. After correcting parser artifacts, audited unstructured baselines achieve approximately 97 percent and 93.3 percent success.
+  In auction experiments (N=30 per model), both models achieve 100 percent efficient allocation but differ sharply in truthful bidding: one bids its exact valuation in every trial, whereas the other does so in only 3.3 percent of trials. Thus, mechanism-level incentive compatibility does not automatically transfer to LLM-agent behavior. A three-party fair-allocation task produced only 4.2 percent usable outcomes; we report this negative result with a diagnosis. This work bridges classical multi-agent systems theory and modern LLM-agent infrastructure and defines verifiable interaction at the A2A protocol layer.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-10T07:32:19Z</published>
+    <arxiv:comment>20 pages , 3 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Wael Albayaydh</name>
+    </author>
+    <author>
+      <name>Rui Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.06445v1</id>
+    <title>Constraint Decay: The Fragility of LLM Agents in Backend Code Generation</title>
+    <updated>2026-05-07T15:44:40Z</updated>
+    <link href="https://arxiv.org/abs/2605.06445v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.06445v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Model (LLM) agents demonstrate strong performance in autonomous code generation under loose specifications. However, production-grade software requires strict adherence to structural constraints, such as architectural patterns, databases, and object-relational mappings. Existing benchmarks often overlook these non-functional requirements, rewarding functionally correct but structurally arbitrary solutions. We present a systematic study evaluating how well agents handle structural constraints in multi-file backend generation. By fixing a unified API contract across 80 greenfield generation tasks and 20 feature-implementation tasks spanning eight web frameworks, we isolate the effect of structural complexity using a dual evaluation with end-to-end behavioral tests and static verifiers. Our findings reveal a phenomenon of constraint decay: as structural requirements accumulate, agent performance exhibits a substantial decline. Capable configurations lose 30 points on average in assertion pass rates from baseline to fully specified tasks, while some weaker configurations approach zero. Framework sensitivity analysis exposes significant performance disparities: agents succeed in minimal, explicit frameworks (e.g., Flask) but perform substantially worse on average in convention-heavy environments (e.g., FastAPI, Django). Finally, error analysis identifies data-layer defects (e.g., incorrect query composition and ORM runtime violations) as the leading root causes. This work highlights that jointly satisfying functional and structural requirements remains a key open challenge for coding agents.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-07T15:44:40Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Francesco Dente</name>
+    </author>
+    <author>
+      <name>Dario Satriani</name>
+    </author>
+    <author>
+      <name>Paolo Papotti</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.20173v2</id>
+    <title>A Methodology for Selecting and Composing Runtime Architecture Patterns for Production LLM Agents</title>
+    <updated>2026-08-11T16:46:29Z</updated>
+    <link href="https://arxiv.org/abs/2605.20173v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.20173v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Production LLM agents combine stochastic model outputs with deterministic software systems, yet the boundary between the two is rarely treated as a first-class architectural object. This paper names that boundary the stochastic-deterministic boundary (SDB): a four-part contract among a proposer, verifier, commit step, and reject signal that specifies how an LLM output becomes a system action. We argue that the SDB is the load-bearing primitive of production agent runtimes.
+  Around this primitive, we organize agent runtime design into three concerns: Coordination, State, and Control. We present a catalog of six runtime patterns that compose the SDB differently across conversational, autonomous, and long-horizon agents: hierarchical delegation, scatter-gather plus saga, event-driven sequencing, shared state machine, supervisor plus gate, and human in the loop. For each pattern, we trace its lineage to distributed-systems concepts and identify what changes when the worker is stochastic.
+  The paper contributes a five-step methodology for selecting runtime patterns, a diagnostic procedure that maps production failures to pattern weaknesses, and a failure mode called replay divergence, in which LLM-based consumers of a deterministic event log produce different downstream outputs under model-version or prompt changes. A stylized reliability decomposition separates per-call model variance from architectural momentum, motivating the claim that as model variance decreases, pattern choice and SDB strength become increasingly important levers for long-run reliability. We apply the methodology to five workloads and provide one runnable reference implementation for a 90-day contract-renewal agent.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-19T17:54:21Z</published>
+    <arxiv:comment>26 pages, 2 figures, 6 tables. Companion repo at https://github.com/vasundras/agent-runtime-patterns</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Vasundra Srinivasan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.03378v2</id>
+    <title>ARGUS: Defending LLM Agents Against Context-Aware Prompt Injection</title>
+    <updated>2026-07-08T15:04:28Z</updated>
+    <link href="https://arxiv.org/abs/2605.03378v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.03378v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Model (LLM) agents are increasingly deployed as task-oriented software systems that use runtime context to decide and act on behalf of users. This delegation model makes prompt injection especially dangerous: an attacker can hide a context-aware instruction inside evidence the agent must use to decide what to do. Existing benchmarks and defenses largely miss this setting. Benchmarks often use context-insensitive tasks where the user prompt already specifies the intended action, together with generic attack payloads independent of context. Existing defenses also do not capture the causal support from runtime evidence to concrete actions, which makes them incomplete and ineffective for context-dependent tasks.
+  We present AgentLure, a benchmark for context-dependent tasks under context-aware prompt injection. AgentLure spans four agentic domains and eight attack vectors across six attack surfaces. To defend this setting, we propose ARGUS, a causal-provenance auditor for LLM agents. Instead of relying only on tool authorization or suspicious-context detection, ARGUS verifies whether each proposed action has a complete benign causal justification. It builds an influence-provenance graph, labels runtime spans, grounds action arguments in supporting evidence, and releases an action only when benign evidence entails it and task invariants hold. On AgentLure, ARGUS reduces attack success rate from 28.8% to 3.8% while preserving 87.5% clean utility, significantly outperforming existing defenses in the security-utility tradeoff.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-05T05:37:00Z</published>
+    <arxiv:comment>14 pages</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Shihao Weng</name>
+    </author>
+    <author>
+      <name>Yang Feng</name>
+    </author>
+    <author>
+      <name>Jinrui Zhang</name>
+    </author>
+    <author>
+      <name>Xiaofei Xie</name>
+    </author>
+    <author>
+      <name>Jiongchi Yu</name>
+    </author>
+    <author>
+      <name>Jia Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.07538v1</id>
+    <title>When LLM Agents Negotiate: Private Information and Dynamic Bargaining in Supply Chains</title>
+    <updated>2026-07-29T02:17:11Z</updated>
+    <link href="https://arxiv.org/abs/2608.07538v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.07538v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As LLM agents move from decision support to autonomous procurement, firms need to know whether delegated negotiators create value, divide it predictably, and avoid money-losing contracts. We study this in a canonical supply chain bargaining problem: a buyer with private demand information negotiates a quantity-payment contract with an uninformed seller. We benchmark nine LLMs from OpenAI, Google, and Alibaba against a validated Perfect Bayesian Equilibrium across 9,840 LLM-to-LLM negotiations. First, capability governs value creation. Agents agree in 98.9% of negotiations and capture 95.4% of first-best surplus undiscounted, but average 2.98 rounds against the benchmark's 1.25, and this delay erodes 21-34% of surplus. Capability also governs reliability: baseline models accept individually irrational contracts in 19.2% of cases, versus 0.0-0.6% at mid-tier and flagship, making automated profit verification the binding guardrail below that threshold. Second, surplus capture is relational. Provider identity predicts who captures surplus better than capability rank: self-play buyer shares average 40% for OpenAI, 50% for Google, and 70% for Alibaba's Qwen, an ordering that survives restricted communication and no discounting. Reversing which provider sells moves the division by 7-18 percentage points, and the capable Qwen flagship is the weakest cross-family seller: vendor choice is a first-order distributional decision. Third, the prompt is a strategic lever. Delegation separates the principal's economic patience from the agent's prompted strategic patience, a free deployment choice that is the single strongest driver of surplus division (90% of explained variance). Together these establish an equilibrium-referenced audit of AI agents along three dimensions: discounted efficiency, distributional profile, and operational reliability.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.GT" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="econ.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-29T02:17:11Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Chen Liang</name>
+    </author>
+    <author>
+      <name>Fasheng Xu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.22936v1</id>
+    <title>When Agents Commit Too Soon: Diagnosing Premature Commitment in LLM Agents</title>
+    <updated>2026-06-22T07:13:13Z</updated>
+    <link href="https://arxiv.org/abs/2606.22936v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.22936v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Long-horizon LLM agents can fail quietly: they settle on one reading of the evidence early, then spend the rest of the run defending it. We call this premature commitment. Final-answer scoring misses the failure mode because it sees only the answer, not whether the process has already collapsed to a stable path. We define representational commitment as cross-run hidden-state convergence at a fixed reasoning step, and use it as an early diagnostic of trajectory consistency. On Llama-3.1-70B running ReAct on HotpotQA, step-4 hidden-state similarity predicts downstream behavioral consistency (r = -0.35, partial r = -0.45), with a localized temporal and layer-wise signature. The signal replicates across Qwen-2.5-72B and Phi-3-14B, and on StrategyQA (r = -0.83). It does not track correctness: committed-wrong and committed-correct questions are not separable in activation similarity. That boundary is central to the claim. Commitment tells us whether an agent has settled, not whether it is right. A runtime monitor detects inconsistent trajectories from hidden states at AUROC up to 0.97 (0.85--0.88 under a stricter split), and a prompting intervention cuts behavioral variance by 28% against a token-matched control while leaving accuracy statistically unchanged. We also test whether the signal can route self-consistency compute; on a harder benchmark it helps only modestly and is matched by a simpler output-based baseline. The result is a diagnostic for a hidden process failure, with clear limits rather than a general accuracy lever.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-22T07:13:13Z</published>
+    <arxiv:comment>22 pages, 16 figures Primary: cs.AI Secondary: cs.CL</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Aman Mehta</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.18947v1</id>
+    <title>Decoupling Search from Reasoning: A Vendor-Agnostic Grounding Architecture for LLM Agents</title>
+    <updated>2026-06-17T11:30:39Z</updated>
+    <link href="https://arxiv.org/abs/2606.18947v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.18947v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Production LLM agents increasingly depend on real-time search, yet native search grounding bundles retrieval policy, provider choice, evidence injection, cost, latency, and generation behavior behind a single model-provider boundary. This coupling makes grounding hard to inspect, tune, reuse, or port, and can trigger Search-Induced Verbosity that breaks strict output contracts. We present Decoupled Search Grounding (DSG), a vendor-agnostic boundary that moves grounding outside the reasoning model through an MCP-compatible gateway, exposing provider routing, source-aware context rendering, configured fallback, retrieval-depth control, and exact plus semantic caching as first-class controls. Across five frontier models on SimpleQA, FreshQA, and HotpotQA, native search leads on recency-sensitive FreshQA, but DSG exposes a stronger frontier when control matters: on SimpleQA it nearly matches native accuracy (86.1% vs. 87.7%) at 91% lower search cost, preserves concise answer contracts, and reaches a 99.4% warm-cache hit rate with 68% lower latency. Deployed as a shared production grounding layer for large-scale agentic workloads with interchangeable models, DSG matches or slightly exceeds native-search accuracy on an e-commerce query-understanding (QIU) workload while cutting search cost by over 98%. Real-time grounding is best treated as an optimizable interface boundary, not a fixed model feature.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-17T11:30:39Z</published>
+    <arxiv:comment>15 pages, Figure 8</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Emmanuel Aboah Boateng</name>
+    </author>
+    <author>
+      <name>Kyle MacDonald</name>
+    </author>
+    <author>
+      <name>Amardeep Kumar</name>
+    </author>
+    <author>
+      <name>Siddharth Kodwani</name>
+    </author>
+    <author>
+      <name>Sudeep Das</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.03130v1</id>
+    <title>DP-MemView: A Memory Interface for Attribute-Level Transcript Privacy in Long-Term LLM Agents</title>
+    <updated>2026-08-04T05:00:10Z</updated>
+    <link href="https://arxiv.org/abs/2608.03130v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.03130v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Long-term memory enables persistent personalization in LLM agents, but repeated memory-conditioned responses can cumulatively reveal protected attributes even when they are never stated explicitly. We formalize this threat as adaptive transcript privacy and introduce DP-MemView, a differentially private interface that privately selects public response-conditioning views and exposes those views---rather than raw memory---to the response LLM. Each private selection is charged to every protected attribute whose memory group intersects the read set. Per-attribute ledgers block any selection that would exceed its cap and return a fixed generic view instead. Under an explicit interface contract, we prove pure B_a-DP for the entire adaptive transcript. We also extend the result to stores that differ across multiple protected groups and bound how much observing the transcript can change an adversary's prior odds. We evaluate the online and preallocated modes with three response LLMs on a controlled adjacent-store benchmark and a public-corpus transfer track. Both modes keep transcript distinguishability near chance while preserving target-required personalization and overall response quality. Further diagnostics show that removing key safeguards causes mismatched output support, missing ledger charges, revealing side channels, or growing long-horizon leakage.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-04T05:00:10Z</published>
+    <arxiv:comment>18 pages, 2 figures, 9 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jong Wook Kim</name>
+    </author>
+    <author>
+      <name>Byoungjae Min</name>
+    </author>
+    <author>
+      <name>Kennedy Edemacu</name>
+    </author>
+    <author>
+      <name>Yoonhyuk Choi</name>
+    </author>
+    <author>
+      <name>Sae-Hong Cho</name>
+    </author>
+    <author>
+      <name>Beakcheol Jang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.03655v1</id>
+    <title>Mozi: Governed Autonomy for Drug Discovery LLM Agents</title>
+    <updated>2026-03-04T02:22:21Z</updated>
+    <link href="https://arxiv.org/abs/2603.03655v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.03655v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented large language model (LLM) agents promise to unify scientific reasoning with computation, yet their deployment in high-stakes domains like drug discovery is bottlenecked by two critical barriers: unconstrained tool-use governance and poor long-horizon reliability. In dependency-heavy pharmaceutical pipelines, autonomous agents often drift into irreproducible trajectories, where early-stage hallucinations multiplicatively compound into downstream failures. To overcome this, we present Mozi, a dual-layer architecture that bridges the flexibility of generative AI with the deterministic rigor of computational biology. Layer A (Control Plane) establishes a governed supervisor--worker hierarchy that enforces role-based tool isolation, limits execution to constrained action spaces, and drives reflection-based replanning. Layer B (Workflow Plane) operationalizes canonical drug discovery stages -- from Target Identification to Lead Optimization -- as stateful, composable skill graphs. This layer integrates strict data contracts and strategic human-in-the-loop (HITL) checkpoints to safeguard scientific validity at high-uncertainty decision boundaries.
+  Operating on the design principle of ``free-form reasoning for safe tasks, structured execution for long-horizon pipelines,'' Mozi provides built-in robustness mechanisms and trace-level audibility to completely mitigate error accumulation. We evaluate Mozi on PharmaBench, a curated benchmark for biomedical agents, demonstrating superior orchestration accuracy over existing baselines. Furthermore, through end-to-end therapeutic case studies, we demonstrate Mozi's ability to navigate massive chemical spaces, enforce stringent toxicity filters, and generate highly competitive in silico candidates, effectively transforming the LLM from a fragile conversationalist into a reliable, governed co-scientist.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-04T02:22:21Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>He Cao</name>
+    </author>
+    <author>
+      <name>Siyu Liu</name>
+    </author>
+    <author>
+      <name>Fan Zhang</name>
+    </author>
+    <author>
+      <name>Zijing Liu</name>
+    </author>
+    <author>
+      <name>Hao Li</name>
+    </author>
+    <author>
+      <name>Bin Feng</name>
+    </author>
+    <author>
+      <name>Shengyuan Bai</name>
+    </author>
+    <author>
+      <name>Leqing Chen</name>
+    </author>
+    <author>
+      <name>Kai Xie</name>
+    </author>
+    <author>
+      <name>Yu Li</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2607.08400v1</id>
+    <title>TRACE: A Two-Channel Robust Attribution Watermark via Complementary Embeddings for LLM-Agent Trajectories</title>
+    <updated>2026-07-09T12:25:22Z</updated>
+    <link href="https://arxiv.org/abs/2607.08400v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2607.08400v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents reach users through resellers, who may rebrand a developer's agent or substitute a cheaper model. When provenance is disputed, attribution rests on the trajectory log (the record of tool calls, observations, and executed actions, not the model's reasoning), which the reseller stores and processes to meter usage. A watermark must therefore survive an adversary with full read/write access to the very evidence it is detected from; existing agent watermarks do not, as their attribution is read straight off that log. We present TRACE, to our knowledge the first agent watermark that is distortion-free in its action choices, self-synchronizing under deletion, and unconditionally invariant under rewriting. Deletion desynchronizes a position-derived key and rewriting alters content, so a deletion-robust key must come from content and a rewrite-robust key from position, and no single key serves both. A trajectory, however, has room for two watermarks. TRACE superposes a selection channel that sets which action is chosen, keyed on local content with a distortion-free sampler, so the agent's distribution is provably unchanged and detection resynchronizes after deletions, and a tally channel that sets how many records each decision group holds, keyed on the log's skeleton alone, which no rewriting can touch. We prove this behavioral watermark's signal is bought with decision entropy, each decision paying at least half its entropy and deterministic decisions nothing, and that erasing both channels forces the reseller to corrupt the trajectories it resells. On ToolBench and ALFWorld, TRACE matches the unwatermarked agent's success rate while its selection channel reaches detection scores near z = 100 on long-horizon trajectories, stays detectable under 70% step deletion, and keeps a tally channel exactly unchanged under LLM rewriting of any strength.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-07-09T12:25:22Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Zheng Gao</name>
+    </author>
+    <author>
+      <name>Xiaoyu Li</name>
+    </author>
+    <author>
+      <name>Xiaoyan Feng</name>
+    </author>
+    <author>
+      <name>Jiaojiao Jiang</name>
+    </author>
+    <author>
+      <name>Yang Song</name>
+    </author>
+    <author>
+      <name>Yulei Sui</name>
+    </author>
+    <author>
+      <name>Zhenchang Xing</name>
+    </author>
+    <author>
+      <name>Liming Zhu</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2509.07642v1</id>
+    <title>Getting In Contract with Large Language Models -- An Agency Theory Perspective On Large Language Model Alignment</title>
+    <updated>2025-09-09T12:10:14Z</updated>
+    <link href="https://arxiv.org/abs/2509.07642v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2509.07642v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Adopting Large language models (LLMs) in organizations potentially revolutionizes our lives and work. However, they can generate off-topic, discriminating, or harmful content. This AI alignment problem often stems from misspecifications during the LLM adoption, unnoticed by the principal due to the LLM's black-box nature. While various research disciplines investigated AI alignment, they neither address the information asymmetries between organizational adopters and black-box LLM agents nor consider organizational AI adoption processes. Therefore, we propose LLM ATLAS (LLM Agency Theory-Led Alignment Strategy) a conceptual framework grounded in agency (contract) theory, to mitigate alignment problems during organizational LLM adoption. We conduct a conceptual literature analysis using the organizational LLM adoption phases and the agency theory as concepts. Our approach results in (1) providing an extended literature analysis process specific to AI alignment methods during organizational LLM adoption and (2) providing a first LLM alignment problem-solution space.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-09-09T12:10:14Z</published>
+    <arxiv:comment>Presented at the 19th International Conference on Wirtschaftsinformatik 2024, Würzburg, Germany https://aisel.aisnet.org/wi2024/91/</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Sascha Kaltenpoth</name>
+    </author>
+    <author>
+      <name>Oliver Müller</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2507.16044v4</id>
+    <title>From REST to MCP: An Empirical Study of API Wrapping and Automated Server Generation for LLM Agents</title>
+    <updated>2026-04-06T20:03:40Z</updated>
+    <link href="https://arxiv.org/abs/2507.16044v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2507.16044v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Model Context Protocol (MCP) is emerging as a standard interface through which LLM agents invoke external tools, and a growing ecosystem of MCP servers now mediates access to vendor services. Most of these servers target vendors that already expose REST APIs, yet the relationship between MCP tool interfaces and the underlying API surface has not been empirically characterised. This paper presents the first large-scale study of MCP server construction. We analyse 116 official servers to determine REST reliance and integration strategies (RQ1); examine servers paired with OpenAPI specifications to quantify operation exposure, omission, and mapping patterns (RQ2); evaluate automated generation from 80 real-world OpenAPI contracts (RQ3); and assess specification repair and tool-set transformations to improve correctness and reduce complexity (RQ4). We find that 88.6% of servers are fully or partially REST-backed, with 92% implementing tools as bare API wrappers. MCP servers expose a median of 19% of available operations, following systematic patterns predictable from the specification. Baseline generation succeeds for 76% of sampled tools; automated repair raises this to 94.2%, while filtering and regrouping reduce the median tool count per API by one-third. We release AutoMCP, an end-to-end pipeline integrating specification repair and empirically grounded tool-set transformations.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-07-21T20:20:31Z</published>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Meriem Mastouri</name>
+    </author>
+    <author>
+      <name>Emna Ksontini</name>
+    </author>
+    <author>
+      <name>Amine Barrak</name>
+    </author>
+    <author>
+      <name>Wael Kessentini</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.13173v2</id>
+    <title>Semantic Invariance in Agentic AI</title>
+    <updated>2026-03-16T02:18:53Z</updated>
+    <link href="https://arxiv.org/abs/2603.13173v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.13173v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large Language Models (LLMs) increasingly serve as autonomous reasoning agents in decision support, scientific problem-solving, and multi-agent coordination systems. However, deploying LLM agents in consequential applications requires assurance that their reasoning remains stable under semantically equivalent input variations, a property we term semantic invariance. Standard benchmark evaluations, which assess accuracy on fixed, canonical problem formulations, fail to capture this critical reliability dimension. To address this shortcoming, in this paper we present a metamorphic testing framework for systematically assessing the robustness of LLM reasoning agents, applying eight semantic-preserving transformations (identity, paraphrase, fact reordering, expansion, contraction, academic context, business context, and contrastive formulation) across seven foundation models spanning four distinct architectural families: Hermes (70B, 405B), Qwen3 (30B-A3B, 235B-A22B), DeepSeek-R1, and gpt-oss (20B, 120B). Our evaluation encompasses 19 multi-step reasoning problems across eight scientific domains. The results reveal that model scale does not predict robustness: the smaller Qwen3-30B-A3B achieves the highest stability (79.6% invariant responses, semantic similarity 0.91), while larger models exhibit greater fragility.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-13T17:08:44Z</published>
+    <arxiv:comment>Accepted for publication in 20th International Conference on Agents and Multi-Agent Systems: Technologies and Applications (AMSTA 2026), to appear in Springer Nature proceedings (KES Smart Innovation Systems and Technologies). The final authenticated version will be available online at Springer</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>I. de Zarzà</name>
+    </author>
+    <author>
+      <name>J. de Curtò</name>
+    </author>
+    <author>
+      <name>Jordi Cabot</name>
+    </author>
+    <author>
+      <name>Pietro Manzoni</name>
+    </author>
+    <author>
+      <name>Carlos T. Calafate</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.16364v2</id>
+    <title>Looking Is Not Picking: An Attention-Segment Account of Tool-Selection Failures in LLM Agents</title>
+    <updated>2026-06-27T03:15:26Z</updated>
+    <link href="https://arxiv.org/abs/2606.16364v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.16364v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>LLM agents mis-call tools, and the natural guess is that the model failed to see the right tool in a crowded harness. We show the opposite through a lens concurrent work sets aside -- the model's attention to labeled tool-definition segments. On real BFCL failures, by per-candidate attention argmax the model attends most to the correct tool 80% of the time (vs. 21% chance), and the gold is the under-attended segment on only 10%: it looks at the right tool and still picks wrong. This directly refutes the intuitive "crowded-harness / lost-in-the-middle" explanation: the failure is at the decision readout, not the harness, and we pin it there three ways. (1) Input vs. readout: repairing the prompt (reordering or duplicating the gold tool) recovers &lt;=23% of failures, while readout-side interventions recover 59-91%. (2) Representation-invariance: two gold-pointed interventions in different representations -- an additive attention-logit bias and a residual-stream steering vector -- recover largely the same failures (per-task Jaccard 0.865 pooled, 0.79-0.91 per model), so the bottleneck is localized to the readout independent of which representation is poked. (3) A training-free, gold-free selector: per-segment attention closes most of the gold-free-vs-oracle gap on BFCL (+11.9 pts pooled function-name selection vs. +17.9-pt oracle headroom) and adds +14.9 pts on Seal-Tools; every model positive (exact McNemar p&lt;=8e-4 each). Scopes differ: the causal attention-bias dose-response is bidirectional and monotonic on 10 mask-honoring models (3-32B), the full 0.5-32B span carrying only the correlational diagnostic; the deployable selector is evaluated on 5 single-turn models and does not yet transfer to a multi-turn loop.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-15T07:58:56Z</published>
+    <arxiv:comment>13 pages, 1 figure, 15 tables</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Shiyang Chen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2602.16943v1</id>
+    <title>Mind the GAP: Text Safety Does Not Transfer to Tool-Call Safety in LLM Agents</title>
+    <updated>2026-02-18T23:17:15Z</updated>
+    <link href="https://arxiv.org/abs/2602.16943v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2602.16943v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language models deployed as agents increasingly interact with external systems through tool calls--actions with real-world consequences that text outputs alone do not carry. Safety evaluations, however, overwhelmingly measure text-level refusal behavior, leaving a critical question unanswered: does alignment that suppresses harmful text also suppress harmful actions? We introduce the GAP benchmark, a systematic evaluation framework that measures divergence between text-level safety and tool-call-level safety in LLM agents. We test six frontier models across six regulated domains (pharmaceutical, financial, educational, employment, legal, and infrastructure), seven jailbreak scenarios per domain, three system prompt conditions (neutral, safety-reinforced, and tool-encouraging), and two prompt variants, producing 17,420 analysis-ready datapoints. Our central finding is that text safety does not transfer to tool-call safety. Across all six models, we observe instances where the model's text output refuses a harmful request while its tool calls simultaneously execute the forbidden action--a divergence we formalize as the GAP metric. Even under safety-reinforced system prompts, 219 such cases persist across all six models. System prompt wording exerts substantial influence on tool-call behavior: TC-safe rates span 21 percentage points for the most robust model and 57 for the most prompt-sensitive, with 16 of 18 pairwise ablation comparisons remaining significant after Bonferroni correction. Runtime governance contracts reduce information leakage in all six models but produce no detectable deterrent effect on forbidden tool-call attempts themselves. These results demonstrate that text-only safety evaluations are insufficient for assessing agent behavior and that tool-call safety requires dedicated measurement and mitigation.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-02-18T23:17:15Z</published>
+    <arxiv:comment>23 pages, 5 figures, 4 tables, code and data at https://github.com/acartag7/gap-benchmark</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Arnold Cartagena</name>
+    </author>
+    <author>
+      <name>Ariane Teixeira</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.11039v1</id>
+    <title>The Granularity Mismatch in Agent Security: Argument-Level Provenance Solves Enforcement and Isolates the LLM Reasoning Bottleneck</title>
+    <updated>2026-05-11T04:09:11Z</updated>
+    <link href="https://arxiv.org/abs/2605.11039v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.11039v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-using LLM agents must act on untrusted webpages, emails, files, and API outputs while issuing privileged tool calls. Existing defenses often mediate trust at the granularity of an entire tool invocation, forcing a brittle choice in mixed-trust workflows: allow external content to influence a call and risk hijacked destinations or commands, or quarantine the call and block benign retrieval-then-act behavior. The key observation behind this paper is that indirect prompt injection becomes dangerous not when untrusted content appears in context, but when it determines an authority-bearing argument. We present \textsc{PACT} (\emph{Provenance-Aware Capability Contracts}), a runtime monitor that assigns semantic roles to tool arguments, tracks value provenance across replanning steps, and checks whether each argument's origin satisfies its role-specific trust contract. Under oracle provenance, \textsc{PACT} achieves 100\% utility and 100\% security on mixed-trust diagnostic suites, while flat invocation-level monitors incur false positives or false negatives. In full AgentDojo deployments across five models, \textsc{PACT} reaches 100\% security on the three strongest models while recovering 38.1--46.4\% utility, 8--16 percentage points above CaMeL at the same security level. Ablations show that both semantic roles and cross-step provenance are necessary. \textsc{PACT} reframes agent security as authority binding, and isolates the remaining deployment bottleneck to provenance inference and contract synthesis.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-11T04:09:11Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Linfeng Fan</name>
+    </author>
+    <author>
+      <name>Ziwei Li</name>
+    </author>
+    <author>
+      <name>Yuan Tian</name>
+    </author>
+    <author>
+      <name>Yichen Wang</name>
+    </author>
+    <author>
+      <name>Rongsheng Li</name>
+    </author>
+    <author>
+      <name>Xiong Wang</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.19362v2</id>
+    <title>Toward User Comprehension Supports for LLM Agent Skill Specifications</title>
+    <updated>2026-05-20T17:49:17Z</updated>
+    <link href="https://arxiv.org/abs/2605.19362v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.19362v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Users often interpret and select agent skills through their SKILL markdown specifications. To protect users, existing audits mainly focus on malicious or unsafe skills. We study the complementary question of whether specifications help users form bounded expectations about what a skill consumes, produces, and covers. Across 878 cybersecurity skills, we used rule-based coding to measure textual cues for four comprehension anchors, namely operational basis, output contract, boundary disclosure, and example capability demonstration. Cues for operational basis were common, but only 19.0% of specifications exhibited cues for an example task, sample, or expected outcome, and only 2.3% exhibited cues for all four anchors. We further examined a small DNS/C2 telemetry subset (n$=$6) to illustrate why missing examples may matter. Examples appeared to make first local checks easier to construct, while no-example skills typically required helper code inspection to recover command arguments or output fields. We argue that agent-skill evaluation should treat specifications as user-facing capability disclosures, not merely as containers for executable instructions.</summary>
+    <category term="cs.HC" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-19T04:50:42Z</published>
+    <arxiv:comment>To appear at ACM CAIS Workshop Agent Skill 2026</arxiv:comment>
+    <arxiv:primary_category term="cs.HC"/>
+    <author>
+      <name>Zikai Alex Wen</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.05670v1</id>
+    <title>Do More Agents Help? Controlled and Protocol-Aligned Evaluation of LLM Agent Workflows</title>
+    <updated>2026-06-04T03:50:47Z</updated>
+    <link href="https://arxiv.org/abs/2606.05670v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.05670v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Does adding more agents help an LLM workflow once compared systems share the same benchmark loader, tool access, answer contract, usage accounting, and trajectory logging? We introduce BenchAgent, an evaluation framework that places single-agent, fixed multi-agent (MAS), and evolving MAS workflows under one normalized execution and logging protocol. BenchAgent evaluates these substrate-internal workflows across ten reasoning, coding, and tool-use benchmarks with GPT-4.1, and separately reports a Protocol-Aligned External (PAE) GAIA study of a runtime-generated workflow. Under SI conditions, at most one of six tested MAS exceeds the matched single-agent anchor on benchmark-balanced average accuracy: EvoAgent lies within the Wilson one-run guidance, while the remaining five trail by 2.56-11.29 points and occupy more expensive accuracy-cost trade-offs. On the PAE GAIA snapshot, a Claude-Code-style runtime workflow reaches 66.72% overall and 69.23% on Level 3, more than 20 points above the strongest non-Claude baseline, Jarvis, a fixed MAS.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-04T03:50:47Z</published>
+    <arxiv:comment>https://github.com/LINs-lab/MASArena/tree/BenchAgent</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yuhang Fu</name>
+    </author>
+    <author>
+      <name>Ruishan Fang</name>
+    </author>
+    <author>
+      <name>Jiaqi Shao</name>
+    </author>
+    <author>
+      <name>Huiyu Zheng</name>
+    </author>
+    <author>
+      <name>Zhengtao Zhu</name>
+    </author>
+    <author>
+      <name>Bing Luo</name>
+    </author>
+    <author>
+      <name>Tao Lin</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.13716v1</id>
+    <title>SkillOps: Managing LLM Agent Skill Libraries as Self-Maintaining Software Ecosystems</title>
+    <updated>2026-05-13T16:02:25Z</updated>
+    <link href="https://arxiv.org/abs/2605.13716v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.13716v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Large language model agents increasingly rely on skill libraries for multi-step tasks, yet these libraries can accumulate persistent defects as skills are added, reused, patched, and linked to changing dependencies. We call this failure mode skill technical debt: library-level defects that may not break a single skill locally but can harm future retrieval, composition, and execution. Existing skill-based agents mainly focus on task-time retrieval, planning, and repair, while library-time maintenance remains underexplored. We propose SkillOps, a method-agnostic plug-in framework for maintaining skill libraries. SkillOps represents each skill as a typed Skill Contract (P, O, A, V, F), organizes skills with a Hierarchical Skill Ecosystem Graph, and diagnoses library health across utility, compatibility, risk, and validation dimensions. Given a raw skill library, SkillOps produces a maintained library that can be used by existing retrieval or planning agents without changing their internal code. On ALFWorld, SkillOps achieves 79.5 percent task success as a standalone agent, outperforming the strongest baseline by 8.8 percentage points with no additional task-time large language model calls. As a plug-in layer, it improves retrieval-heavy baselines by 0.68 to 2.90 percentage points. The current rule-based maintenance implementation uses nearly zero library-time large language model calls or tokens, showing that skill-library maintenance can be added as a low-overhead architectural layer.</summary>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-13T16:02:25Z</published>
+    <arxiv:comment>23 pages, 9 figures. Submitted to NeurIPS 2026. Code is available at https://github.com/Hik289/SkillOps.git</arxiv:comment>
+    <arxiv:primary_category term="cs.SE"/>
+    <author>
+      <name>Hongji Pu</name>
+    </author>
+    <author>
+      <name>Xinyuan Song</name>
+    </author>
+    <author>
+      <name>Liang Zhao</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.14051v1</id>
+    <title>SPIN: Structural LLM Planning via Iterative Navigation for Industrial Tasks</title>
+    <updated>2026-05-13T19:12:24Z</updated>
+    <link href="https://arxiv.org/abs/2605.14051v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.14051v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Industrial LLM agent systems often separate planning from execution, yet LLM planners frequently produce structurally invalid or unnecessarily long workflows, leading to brittle failures and avoidable tool and API cost. We propose \texttt{SPIN}, a planning wrapper that combines validated Directed Acyclic Graph (DAG) planning with prefix based execution control. \texttt{SPIN} enforces a strict DAG contract through \texttt{\_validate\_plan\_text} and repair prompting, producing executable plans before downstream execution, and then evaluates DAG prefixes incrementally to stop when the current prefix is sufficient to answer the query. On AssetOpsBench, across 261 scenarios, \texttt{SPIN} reduces executed tasks from 1061 to 623 and improves \emph{Accomplished} from 0.638 to 0.706, while reducing tool calls from 11.81 to 6.82 per run. On MCP Bench, the same wrapper improves planning, grounding, and dependency related scores for both GPT OSS1 and Llama 4 Maverick.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-13T19:12:24Z</published>
+    <arxiv:comment>31 pages, 10 figures</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Yusuke Ozaki</name>
+    </author>
+    <author>
+      <name>Dhaval Patel</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2511.15456v1</id>
+    <title>Know Your Intent: An Autonomous Multi-Perspective LLM Agent Framework for DeFi User Transaction Intent Mining</title>
+    <updated>2025-11-19T14:15:23Z</updated>
+    <link href="https://arxiv.org/abs/2511.15456v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2511.15456v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As Decentralized Finance (DeFi) develops, understanding user intent behind DeFi transactions is crucial yet challenging due to complex smart contract interactions, multifaceted on-/off-chain factors, and opaque hex logs. Existing methods lack deep semantic insight. To address this, we propose the Transaction Intent Mining (TIM) framework. TIM leverages a DeFi intent taxonomy built on grounded theory and a multi-agent Large Language Model (LLM) system to robustly infer user intents. A Meta-Level Planner dynamically coordinates domain experts to decompose multiple perspective-specific intent analyses into solvable subtasks. Question Solvers handle the tasks with multi-modal on/off-chain data. While a Cognitive Evaluator mitigates LLM hallucinations and ensures verifiability. Experiments show that TIM significantly outperforms machine learning models, single LLMs, and single Agent baselines. We also analyze core challenges in intent inference. This work helps provide a more reliable understanding of user motivations in DeFi, offering context-aware explanations for complex blockchain activity.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="q-fin.GN" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2025-11-19T14:15:23Z</published>
+    <arxiv:comment>Written in 2025 Q1</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Qian'ang Mao</name>
+    </author>
+    <author>
+      <name>Yuxuan Zhang</name>
+    </author>
+    <author>
+      <name>Jiaman Chen</name>
+    </author>
+    <author>
+      <name>Wenjun Zhou</name>
+    </author>
+    <author>
+      <name>Jiaqi Yan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.07904v1</id>
+    <title>Contract2Tool: Learning Preconditions and Effects for Reliable Tool-Augmented LLM Agents</title>
+    <updated>2026-06-05T23:47:33Z</updated>
+    <link href="https://arxiv.org/abs/2606.07904v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.07904v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Tool-augmented large language model agents increasingly rely on external APIs, but standard tool schemas describe how to call a tool, not when the tool is causally appropriate or what task state it produces. Causal tool filtering addresses this gap by using lightweight contracts that specify each tool's preconditions, effects, risk level, and cost. However, manually writing and maintaining such contracts does not scale to large or changing tool ecosystems. We introduce Contract2Tool, a framework for inferring tool contracts from metadata, schemas, documentation, and execution traces. Contract2Tool converts observable tool evidence into normalized symbolic contracts that can be evaluated intrinsically and deployed inside downstream causal tool filtering. We evaluate learned contracts against gold preconditions, effects, and risk labels, and measure their downstream utility on multi-step agent tasks. Our results show that hybrid documentation-and-trace evidence produces contracts accurate enough to preserve most of the reliability and efficiency benefits of gold contracts. Learned-contract CMTF achieves 0.980 downstream success, close to 0.990 for gold-contract CMTF, while reducing visible tools from 100 to 1 and reducing average token usage from 26,172 to 2,528 relative to all-tools exposure. These results suggest that learned contracts can provide a scalable contract layer between tool schemas and reliable agent execution.</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-05T23:47:33Z</published>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Rahul Suresh Babu</name>
+    </author>
+    <author>
+      <name>Laxmipriya Ganesh Iyer</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2603.27905v2</id>
+    <title>ATLAS-RTC: Closing the Loop on LLM Agent Output with Token-Level Runtime Control</title>
+    <updated>2026-04-06T02:52:33Z</updated>
+    <link href="https://arxiv.org/abs/2603.27905v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2603.27905v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present ATLAS-RTC, a runtime control system for autoregressive language models that enforces structured output during decoding. ATLAS-RTC monitors generation at each step, detects drift from output contracts using lightweight signals, and applies targeted interventions such as biasing, masking, and rollback. Unlike post-hoc validation or static constrained decoding, it operates in a closed loop, enabling correction before errors materialize. Across structured generation and tool-calling tasks, ATLAS-RTC improves first-attempt success rates by 20 to 37.8 percentage points, with up to 88% latency reduction in failure-dominated settings. Results show that many failures arise from decoding artifacts rather than task misunderstanding, motivating runtime control as a distinct layer in LLM systems.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-03-29T23:28:26Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Christopher Cruz</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.27009v1</id>
+    <title>Semantic Early-Stopping for Iterative LLM Agent Loops</title>
+    <updated>2026-06-25T13:24:21Z</updated>
+    <link href="https://arxiv.org/abs/2606.27009v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.27009v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Multi-agent large language model (LLM) loops, for example a Writer that drafts and a Critic that revises, are almost always terminated by a fixed iteration cap (max_iterations). This is a syntactic kill-switch: it is blind to whether the answer is still improving, so it over-spends tokens on easy inputs and truncates hard ones. We study semantic early-stopping: the loop halts when consecutive draft embeddings stop changing in meaning (cosine distance with a patience window) and the answer's measured quality stops improving. Our work makes three contributions. First, an honest theoretical footing: we prove deterministic termination and well-definedness and machine-check these claims, while treating the convergence of the distance sequence as an empirically tested conjecture rather than a (previously over-claimed) Banach contraction. Second, a judge-efficient evaluation protocol: we generate each question's full trajectory once, replay every stopping policy over the identical drafts, and cache every LLM-judge call, yielding a strictly paired efficiency-versus-quality comparison at low cost; we further separate operational tokens (charged to a policy) from evaluation tokens (a measurement instrument). Third, an empirical study on multi-hop retrieval-augmented question answering (HotpotQA). On the 60-question test split, a judge-free semantic stopper reduces operational tokens by 38% relative to max_iterations at parity quality (Delta-IS = -0.004, p = 0.81), whereas the full quality-gated variant is counter-productive because its per-round judging dominates cost. An oracle that selects the best round attains +0.115 Information Score over every practical policy (p ~ 4e-11), reframing the problem from "when to stop" (easy) to "which round is best" (open).</summary>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-25T13:24:21Z</published>
+    <arxiv:comment>7 pages, 5 figures, 4 tables. Open implementation, machine-checked theory, and reproducible harness: github.com/SahilShrivastava-Dev/semantic-halting-problem</arxiv:comment>
+    <arxiv:primary_category term="cs.AI"/>
+    <author>
+      <name>Sahil Shrivastava</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2608.12292v1</id>
+    <title>Teaching a Large Language Model Tutor to Withhold the Answer: A Supervisor Architecture and an Evidence-Driven Method for Tuning Socratic Behavior</title>
+    <updated>2026-08-12T17:35:58Z</updated>
+    <link href="https://arxiv.org/abs/2608.12292v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2608.12292v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>An effective large language model (LLM) tutor must often decline to give an answer it could easily produce. In a randomized study, students who used an unguarded chatbot scored higher while practicing but lower on a later test taken without it, whereas a Socratically guarded version of the same model kept the practice gain and removed the later loss [4]. Reliable answer-withholding is therefore central to a tutor's value, yet a capable model pressed by a frustrated student does not withhold reliably on a prompt alone. We report a deployed tutoring system that enforces answer-withholding as a per-turn, machine-checkable contract, and a method for tuning that withholding against evidence. A non-LLM policy core, reading only trusted learner state, sets a per-turn ceiling on an eight-rung help ladder; a deterministic detector strips solution code; and a separate LLM judge checks each risky reply against the contract. We tune the behavior with an automated evaluation that uses no human subjects: scripted student personas are driven through the live pipeline and re-scored by a stronger model, and we record each rejection's stated reason so failures are fixed by cause. Doing so revealed an interpretable "over-help ladder," from blatant solution leaks, to naming the exact bug, to over-citing general facts, with each fix exposing the next. The tutor reached full compliance on all four acceptance criteria. We offer the measure, diagnose, and fix loop as a reusable recipe for any LLM agent that must refuse a capability it has.</summary>
+    <category term="cs.CY" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-08-12T17:35:58Z</published>
+    <arxiv:primary_category term="cs.CY"/>
+    <author>
+      <name>Yusuf Pisan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.09315v1</id>
+    <title>Brain-Prompt Injection: A Route-Safety Audit for BCI-LLM Agents</title>
+    <updated>2026-06-08T10:19:34Z</updated>
+    <link href="https://arxiv.org/abs/2606.09315v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.09315v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>BCI-to-agent pipelines turn decoded neural activity into an authorization channel for tool-use agents, exposing a new attack surface we call \emph{brain-prompt injection}: signal-side perturbations, context-only injections, and adaptive dual-decoder attacks can all change the routed action while EEG-side or text-side monitors remain blind. Route safety in this stack depends on what the audit log can observe, not on decoder accuracy or agreement alone. We define a Route-Safety Audit Contract: a minimal log schema, denominator hierarchy, and endpoint specification, and prove an audit-schema separation theorem together with a C3 attacked-dependence decomposition; clean agreement and marginal robustness do not identify the joint term that controls C3 routing. As a calibration layer on top of the contract, we apply split-conformal calibration to a non-oracle EEG confirmation channel and report the resulting false-accept frontier under an explicit threat-archetype matrix. We instantiate the contract on EEGMMI native left/right command-control over 5{,}400 events, harmless tool stubs, and seed/case denominators. Provenance blocks C2 routes ($0.000$); agreement-plus-provenance routes C3 flips ($1.000$); confirmation-plus-provenance routes them ($0.000$). The conformal frontier reaches FAR $0.000$ at clean utility $0.150$ for $α=.005$ and FAR $0.119$ at clean utility $0.452$ for $α=.10$ under acquisition isolation; an attacker-controllable confirmation channel breaks the bound to $\approx\!1$. Subject-cluster bootstrap confirms these intervals on $60$ subjects; cross-architecture (TinyEEGNet, EEGNetV4) and capacity-sweep results show within-regime saturation. Mediation and confirmation reduce risk; they are not intent certificates.</summary>
+    <category term="cs.CR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-08T10:19:34Z</published>
+    <arxiv:primary_category term="cs.CR"/>
+    <author>
+      <name>Jianwei Tai</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2605.21958v1</id>
+    <title>Diagnosis Is Not Prescription: Linguistic Co-Adaptation Explains Patching Hazards in LLM Pipelines</title>
+    <updated>2026-05-21T03:44:47Z</updated>
+    <link href="https://arxiv.org/abs/2605.21958v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2605.21958v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When a multi-module LLM agent fails, the module most responsible for the failure is not necessarily the best place to intervene. We demonstrate this Diagnostic Paradox empirically: causal analysis consistently identifies the routing module -- which selects which tool to call next -- as the primary bottleneck across three independent agent families. Yet injecting prompt-level correction examples into this module consistently degrades performance, sometimes severely. Patching an upstream query-rewriting module instead reliably improves outcomes. The effect holds with statistical significance on two agent families and directional consistency on a third; alternative repair strategies at the routing module (instruction rewriting, model upgrade) are neutral, confirming that the harm is specific to correction-injection patching.
+  We explain this asymmetry through the Linguistic Contract hypothesis: each downstream module implicitly adapts to its upstream's characteristic error distribution, so correcting the bottleneck breaks this implicit alignment in a way that upstream corrections do not. We operationalize this via a per-agent co-adaptation measure, derived from diagnosis alone, and show it is consistently associated with patching harm across agent families: higher co-adaptation co-occurs with harm, lower with safety. This trend holds across all three agent families, providing preliminary support for the hypothesis beyond a single-agent observation.</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-05-21T03:44:47Z</published>
+    <arxiv:comment>Preprint. Under review at EMNLP 2026 (ARR)</arxiv:comment>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Yoon Jeonghun</name>
+    </author>
+    <author>
+      <name>Kim Dongchan</name>
+    </author>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2606.26403v1</id>
+    <title>ProfileFoundry: A Synthetic Person-Object Substrate for Privacy, Memory, and Tool-Use Evaluation in LLM Agent</title>
+    <updated>2026-06-24T21:43:36Z</updated>
+    <link href="https://arxiv.org/abs/2606.26403v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2606.26403v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Foundation-model research increasingly needs data about people: user state, personal histories, relationships, contact-like fields, documents, and longitudinal updates. Real user data is difficult to share, perturb, audit, or redistribute responsibly, while independently generated fake fields rarely preserve the cross-field and temporal consistency needed for controlled evaluation. We present PROFILEFOUNDRY, a deterministic generator and fixed reference release of 100,000 adult synthetic Person Objects across eight locales. Each object combines a typed current snapshot, household, family, and employer links, snapshot-aligned events, normalized relational views, and generation provenance. The release contains 709,228 events, 40,338 households, 52,491 employers, and 518,564 directed relationship edges. We report evidence in separate categories: selected population-marginal comparisons, per-object invariant checks, release-wide referential and temporal closure, and coincidence/provenance screens. PROFILEFOUNDRY is not a population-fidelity model, a rendered-text corpus, or a formal privacy mechanism. Instead, it is a responsible synthetic source layer for constructing downstream foundation-model evaluations involving memory, privacy, document understanding, record linkage, and agent state while keeping the synthetic person behind each artifact inspectable</summary>
+    <category term="cs.CL" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2026-06-24T21:43:36Z</published>
+    <arxiv:primary_category term="cs.CL"/>
+    <author>
+      <name>Sriram Selvam</name>
+    </author>
+    <author>
+      <name>Anneswa Ghosh</name>
+    </author>
+  </entry>
+</feed>
+

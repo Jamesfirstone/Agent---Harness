@@ -1,5 +1,6 @@
 # Task-local browser and rendering caches
 .chrome-pdf-profile*/
+.chrome-supplement-pdf-profile*/
 .edge-pdf-profile*/
 sources/report_render/
 sources/pptx_slides/
@@ -10,6 +11,7 @@ papers/text/
 tools/
 reports/*.html
 reports/worker_ledger.md
+reports/supplement_worker_ledger.md
 
 # Editor, OS and runtime noise
 .DS_Store

@@ -1,0 +1,114 @@
+﻿[
+    {
+        "id":  "nemo_guardrails_2023",
+        "status":  "downloaded",
+        "url":  "https://aclanthology.org/2023.emnlp-demo.40.pdf",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\nemo_guardrails_2023.pdf",
+        "error":  null
+    },
+    {
+        "id":  "isolategpt_ndss_2025",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2403.04960",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\isolategpt_ndss_2025.pdf",
+        "error":  null
+    },
+    {
+        "id":  "trustagent_2024",
+        "status":  "downloaded",
+        "url":  "https://aclanthology.org/2024.findings-emnlp.585.pdf",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\trustagent_2024.pdf",
+        "error":  null
+    },
+    {
+        "id":  "shieldagent_icml_2025",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2503.22738",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\shieldagent_icml_2025.pdf",
+        "error":  null
+    },
+    {
+        "id":  "agentspec_icse_2026",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2503.18666",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\agentspec_icse_2026.pdf",
+        "error":  null
+    },
+    {
+        "id":  "progent_2025",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2504.11703",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\progent_2025.pdf",
+        "error":  null
+    },
+    {
+        "id":  "camel_2025",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2503.18813",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\camel_2025.pdf",
+        "error":  null
+    },
+    {
+        "id":  "fides_ifc_2025",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2505.23643",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\fides_ifc_2025.pdf",
+        "error":  null
+    },
+    {
+        "id":  "pfi_2025",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2503.15547",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\pfi_2025.pdf",
+        "error":  null
+    },
+    {
+        "id":  "llamafirewall_2025",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2505.03574",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\llamafirewall_2025.pdf",
+        "error":  null
+    },
+    {
+        "id":  "mcp_runtime_policy_2026",
+        "status":  "downloaded",
+        "url":  "https://mdpi-res.com/d_attachment/electronics/electronics-15-02829/article_deploy/electronics-15-02829.pdf",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\mcp_runtime_policy_2026.pdf",
+        "error":  null
+    },
+    {
+        "id":  "cuga_2026",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2605.20874",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\cuga_2026.pdf",
+        "error":  null
+    },
+    {
+        "id":  "toolsafe_acl_2026",
+        "status":  "downloaded",
+        "url":  "https://aclanthology.org/2026.findings-acl.1850.pdf",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\toolsafe_acl_2026.pdf",
+        "error":  null
+    },
+    {
+        "id":  "agent_c_2025",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2512.23738",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\agent_c_2025.pdf",
+        "error":  null
+    },
+    {
+        "id":  "harnessaudit_2026",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2605.14271",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\harnessaudit_2026.pdf",
+        "error":  null
+    },
+    {
+        "id":  "tool_forge_2026",
+        "status":  "downloaded",
+        "url":  "https://arxiv.org/pdf/2605.28000",
+        "path":  "D:\\FDU\\科研环节\\harness\\sources\\supplement\\..\\..\\papers\\supplement\\tool_forge_2026.pdf",
+        "error":  null
+    }
+]
