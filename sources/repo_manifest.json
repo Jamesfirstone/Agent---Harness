@@ -1,0 +1,178 @@
+[
+  {
+    "name": "actplane",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\actplane",
+    "origin": "https://github.com/eunomia-bpf/ActPlane.git",
+    "upstream": "https://github.com/eunomia-bpf/ActPlane.git",
+    "commit": "47cd96c6fda6eaae0d4236f4ef49eee75a4ed371",
+    "branch": "master",
+    "commit_date": "2026-08-09T00:42:01-07:00",
+    "tracked_files": 170,
+    "clean": true
+  },
+  {
+    "name": "agent-governance-toolkit",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\agent-governance-toolkit",
+    "origin": "D:\\FDU\\科研环节\\agent不确定性\\repos\\agent-governance-toolkit",
+    "upstream": "https://github.com/microsoft/agent-governance-toolkit.git",
+    "commit": "81955d48025c6b11deb3fc9dabf89f74f4145775",
+    "branch": "main",
+    "commit_date": "2026-08-07T02:06:06-07:00",
+    "tracked_files": 4786,
+    "clean": true
+  },
+  {
+    "name": "agent-testing-replication",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\agent-testing-replication",
+    "origin": "https://github.com/SAILResearch/replication-25-agent-testing-empirical-study.git",
+    "upstream": "https://github.com/SAILResearch/replication-25-agent-testing-empirical-study.git",
+    "commit": "f850ad9e37c121dcee357e447e181a772a9f1d1b",
+    "branch": "main",
+    "commit_date": "2025-09-24T00:16:48-04:00",
+    "tracked_files": 6,
+    "clean": true
+  },
+  {
+    "name": "agentdojo",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\agentdojo",
+    "origin": "D:\\FDU\\科研环节\\agent不确定性\\repos\\agentdojo",
+    "upstream": "https://github.com/ethz-spylab/agentdojo.git",
+    "commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+    "branch": "main",
+    "commit_date": "2026-06-02T11:59:58+02:00",
+    "tracked_files": 36860,
+    "clean": true
+  },
+  {
+    "name": "agentif",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\agentif",
+    "origin": "D:\\FDU\\科研环节\\agent不确定性\\repos\\agentif",
+    "upstream": "https://github.com/THU-KEG/AgentIF.git",
+    "commit": "76662306ba5b7fa61a4f8c81ef590bfd4432e490",
+    "branch": "main",
+    "commit_date": "2025-12-01T20:45:17+08:00",
+    "tracked_files": 13,
+    "clean": true
+  },
+  {
+    "name": "awesome-agent-harness",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\awesome-agent-harness",
+    "origin": "https://github.com/Picrew/awesome-agent-harness.git",
+    "upstream": "https://github.com/Picrew/awesome-agent-harness.git",
+    "commit": "6eafe16bfbe22b9ae26fdd5bee0a891d19dd4e94",
+    "branch": "main",
+    "commit_date": "2026-08-13T23:40:53+08:00",
+    "tracked_files": 54,
+    "clean": true
+  },
+  {
+    "name": "enterprise-llm-agent-harness",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\enterprise-llm-agent-harness",
+    "origin": "https://github.com/hammerbaki/enterprise-llm-agent-harness.git",
+    "upstream": "https://github.com/hammerbaki/enterprise-llm-agent-harness.git",
+    "commit": "e8e60fb8ea6e34d4caa53f00187e760b67bd973a",
+    "branch": "main",
+    "commit_date": "2026-07-09T08:11:19+09:00",
+    "tracked_files": 336,
+    "clean": true
+  },
+  {
+    "name": "google-research-ifeval",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\google-research-ifeval",
+    "origin": "https://github.com/google-research/google-research.git",
+    "upstream": "https://github.com/google-research/google-research.git",
+    "commit": "13ec2c53411ad214f13709a2fcc1c1b730c605ff",
+    "branch": "master",
+    "commit_date": "2026-08-19T13:48:00-07:00",
+    "tracked_files": 12,
+    "clean": false
+  },
+  {
+    "name": "jsonschemabench",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\jsonschemabench",
+    "origin": "https://github.com/epfl-dlab/jsonschemabench.git",
+    "upstream": "https://github.com/epfl-dlab/jsonschemabench.git",
+    "commit": "8003e8405c4d8d8b327b1eb472c9856297d75493",
+    "branch": "main",
+    "commit_date": "2025-06-12T13:53:51+02:00",
+    "tracked_files": 44,
+    "clean": true
+  },
+  {
+    "name": "nemo-guardrails",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\nemo-guardrails",
+    "origin": "D:\\FDU\\科研环节\\agent不确定性\\repos\\nemo-guardrails",
+    "upstream": "https://github.com/NVIDIA-NeMo/Guardrails.git",
+    "commit": "1c657caab4f22105b7c305197fcca302d775effc",
+    "branch": "develop",
+    "commit_date": "2026-08-11T16:37:10-05:00",
+    "tracked_files": 2041,
+    "clean": true
+  },
+  {
+    "name": "openai-agents-python",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\openai-agents-python",
+    "origin": "D:\\FDU\\科研环节\\agent不确定性\\repos\\openai-agents-python",
+    "upstream": "https://github.com/openai/openai-agents-python.git",
+    "commit": "5250cb86053f50abea9d30e7d06b8fc4b5b6adb1",
+    "branch": "main",
+    "commit_date": "2026-08-12T14:18:50+09:00",
+    "tracked_files": 1512,
+    "clean": true
+  },
+  {
+    "name": "prompts-to-templates-fse2025",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\prompts-to-templates-fse2025",
+    "origin": "https://github.com/RedSmallPanda/FSE2025.git",
+    "upstream": "https://github.com/RedSmallPanda/FSE2025.git",
+    "commit": "2973a75aae1b197fbd59248736437b9984e63933",
+    "branch": "main",
+    "commit_date": "2025-01-15T11:53:14+01:00",
+    "tracked_files": 5,
+    "clean": true
+  },
+  {
+    "name": "purple-llama",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\purple-llama",
+    "origin": "D:\\FDU\\科研环节\\agent不确定性\\repos\\purple-llama",
+    "upstream": "https://github.com/meta-llama/PurpleLlama.git",
+    "commit": "e36f132f4c4b952515a03b8bdb1275738a1fa28b",
+    "branch": "main",
+    "commit_date": "2026-08-06T08:18:27-07:00",
+    "tracked_files": 894,
+    "clean": true
+  },
+  {
+    "name": "tangent-ase2026",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\tangent-ase2026",
+    "origin": "https://github.com/aster-test-generation/tangent-ase-2026.git",
+    "upstream": "https://github.com/aster-test-generation/tangent-ase-2026.git",
+    "commit": null,
+    "branch": "main",
+    "commit_date": null,
+    "tracked_files": 0,
+    "clean": true
+  },
+  {
+    "name": "tau-bench",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\tau-bench",
+    "origin": "D:\\FDU\\科研环节\\agent不确定性\\repos\\tau-bench",
+    "upstream": "https://github.com/sierra-research/tau-bench.git",
+    "commit": "59a200c6d575d595120f1cb70fea53cef0632f6b",
+    "branch": "main",
+    "commit_date": "2026-03-18T10:36:06-07:00",
+    "tracked_files": 113,
+    "clean": true
+  },
+  {
+    "name": "tau2-bench",
+    "path": "D:\\FDU\\科研环节\\harness\\repos\\tau2-bench",
+    "origin": "https://github.com/sierra-research/tau2-bench.git",
+    "upstream": "https://github.com/sierra-research/tau2-bench.git",
+    "commit": "a2c024725189473d2d7cea3a5cfdbcc67478e41f",
+    "branch": "main",
+    "commit_date": "2026-08-18T10:07:54-07:00",
+    "tracked_files": 1564,
+    "clean": true
+  }
+]

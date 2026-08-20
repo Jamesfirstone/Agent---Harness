@@ -1,0 +1,7 @@
+*.pdf binary
+*.png binary
+*.zip binary
+*.md text eol=lf
+*.json text eol=lf
+.gitignore text eol=lf
+.gitmodules text eol=lf

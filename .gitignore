@@ -1,0 +1,25 @@
+# Task-local browser and rendering caches
+.chrome-pdf-profile*/
+.edge-pdf-profile*/
+sources/report_render/
+sources/pptx_slides/
+sources/survey-first-page-01.png
+
+# Rebuildable extraction products and authoring helpers
+papers/text/
+tools/
+reports/*.html
+reports/worker_ledger.md
+
+# Editor, OS and runtime noise
+.DS_Store
+Thumbs.db
+*.log
+__pycache__/
+*.py[cod]
+
+# The upstream artifact has no commit as of 2026-08-20.
+repos/tangent-ase2026/
+
+# This sparse checkout cannot be reproduced safely on Windows; use the archive.
+repos/google-research-ifeval/

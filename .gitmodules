@@ -1,0 +1,42 @@
+[submodule "repos/actplane"]
+	path = repos/actplane
+	url = https://github.com/eunomia-bpf/ActPlane.git
+[submodule "repos/agent-governance-toolkit"]
+	path = repos/agent-governance-toolkit
+	url = https://github.com/microsoft/agent-governance-toolkit.git
+[submodule "repos/agent-testing-replication"]
+	path = repos/agent-testing-replication
+	url = https://github.com/SAILResearch/replication-25-agent-testing-empirical-study.git
+[submodule "repos/agentdojo"]
+	path = repos/agentdojo
+	url = https://github.com/ethz-spylab/agentdojo.git
+[submodule "repos/agentif"]
+	path = repos/agentif
+	url = https://github.com/THU-KEG/AgentIF.git
+[submodule "repos/awesome-agent-harness"]
+	path = repos/awesome-agent-harness
+	url = https://github.com/Picrew/awesome-agent-harness.git
+[submodule "repos/enterprise-llm-agent-harness"]
+	path = repos/enterprise-llm-agent-harness
+	url = https://github.com/hammerbaki/enterprise-llm-agent-harness.git
+[submodule "repos/jsonschemabench"]
+	path = repos/jsonschemabench
+	url = https://github.com/epfl-dlab/jsonschemabench.git
+[submodule "repos/nemo-guardrails"]
+	path = repos/nemo-guardrails
+	url = https://github.com/NVIDIA-NeMo/Guardrails.git
+[submodule "repos/openai-agents-python"]
+	path = repos/openai-agents-python
+	url = https://github.com/openai/openai-agents-python.git
+[submodule "repos/prompts-to-templates-fse2025"]
+	path = repos/prompts-to-templates-fse2025
+	url = https://github.com/RedSmallPanda/FSE2025.git
+[submodule "repos/purple-llama"]
+	path = repos/purple-llama
+	url = https://github.com/meta-llama/PurpleLlama.git
+[submodule "repos/tau-bench"]
+	path = repos/tau-bench
+	url = https://github.com/sierra-research/tau-bench.git
+[submodule "repos/tau2-bench"]
+	path = repos/tau2-bench
+	url = https://github.com/sierra-research/tau2-bench.git
