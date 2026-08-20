@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="650" viewBox="0 0 1400 650" role="img" aria-labelledby="title desc">
+  <title id="title">Agent harness 指令遵从保证阶梯</title>
+  <desc id="desc">从提示规范、事后检测、决策源、运行时工具门到系统级副作用边界，控制所有权和阻断能力逐级增强。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7fafc"/>
+      <stop offset="1" stop-color="#edf4f8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#123047" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#176b70"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="650" rx="28" fill="url(#bg)"/>
+  <text x="700" y="64" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="38" font-weight="700" fill="#102a43">指令遵从保证取决于控制所有权，而不是规则文本数量</text>
+  <text x="700" y="104" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="20" fill="#486581">越接近真实副作用、越难被模型或调用方旁路，保证越强</text>
+
+  <g filter="url(#shadow)" font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect x="55" y="370" width="240" height="175" rx="20" fill="#fff4e6" stroke="#e67700" stroke-width="3"/>
+    <text x="175" y="410" text-anchor="middle" font-size="25" font-weight="700" fill="#9c4a00">L0 提示规范</text>
+    <text x="175" y="450" text-anchor="middle" font-size="20" fill="#5d4037">Prompt / README</text>
+    <text x="175" y="483" text-anchor="middle" font-size="18" fill="#5d4037">只能建议模型</text>
+    <text x="175" y="516" text-anchor="middle" font-size="18" font-weight="700" fill="#b42318">不能阻止副作用</text>
+
+    <rect x="320" y="315" width="240" height="230" rx="20" fill="#fff9db" stroke="#d69e2e" stroke-width="3"/>
+    <text x="440" y="355" text-anchor="middle" font-size="25" font-weight="700" fill="#805b10">L1 检测与验收</text>
+    <text x="440" y="395" text-anchor="middle" font-size="20" fill="#5d4a14">Evaluator / Postcondition</text>
+    <text x="440" y="428" text-anchor="middle" font-size="18" fill="#5d4a14">能识别违规</text>
+    <text x="440" y="461" text-anchor="middle" font-size="18" fill="#5d4a14">可触发评分或恢复</text>
+    <text x="440" y="514" text-anchor="middle" font-size="17" font-weight="700" fill="#9c6f19">不可逆动作可能已发生</text>
+
+    <rect x="585" y="260" width="240" height="285" rx="20" fill="#e6fffa" stroke="#2c7a7b" stroke-width="3"/>
+    <text x="705" y="300" text-anchor="middle" font-size="25" font-weight="700" fill="#176b70">L2 策略决策源</text>
+    <text x="705" y="340" text-anchor="middle" font-size="20" fill="#234e52">Policy / Scanner</text>
+    <text x="705" y="373" text-anchor="middle" font-size="18" fill="#234e52">产生 ALLOW / DENY / HITL</text>
+    <text x="705" y="406" text-anchor="middle" font-size="18" fill="#234e52">可验证参数与内容</text>
+    <text x="705" y="459" text-anchor="middle" font-size="17" font-weight="700" fill="#176b70">只有接入执行路径才生效</text>
+
+    <rect x="850" y="205" width="240" height="340" rx="20" fill="#e8f4fd" stroke="#2369a1" stroke-width="3"/>
+    <text x="970" y="245" text-anchor="middle" font-size="25" font-weight="700" fill="#174e75">L3 运行时执行门</text>
+    <text x="970" y="285" text-anchor="middle" font-size="20" fill="#243b53">Tool Gate / Approval</text>
+    <text x="970" y="318" text-anchor="middle" font-size="18" fill="#243b53">调用前授权与暂停</text>
+    <text x="970" y="351" text-anchor="middle" font-size="18" fill="#243b53">状态化恢复与审计</text>
+    <text x="970" y="404" text-anchor="middle" font-size="17" font-weight="700" fill="#174e75">能阻断框架内工具调用</text>
+    <text x="970" y="437" text-anchor="middle" font-size="17" fill="#486581">直调工具仍可能旁路</text>
+
+    <rect x="1115" y="150" width="240" height="395" rx="20" fill="#eee8ff" stroke="#6941c6" stroke-width="3"/>
+    <text x="1235" y="190" text-anchor="middle" font-size="25" font-weight="700" fill="#4a2b8a">L4 副作用边界</text>
+    <text x="1235" y="230" text-anchor="middle" font-size="20" fill="#3e2c63">Sandbox / OS Hook</text>
+    <text x="1235" y="263" text-anchor="middle" font-size="18" fill="#3e2c63">文件、网络、进程隔离</text>
+    <text x="1235" y="296" text-anchor="middle" font-size="18" fill="#3e2c63">在真实执行点拒绝</text>
+    <text x="1235" y="349" text-anchor="middle" font-size="17" font-weight="700" fill="#4a2b8a">模型不服从仍可阻断</text>
+    <text x="1235" y="382" text-anchor="middle" font-size="17" fill="#5c4d7d">但不理解业务语义</text>
+  </g>
+
+  <path d="M275 575 H1120" fill="none" stroke="#176b70" stroke-width="8" marker-end="url(#arrow)"/>
+  <text x="700" y="620" text-anchor="middle" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="23" font-weight="700" fill="#176b70">控制所有权增强 · 阻断能力增强 · 旁路面缩小</text>
+</svg>

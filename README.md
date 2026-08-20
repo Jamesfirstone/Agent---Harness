@@ -12,6 +12,12 @@
 - `sources/repo_manifest.*`：仓库 upstream、commit、分支与状态。
 - `figures/harness_control_chain.png`：控制生命周期概念图。
 
+### 最终代码级综述（2026-08-20）
+
+- `reports/final_agent_harness_instruction_compliance_code_review.pdf`：汇总 PPT 内外证据的最终文档，区分 21 个运行时/决策层实现与 2 个检测/后置验收实现。
+- `reports/final_agent_harness_instruction_compliance_code_review.md`：最终文档源文件，逐项列出固定提交、代码路径、行号、执行语义与保证边界。
+- `figures/final/enforcement_guarantee_ladder.svg`：从规则存在到完整调解、闭合控制链的保证等级图。
+
 ### PPT 之外的补充系统映射（2026-08-20）
 
 - `reports/supplement_harness_instruction_compliance_review.pdf`：论文、工程实践与代码证据综合报告。
