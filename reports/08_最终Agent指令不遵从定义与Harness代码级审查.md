@@ -1,25 +1,21 @@
 # Agent 指令不遵从的论文定义与 Harness 代码级实现
 
-## 最终综合报告：文献定义、证据边界与实现取证
+## 论文定义、代码实现与证据边界
 
-**资料核验基准：** 2026-08-20；报告修订：2026-08-23（Asia/Shanghai）<br>
-**材料范围：** 《相关工作.pptx》相关研究、16 篇补充论文，共 27 份本地论文材料，以及当前仓库中固定提交的源码与测试<br>
-**报告目录：** [reports 编号与内容说明](00_报告目录与编号说明.md)<br>
-**证据入口：** [原始综合报告](03_初始文献与代码证据综合报告.md)、[补充系统综述](06_补充性系统映射与代码证据综合报告.md)、[既有代码矩阵](01_代码级证据矩阵.md)、[主仓库清单](../sources/repo_manifest.md)、[补充仓库清单](../repos/supplement/manifest.json)
 
 ## 摘要
 
-本报告回答两个相互依赖的问题：论文究竟把 agent 的“指令不遵从”定义成什么，以及当前证据集中有哪些 harness 以代码而非提示词改变了这些不遵从行为。对 27 份本地论文材料的主题综合表明，不遵从不能缩成“最终回答不像用户要求”：它至少覆盖原子输出、条件与多约束、结构化输出、动作安全、时序状态、最小权限、来源与信息流、执行保真、资源边界以及合同稳定性与恢复 10 类性质。前七类大多可回溯到论文明确术语或形式化判据；“终态统一定义”和“恢复不遵从”则是本报告跨论文综合，不能伪称为单篇论文原话。在此口径下，逐仓库核验得到 21 个具有运行时控制、策略决策、工具审批、信息流、隔离或恢复代码的实现，另有 2 个检测/后置验收实现。代码证据进一步表明，论文中的检测指标只有在真实副作用之前进入不可绕过的执行门、异常语义明确、状态持久化且恢复仍受策略约束时，才会从“可测量的不遵从”升级为“可阻止的不遵从”。
+本文回答两个相互依赖的问题：论文把 agent 的“指令不遵从”定义成什么，以及哪些 harness 以代码而非提示词改变了这些行为。对 27 份论文材料的主题综合表明，不遵从不能缩成“最终回答不像用户要求”：它至少覆盖原子输出、条件与多约束、结构化输出、动作安全、时序状态、最小权限、来源与信息流、执行保真、资源边界以及合同稳定性与恢复 10 类性质。前七类大多可回溯到论文明确术语或形式化判据；终态、边界和恢复的统一命名属于跨论文综合。在此口径下，代码审计确认 21 个运行时或决策层实现，另有 2 个检测或后置验收实现。论文中的检测指标只有在真实副作用之前进入不可绕过的执行门、异常语义明确、状态持久化且恢复仍受策略约束时，才会从“可测量的不遵从”升级为“可阻止的不遵从”。
 
 ![图形摘要：完整调解](../figures/supplement/instruction_compliance_complete_mediation.png)
 
 *图 1　指令遵从应被实现为完整调解。模型负责提出意图、计划和工具调用；harness 负责解析、能力与信息流判断、执行前 gate、隔离、后置条件、审计和受策略约束的恢复。该图是概念综合，不包含经验计数。*
 
-## 1. 口径与证据规则
+## 1. 分析口径与证据标准
 
-本报告把“代码级实现”定义为能在固定 Git 提交中定位到可执行控制路径的项目。控制路径至少要读取 agent 的消息、计划、工具、参数、状态或结果，并产生验证、变换、暂停、拒绝、隔离、恢复或审计效果。只存在 system prompt、README 架构图或论文描述的项目不计为代码实现；只在运行后评分的 checker 被单列为检测型实现，不与执行前 gate 合并。
+“代码级实现”是指能够在固定 Git 提交中定位到可执行控制路径的项目。控制路径至少要读取 agent 的消息、计划、工具、参数、状态或结果，并产生验证、变换、暂停、拒绝、隔离、恢复或审计效果。只存在 system prompt、README 架构图或论文描述的项目不计为代码实现；只在运行后评分的 checker 被单列为检测型实现，不与执行前 gate 合并。
 
-证据等级沿用此前报告。E0 表示只有文档或提示声称，E1 表示存在可定位的实现路径，E2 表示存在针对性测试，E3 表示有对照、消融或行为测量，E4 表示独立复现或生产证据。等级描述的是本轮实际取得的证据，不是项目知名度。表中提交均为本地固定提交的唯一短哈希，完整 40 位提交、remote 和检出状态见仓库清单。
+证据等级定义如下：E0 表示只有文档或提示声称，E1 表示存在可定位的实现路径，E2 表示存在针对性测试，E3 表示有对照、消融或行为测量，E4 表示独立复现或生产证据。等级描述实际取得的证据，不代表项目知名度。表中的短哈希用于把结论绑定到固定源码状态。
 
 ![从规范到副作用的控制链](../figures/harness_control_chain.png)
 
@@ -31,7 +27,7 @@
 
 ## 2. 论文中的“指令不遵从”定义体系
 
-前一版最终报告把论文主要当作仓库来源和机制背景，重点落在“代码在哪里改变执行”，因而确实没有充分呈现论文怎样界定不遵从。本次修订把两层证据分开：论文层回答哪些行为算违反指令，代码层回答系统能否在副作用发生前检测、阻断或恢复。两者不能互相替代；论文报告的高安全率不能自动证明本地仓库实现完整，代码中存在一个 `deny` 分支也不能证明它覆盖了论文威胁模型。
+论文层回答哪些行为构成指令违反，代码层回答系统能否在副作用发生前检测、阻断或恢复。两层证据不能互相替代：论文报告的高安全率不能自动证明本地仓库实现完整，代码中存在一个 `deny` 分支也不能证明它覆盖了论文威胁模型。
 
 设 `I` 为用户指令、系统政策和工具规格的集合，`H_t` 为时刻 `t` 之前的轨迹，`a_t=(tool,args,target)` 为候选动作，`E_t` 为环境状态，`o_t` 为模型输出。本文把一次轨迹视为遵从，当且仅当输出、语义、工具、授权、信息流、时序、环境变化、终态和恢复对应的判据同时成立。因而，“指令不遵从”可以操作化为至少一个判据在某一步为假，而不是只检查最终文本。这个统一谓词体系是对下列论文的综合，不是任何单篇论文原封不动提出的术语表。
 
@@ -56,11 +52,11 @@ IFEval 把复杂请求拆成可由确定性函数检查的原子指令，并区�
 | **U9 边界、资源、角色与通信不遵从**（论文概念 + 本文综合） | 使用未授权或与任务无关的工具，访问越界资源，超越角色权限，或发生禁止的跨 agent/app 通信与数据转发。 | HarnessAudit §3.2 的 L1 Boundary Compliance，PDF pp.4-5；[IsolateGPT](../papers/supplement/isolategpt_ndss_2025.pdf)，摘要与 §I-II；PFI §4。 | action sink、资源 scope、角色策略、hub-spoke mediation、sandbox 与通信 PEP；未进入受控 sink 的调用仍可绕过。 |
 | **U10 合同、稳定性与恢复不遵从**（跨论文综合） | 在 prompt injection、模型替换、歧义目标、工具错误、重试或恢复时，代码拥有的 contract、边界或安全后置条件不能保持。 | [From Prompts to Contracts](../papers/prompts_to_contracts_2026.pdf)，§3.6、§5.1、§5.5，PDF pp.8、12-18；HarnessAudit L3；[ToolSafe](../papers/supplement/toolsafe_acl_2026.pdf)，§3-4。 | deterministic fallback、bounded retry/replan、rollback/compensation、trace 和扰动回归测试；统一的“恢复不遵从”是本文综合术语。 |
 
-### 2.3 哪些定义来自论文，哪些是本报告综合
+### 2.3 定义来源与综合边界
 
 U1-U7 的核心术语能够直接回到论文：IFEval 的 verifiable instruction 与 strict/loose accuracy，AGENTIF 的 format/semantic/tool constraint 和 CSR/ISR，Structured Output 的三层错误，AgentSpec 的 trigger/predicate/enforcement，Agent-C 的时序规范与 SMT 可满足性，Progent 的 symbolic privilege policy，CaMeL/Fides/PFI 的 capability、完整性和机密性性质。HarnessAudit 也明确提出 L1 Boundary Compliance、L2 Execution Fidelity 和 L3 System Stability。
 
-U8-U10 的统一名称和 U1-U10 的总分类是本报告的跨论文综合。特别是，日志缺失通常意味着“无法证明合规”，而不是已经证明 agent 违规；同样，论文中的检测分数、攻击成功率或规则符合率不等于本地实现具备不可绕过的阻断能力。为避免证据升级错误，后续代码表仍分别标注论文行为证据和本地实现证据。
+U8-U10 的统一名称和 U1-U10 的总分类属于跨论文综合。特别是，日志缺失通常意味着“无法证明合规”，而不是已经证明 agent 违规；同样，论文中的检测分数、攻击成功率或规则符合率不等于本地实现具备不可绕过的阻断能力。后续代码表因此分别标注论文行为证据和本地实现证据。
 
 ### 2.4 从论文定义到 harness 责任
 
@@ -105,7 +101,7 @@ U8-U10 的统一名称和 U1-U10 的总分类是本报告的跨论文综合。�
 |---|---|---|---|
 | **Google ADK Python** (`c986ff0`) | `FunctionTool` confirmation、before/after/error plugin callbacks | `src/google/adk/tools/function_tool.py:99-142,291-353`；`src/google/adk/plugins/base_plugin.py:297,321,348`；`src/google/adk/flows/llm_flows/functions.py:783-947`；`tests/unittests/tools/test_tool_confirmation.py:17-33` | `require_confirmation=True` 且未确认时不执行；默认值是 `False`。原始 callable、非 `FunctionTool` 或未经过 plugin 生命周期的路径是旁路，live path 还留有 confirmation 恢复 TODO。**E2**。 |
 | **Microsoft Agent Framework** (`435201b`) | session-backed 工具审批 middleware、AG-UI resume、standing rule | `python/packages/core/agent_framework/_harness/_tool_approval.py:343,355-413,504-640`；`python/packages/core/tests/core/test_harness_tool_approval.py:708,929,1161,1368` | approval state、排队请求和响应持久化在 session；middleware 是 opt-in。按工具名的 auto-approval 可能误批准同名工具，直接绕过 middleware 不受控。**E2**。 |
-| **PydanticAI** (`97f2114`) | deferred tool execution、`ApprovalRequired`、恢复 | **Git object 证据：**`docs/deferred-tools.md:25-29,65-72,101-106`；`pydantic_ai_slim/pydantic_ai/tools.py:306,333,431,506`；`pydantic_ai_slim/pydantic_ai/_deferred.py:27,44,100,110,155,181-187`；`tests/test_tools.py:1671-1683,1762-1782` | `requires_approval=True` 时工具 deferred，等待 `DeferredToolResults`；默认 `False`。官方文档警告不可信客户端可伪造 history/approval，敏感工具仍须内部鉴权。工作树因 TLS 中断为空，本轮只以 immutable HEAD object 为证。**E2 源码/测试存在，未本地运行**。 |
+| **PydanticAI** (`97f2114`) | deferred tool execution、`ApprovalRequired`、恢复 | **Git object 证据：**`docs/deferred-tools.md:25-29,65-72,101-106`；`pydantic_ai_slim/pydantic_ai/tools.py:306,333,431,506`；`pydantic_ai_slim/pydantic_ai/_deferred.py:27,44,100,110,155,181-187`；`tests/test_tools.py:1671-1683,1762-1782` | `requires_approval=True` 时工具 deferred，等待 `DeferredToolResults`；默认 `False`。官方文档警告不可信客户端可伪造 history/approval，敏感工具仍须内部鉴权。工作树因 TLS 中断为空，仅以 immutable HEAD object 为证。**E2 源码/测试存在，未本地运行**。 |
 | **Guardrails AI** (`c472d55`) | 输入/输出 validator、reask/fix/filter/refrain/exception | `guardrails/guard.py:86,252-272,485-510,680-690`；`guardrails/validator_base.py:102-155,206`；`guardrails/types/on_fail.py:6-31` | `Validator(on_fail=None)` 默认映射为 `EXCEPTION`，可 fail-closed；Pydantic schema 等入口也可能把缺省动作映射为 `NOOP`。直接调用 provider 或工具、绕过 `Guard` 时无保护。**E1-E2**。 |
 | **Invariant** (`2340fe2`) | policy DSL、trace analyzer、`Monitor` 包装执行 | `invariant/analyzer/policy.py:23,77-90,121-126`；`invariant/analyzer/monitor.py:78,141-175`；`invariant/tests/analyzer/test_guarding.py:26,63` | `LocalPolicy.analyze` 只返回分析结果，调用方忽略即 open；`Monitor.run` 对未处理违规抛错。当前固定提交不能外推为完整 Gateway。**E2**。 |
 | **Agent Policy Guard** (`6702e0b`) | YAML policy-as-code、`allow/deny/ask/hitl` effect | `python/src/agent_policy_guard/models.py:10-37,93-120`；`python/src/agent_policy_guard/engine.py:54,117-161`；`python/tests/test_guard.py:21-37,252-312,494-509` | 默认无匹配 effect 是 `ask`，engine 的 `resolve` 只返回 effect 字符串。宿主若不 dispatch verdict，策略不会阻止工具。本地运行因缺少 pytest 未执行。**E2 源码/测试存在**。 |
@@ -123,7 +119,7 @@ U8-U10 的统一名称和 U1-U10 的总分类是本报告的跨论文综合。�
 | **AgentDojo** (`089ed46`) | `src/agentdojo/functions_runtime.py:246-310`；`src/agentdojo/agent_pipeline/pi_detector.py:98-113`；`src/agentdojo/base_tasks.py:18-125`；`src/agentdojo/benchmark.py:361-376`；`tests/test_functions_runtime/test_functions_runtime.py:391-415` | 未注册工具和非法参数可被 runtime 识别；注入 detector 显式配置时可 abort；utility/security checker 对终态给出结果。 | 默认 `raise_on_error=False` 会把工具错误作为模型可见 observation 后继续，注入 detector 默认转换内容而非阻断；核心仍是 benchmark/oracle。**E2 runtime，注入阻断 E1**。 |
 | **HarnessAudit** (`6317162`) | `multi_agent/schemas/access_rules.py:1-4,94-105,158-180`；`multi_agent/checker.py:116-137,172-178`；`multi_agent/completion_checks.py:85-105,117-251`；`multi_agent/frameworks/core/action_sink.py:50-69,89-169` | 检查工具、资源、通信、数据泄露、SDE native bypass 和完成条件，并通过 action sink 记录 trace。 | 默认无匹配时 allow，completion 失败是评分失败而非运行时阻断；绕过 action sink 的副作用不可见。**E1 代码；论文/benchmark 设计 E3**。 |
 
-JSONSchemaBench、IFEval、AGENTIF、τ-bench 与 τ²-bench 同样含有大量可执行 checker，但本报告没有把它们计入 23 个 harness 相关实现。它们主要测量 JSON 结构、文本约束、任务成功或数据库终态，是评测基础设施而不是部署时控制平面。它们仍然适合成为 harness 的 postcondition test oracle，但不应被写成能够事前授权工具。
+JSONSchemaBench、IFEval、AGENTIF、τ-bench 与 τ²-bench 同样含有大量可执行 checker，但本文不把它们计入 23 个 harness 相关实现。它们主要测量 JSON 结构、文本约束、任务成功或数据库终态，是评测基础设施而不是部署时控制平面。它们仍然适合成为 harness 的 postcondition test oracle，但不应被写成能够事前授权工具。
 
 ## 5. 哪些材料不能声称已有代码级实现
 
@@ -131,8 +127,8 @@ JSONSchemaBench、IFEval、AGENTIF、τ-bench 与 τ²-bench 同样含有大量�
 |---|---|---|
 | **Agent-C / Enforcing Temporal Constraints for LLM Agents** (`70b536a`) | 固定提交只有 README，并明确写明代码将来发布 | 不计代码实现；只保留论文中的时序约束思想。 |
 | **TrustAgent** (`b286441`) | Git HEAD 存在，但 Windows 非法冒号文件名导致 322 个 tracked path 无法检出，工作树为 0 文件 | 只能作为论文/README 架构证据，不能据此断言 fail-open/closed。 |
-| **Progent、ShieldAgent、IsolateGPT** | 已下载论文，但本轮没有取得可在当前仓库中完整核验的对应实现 | 作为论文机制证据，不计本地代码实现。 |
-| **Tangent artifact** | 公开仓库截至核验日无提交、0 tracked files | 不计代码实现或可复现 artifact。 |
+| **Progent、ShieldAgent、IsolateGPT** | 论文可用，但没有取得可完整核验的对应实现 | 作为论文机制证据，不计本地代码实现。 |
+| **Tangent artifact** | 公开仓库无提交、0 tracked files | 不计代码实现或可复现 artifact。 |
 | **From Prompts to Templates、testing-practices replication、awesome-agent-harness** | 分别是 prompt 分析、研究复现数据和目录 | 可支持分类或发现，不是运行时 enforcement。 |
 | **JSONSchemaBench、IFEval、AGENTIF、τ-bench、τ²-bench** | checker、reward 与 postcondition 代码可核 | 作为评测/验收证据，不计部署时 harness gate。 |
 
@@ -168,22 +164,19 @@ LlamaFirewall、Guardrails AI、Invariant 和 Agent Policy Guard 能产生结构
 
 一个 harness 若要声称“以代码实现指令遵从”，至少需要证明五件事。第一，所有工具、外部 API、文件、网络和进程入口都经过统一 gate。第二，规则的无匹配、解析失败、策略服务不可用和超时分支具有明确且经过测试的 fail-open/fail-closed 语义。第三，审批绑定主体、工具、精确参数、调用 ID 和 session，且不把客户端历史当作可信授权。第四，策略状态、来源标签、调用次数和时序约束能跨步持久化。第五，拒绝、批准、执行、结果、恢复和旁路尝试均进入不可静默丢失的审计链。缺少任一项时，应把保证降级为“部分控制”而不是“强制遵从”。
 
-## 8. 可复现性与局限
+## 8. 证据局限
 
-本报告基于固定提交的静态代码审计、仓库内测试和少量本地测试，而不是对 23 个项目统一安装依赖后的全量动态复现。MCP PEP 的 42 项测试有 39 项通过，其余三项对应 Windows symlink 权限与 POSIX 路径假设；Enterprise harness 的 guardrail 子集通过但全量测试仍有失败；Agent Policy Guard 因本地缺少 pytest 未运行；PydanticAI 只从 immutable Git object 读取；TrustAgent 与 ToolSafe 分别受到 Windows 文件名和大小写碰撞影响。不同论文使用不同任务、模型、威胁模型和指标，证据等级不可被理解为统一排行榜。
+证据主要来自固定提交的静态代码审计、仓库内测试和少量本地测试，而不是对 23 个项目统一安装依赖后的全量动态复现。MCP PEP 的 42 项测试有 39 项通过，其余三项对应 Windows symlink 权限与 POSIX 路径假设；Enterprise harness 的 guardrail 子集通过但全量测试仍有失败；Agent Policy Guard 因本地缺少 pytest 未运行；PydanticAI 只从 immutable Git object 读取；TrustAgent 与 ToolSafe 分别受到 Windows 文件名和大小写碰撞影响。不同论文使用不同任务、模型、威胁模型和指标，证据等级不可被理解为统一排行榜。
 
-补充检索共取得 650 条数据库记录，去重后 546 条，形成 113 条详细评估池，最终纳入 16 篇论文。筛选过程、查询式和排除原因分别保存在检索协议、原始响应与逐条筛选记录中。图 4 展示这一路径，避免把定向雪球补充与数据库命中混成同一分母。
 
-![补充检索筛选流程](../figures/supplement/prisma_screening_flow.svg)
 
-*图 4　补充检索的 PRISMA 风格筛选流程。数字由 `sources/supplement/screening_flow.json` 确定性生成。*
 
 ## 9. 最终结论
 
-论文层面，本报告把 agent 指令不遵从操作化为 U1-U10：从原子输出、条件和结构约束，延伸到动作安全、时序状态、最小权限、来源与信息流、执行保真、资源边界以及合同稳定性与恢复。其中 U1-U7 主要继承论文明确概念，U8-U10 的统一命名属于跨论文综合。实现层面，截至 2026-08-20，当前仓库能够点名并给出代码证据的项目共有 21 个运行时/决策层实现，以及 2 个检测/后置验收实现。最成熟的工程模式不是让模型重复规则，而是把这些判据编译为由代码所有的 verdict，并让 verdict 在工具或副作用发生前不可绕过地生效。ActPlane 代表系统级副作用控制，Governance Toolkit、OpenAI Agents、NeMo、Google ADK 和 Microsoft Agent Framework 代表 SDK/middleware 执行门，AgentSpec、CaMeL、Fides、PFI、CUGA 和 MCP PEP 代表规范、capability 与信息流控制，Tool Forge、AgentGuard、PydanticAI、Guardrails AI、Invariant、Agent Policy Guard、LlamaFirewall 和 ToolSafe 提供不同强度的验证、审批、扫描或策略组件，AgentDojo 与 HarnessAudit 则补足终态与轨迹验收。
+论文层面，agent 指令不遵从可操作化为 U1-U10：从原子输出、条件和结构约束，延伸到动作安全、时序状态、最小权限、来源与信息流、执行保真、资源边界以及合同稳定性与恢复。其中 U1-U7 主要继承论文明确概念，U8-U10 的统一命名属于跨论文综合。实现层面，代码证据支持 21 个运行时或决策层实现，以及 2 个检测或后置验收实现。最成熟的工程模式不是让模型重复规则，而是把这些判据编译为由代码所有的 verdict，并让 verdict 在工具或副作用发生前不可绕过地生效。ActPlane 代表系统级副作用控制，Governance Toolkit、OpenAI Agents、NeMo、Google ADK 和 Microsoft Agent Framework 代表 SDK/middleware 执行门，AgentSpec、CaMeL、Fides、PFI、CUGA 和 MCP PEP 代表规范、capability 与信息流控制，Tool Forge、AgentGuard、PydanticAI、Guardrails AI、Invariant、Agent Policy Guard、LlamaFirewall 和 ToolSafe 提供不同强度的验证、审批、扫描或策略组件，AgentDojo 与 HarnessAudit 则补足终态与轨迹验收。
 
 最需要避免的表述是“项目有 guardrail，所以 agent 会遵从指令”。代码证据支持的更准确结论是：指令遵从是一条由 specification、validation、authorization、execution、postcondition、recovery 和 audit 共同构成的控制链；链中任一阶段由模型或可绕过调用方所有，整体保证就只能按最弱环节降级。
 
-## 附录：本地证据入口
+## 附录：证据索引
 
-完整论文题名、状态与 PDF 对照见 `sources/paper_index.md` 和 `papers/supplement/manifest.json`；主仓库的 remote、commit 和状态见 `sources/repo_manifest.json`，补充仓库见 `repos/supplement/manifest.json`。原始与补充代码取证分别见 `reports/01_代码级证据矩阵.md` 和 `reports/06_补充性系统映射与代码证据综合报告.md`，测试边界见 `reports/02_本地验证记录.md` 与 `sources/supplement/local_test_results.md`，检索协议和逐条筛选见 `reports/05_补充性系统映射研究协议.md` 与 `sources/supplement/screening_decisions.csv`。
+完整论文题名与 PDF 对照见 `sources/paper_index.md` 和 `papers/supplement/manifest.json`；仓库地址、固定提交与检出状态见 `sources/repo_manifest.json` 和 `repos/supplement/manifest.json`；本地测试结果见 `reports/02_本地验证记录.md` 与 `sources/supplement/local_test_results.md`。
