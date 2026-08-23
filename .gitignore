@@ -10,9 +10,7 @@ sources/survey-first-page-01.png
 papers/text/
 tools/
 reports/*.html
-reports/worker_ledger.md
-reports/supplement_worker_ledger.md
-reports/final_summary_worker_ledger.md
+reports/*worker_ledger*.md
 
 # Editor, OS and runtime noise
 .DS_Store

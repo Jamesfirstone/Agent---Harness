@@ -1,14 +1,15 @@
-# Agent 指令遵从性的 Harness 代码级实现
+# Agent 指令不遵从的论文定义与 Harness 代码级实现
 
-## 最终综合报告
+## 最终综合报告：文献定义、证据边界与实现取证
 
-**核验日期：** 2026-08-20（Asia/Shanghai）<br>
-**材料范围：** 《相关工作.pptx》相关研究、补充系统检索、当前仓库中固定提交的源码与测试<br>
-**证据入口：** [原始综合报告](agent_harness_related_work_report.md)、[补充系统综述](supplement_harness_instruction_compliance_review.md)、[既有代码矩阵](code_evidence_matrix.md)、[主仓库清单](../sources/repo_manifest.md)、[补充仓库清单](../repos/supplement/manifest.json)
+**资料核验基准：** 2026-08-20；报告修订：2026-08-23（Asia/Shanghai）<br>
+**材料范围：** 《相关工作.pptx》相关研究、16 篇补充论文，共 27 份本地论文材料，以及当前仓库中固定提交的源码与测试<br>
+**报告目录：** [reports 编号与内容说明](00_报告目录与编号说明.md)<br>
+**证据入口：** [原始综合报告](03_初始文献与代码证据综合报告.md)、[补充系统综述](06_补充性系统映射与代码证据综合报告.md)、[既有代码矩阵](01_代码级证据矩阵.md)、[主仓库清单](../sources/repo_manifest.md)、[补充仓库清单](../repos/supplement/manifest.json)
 
 ## 摘要
 
-本报告回答一个严格限定的问题：截至核验日，当前证据集中究竟有哪些 harness 以代码而非提示词实现了 agent 指令遵从，它们在什么位置改变执行，又有哪些旁路。逐仓库核验得到 21 个具有运行时控制、策略决策、工具审批、信息流、隔离或恢复代码的实现；另有 2 个具有明确代码的检测/后置验收实现。这里的“21 个实现”不等于“21 个生产级安全系统”：其中既有 SDK 和治理中间件，也有论文原型、notebook、软 guardrail 和只返回 verdict 的策略引擎。只有 verdict 位于真实副作用之前、调用方不能跳过、异常语义明确且状态得到持久化时，才能把“检测到不遵从”提升为“系统能够阻止不遵从”。本轮最强的代码证据来自 ActPlane 的内核副作用钩子、Microsoft Agent Governance Toolkit 的策略/verdict/审批链、OpenAI Agents Python 与 Microsoft Agent Framework 的状态化工具审批、NeMo Guardrails 的工具调用和结果 rails，以及 CaMeL、Fides、PFI、MCP PEP 所代表的 capability/provenance/信息流控制。与此同时，默认 allow、opt-in middleware、直接 callable、禁用 rail、未匹配规则和宿主忽略 verdict，仍是最常见的旁路面。
+本报告回答两个相互依赖的问题：论文究竟把 agent 的“指令不遵从”定义成什么，以及当前证据集中有哪些 harness 以代码而非提示词改变了这些不遵从行为。对 27 份本地论文材料的主题综合表明，不遵从不能缩成“最终回答不像用户要求”：它至少覆盖原子输出、条件与多约束、结构化输出、动作安全、时序状态、最小权限、来源与信息流、执行保真、资源边界以及合同稳定性与恢复 10 类性质。前七类大多可回溯到论文明确术语或形式化判据；“终态统一定义”和“恢复不遵从”则是本报告跨论文综合，不能伪称为单篇论文原话。在此口径下，逐仓库核验得到 21 个具有运行时控制、策略决策、工具审批、信息流、隔离或恢复代码的实现，另有 2 个检测/后置验收实现。代码证据进一步表明，论文中的检测指标只有在真实副作用之前进入不可绕过的执行门、异常语义明确、状态持久化且恢复仍受策略约束时，才会从“可测量的不遵从”升级为“可阻止的不遵从”。
 
 ![图形摘要：完整调解](../figures/supplement/instruction_compliance_complete_mediation.png)
 
@@ -28,11 +29,50 @@
 
 *图 3　保证阶梯。检测器和策略决策源是必要组件，但它们只有被接入不可绕过的执行路径时才成为强制控制；系统级副作用边界最难被模型绕过，却仍需上层业务语义。*
 
-## 2. 当前代码级实现总览
+## 2. 论文中的“指令不遵从”定义体系
+
+前一版最终报告把论文主要当作仓库来源和机制背景，重点落在“代码在哪里改变执行”，因而确实没有充分呈现论文怎样界定不遵从。本次修订把两层证据分开：论文层回答哪些行为算违反指令，代码层回答系统能否在副作用发生前检测、阻断或恢复。两者不能互相替代；论文报告的高安全率不能自动证明本地仓库实现完整，代码中存在一个 `deny` 分支也不能证明它覆盖了论文威胁模型。
+
+设 `I` 为用户指令、系统政策和工具规格的集合，`H_t` 为时刻 `t` 之前的轨迹，`a_t=(tool,args,target)` 为候选动作，`E_t` 为环境状态，`o_t` 为模型输出。本文把一次轨迹视为遵从，当且仅当输出、语义、工具、授权、信息流、时序、环境变化、终态和恢复对应的判据同时成立。因而，“指令不遵从”可以操作化为至少一个判据在某一步为假，而不是只检查最终文本。这个统一谓词体系是对下列论文的综合，不是任何单篇论文原封不动提出的术语表。
+
+### 2.1 从可验证输出到完整执行轨迹
+
+IFEval 把复杂请求拆成可由确定性函数检查的原子指令，并区分 strict 与 loose 评测；它清楚界定了“输出是否满足约束”，但没有工具副作用。AGENTIF 进一步从真实 agent 应用中提取格式、语义和工具三类约束，并加入条件、示例和 meta constraint 表达形式，说明长指令中的不遵从往往是多约束组合失败，而不是单个格式错误。Structured Output Control 与 JSONSchemaBench 又表明，语法合法、结构满足 schema 和值语义正确是三个不同层次；合法 JSON 仍可能携带错误参数或错误业务值。
+
+动作型论文把判定点向执行前移动。AgentSpec 和 ShieldAgent 将“候选动作是否满足安全规则”定义为运行时谓词；Progent 和 PFI 把越过最小权限、未经批准扩权或让低完整性内容触发特权操作视为违规；CaMeL 与 Fides 则通过控制流、数据流、capability、confidentiality 和 integrity 标签刻画不可信数据如何影响动作。Agent-C 证明单步合法仍不足够，因为调用顺序、历史状态和跨步不变量也可能被违反。HarnessAudit 最后把观察范围扩到完整轨迹，分别检查 boundary compliance、execution fidelity 和 system stability。
+
+### 2.2 十类可操作的不遵从定义
+
+| ID 与定义 | 操作化违规判据 | 论文证据（本地 PDF） | Harness 对应机制与边界 |
+|---|---|---|---|
+| **U1 原子可验证输出不遵从**（论文明确） | 任一原子指令的确定性检查为假；strict 口径要求同一提示中的所有检查同时通过。 | [IFEval](../papers/ifeval_2023.pdf)，§2.1-2.2，PDF pp.2、4-5。 | 确定性 checker、输出 parser、重试和 postcondition。它能测量结果，但不能撤销已发生的工具副作用。 |
+| **U2 条件、多约束与工具规格不遵从**（论文明确） | 条件触发后约束失败，或出现禁用工具、遗漏必需工具、错误工具名、参数类型/格式错误；ISR 可通过而整体 CSR 仍失败。 | [AGENTIF](../papers/agentif_2025.pdf)，§3.1-3.4，PDF pp.2-7；§4.3，pp.7-8。 | 条件求值器、逐约束 verdict、工具 registry 和参数 schema；需要明确约束合取与优先级。 |
+| **U3 结构化输出不遵从**（论文明确） | 解析失败属于 syntax error；schema 或函数签名不匹配属于 structural error；值、参数或业务逻辑错误属于 value error；schema 还可能过约束或欠约束。 | [Structured Output Control](../papers/structured_output_control_se_2026.pdf)，§2.2，PDF pp.7-8；[JSONSchemaBench](../papers/jsonschemabench_2025.pdf)，§5，pp.7-8。 | grammar/schema compiler、parser 与语义 validator 必须分层；“可解析”不能替代“可执行且正确”。 |
+| **U4 动作安全规则不遵从**（论文明确） | 在 trigger 命中后，安全 predicate 判定候选动作不安全，执行器仍让动作发生；或策略规则前件成立而禁止动作被执行。 | [AgentSpec](../papers/supplement/agentspec_icse_2026.pdf)，§2.3、§3，PDF pp.4-6；[ShieldAgent](../papers/supplement/shieldagent_icml_2025.pdf)，§3。 | 执行前 gate、规则引擎、STOP/ASK/SELF-EXAMINE 和 verifier；自然语言到规则的漏编译仍是独立风险。 |
+| **U5 时序与状态不遵从**（论文明确） | 把候选动作追加到 `H_t` 后，使 temporal/FOL/SMT 规范不可满足；例如未认证先访问、未批准先付款、一次性授权重复使用。 | [Agent-C](../papers/supplement/agent_c_2025.pdf)，§2，PDF pp.3-5；§4，pp.7-12。 | 持久化状态、时序监控、SMT 检查、回溯或重采样；只检查当前 tool call 无法发现此类违规。 |
+| **U6 最小权限与能力升级不遵从**（论文明确） | 工具、参数、目标或权限范围超出当前 least-privilege policy，或能力未经可信审批被扩大；低权限主体执行 privileged action。 | [Progent](../papers/supplement/progent_2025.pdf)，§4，PDF pp.4-6；[PFI](../papers/supplement/pfi_2025.pdf)，§3.2、§4，pp.3-8。 | capability token、参数级 allowlist、monotonic confinement、扩权审批和身份绑定；工具名级批准过于粗糙。 |
+| **U7 来源、控制流与信息流不遵从**（论文明确） | 不可信数据改变特权控制流，不满足 integrity noninterference，或机密数据流向未授权 sink；“内容在上下文中”不产生权限。 | [CaMeL](../papers/supplement/camel_2025.pdf)，§3-4，PDF pp.4-6；[Fides](../papers/supplement/fides_ifc_2025.pdf)，§4.1-4.4，pp.6-8；PFI §3.2.2。 | provenance/taint/IFC 标签、trusted/quarantined 组件、capability 与 sink authorization；标签传播遗漏会形成隐式流旁路。 |
+| **U8 终态、检查点与执行保真不遵从**（论文概念 + 本文综合） | 中间动作、目标对象、参数、必要 checkpoint 或最终环境状态不满足任务；模型声称成功但没有环境证据。 | [HarnessAudit](../papers/supplement/harnessaudit_2026.pdf)，§3.2 的 L2 Execution Fidelity，PDF pp.4-5；AgentDojo 与 τ-bench 提供后置 oracle。 | 环境 oracle、状态快照、checkpoint 和 postcondition checker；“终态不遵从”作为统一名称是本文跨论文归纳。 |
+| **U9 边界、资源、角色与通信不遵从**（论文概念 + 本文综合） | 使用未授权或与任务无关的工具，访问越界资源，超越角色权限，或发生禁止的跨 agent/app 通信与数据转发。 | HarnessAudit §3.2 的 L1 Boundary Compliance，PDF pp.4-5；[IsolateGPT](../papers/supplement/isolategpt_ndss_2025.pdf)，摘要与 §I-II；PFI §4。 | action sink、资源 scope、角色策略、hub-spoke mediation、sandbox 与通信 PEP；未进入受控 sink 的调用仍可绕过。 |
+| **U10 合同、稳定性与恢复不遵从**（跨论文综合） | 在 prompt injection、模型替换、歧义目标、工具错误、重试或恢复时，代码拥有的 contract、边界或安全后置条件不能保持。 | [From Prompts to Contracts](../papers/prompts_to_contracts_2026.pdf)，§3.6、§5.1、§5.5，PDF pp.8、12-18；HarnessAudit L3；[ToolSafe](../papers/supplement/toolsafe_acl_2026.pdf)，§3-4。 | deterministic fallback、bounded retry/replan、rollback/compensation、trace 和扰动回归测试；统一的“恢复不遵从”是本文综合术语。 |
+
+### 2.3 哪些定义来自论文，哪些是本报告综合
+
+U1-U7 的核心术语能够直接回到论文：IFEval 的 verifiable instruction 与 strict/loose accuracy，AGENTIF 的 format/semantic/tool constraint 和 CSR/ISR，Structured Output 的三层错误，AgentSpec 的 trigger/predicate/enforcement，Agent-C 的时序规范与 SMT 可满足性，Progent 的 symbolic privilege policy，CaMeL/Fides/PFI 的 capability、完整性和机密性性质。HarnessAudit 也明确提出 L1 Boundary Compliance、L2 Execution Fidelity 和 L3 System Stability。
+
+U8-U10 的统一名称和 U1-U10 的总分类是本报告的跨论文综合。特别是，日志缺失通常意味着“无法证明合规”，而不是已经证明 agent 违规；同样，论文中的检测分数、攻击成功率或规则符合率不等于本地实现具备不可绕过的阻断能力。为避免证据升级错误，后续代码表仍分别标注论文行为证据和本地实现证据。
+
+### 2.4 从论文定义到 harness 责任
+
+评价型论文主要提供可观察判据：IFEval、AGENTIF、JSONSchemaBench 和 Structured Output Control 能说明结果哪里错，却不拥有执行器。策略和信息流论文把判据变成状态：AgentSpec、Progent、CaMeL、Fides、PFI、Agent-C 和 MCP PEP 分别持有规则、权限、标签或历史。系统与生产论文进一步强调调解位置：ActPlane 把边界下沉到内核副作用，From Prompts to Contracts 把 fallback 和验证迁入 code-owned contract，Measuring Agents in Production 则观察到生产团队依靠 bounded workflow、环境约束和人工验证来控制可靠性。
+
+因此，论文定义和代码机制应建立一一对应：U1-U3 主要需要 parser、schema 与 semantic validator；U4-U7 需要执行前 policy/capability/IFC gate；U5、U8 和 U10 需要持久状态、环境 oracle 与受约束恢复；U9 还要求 sandbox、资源中介或内核边界。若某实现只返回 scanner verdict 而调用方可以忽略，它至多覆盖“检测”；只有该 verdict 支配后续动作时，才能声称实现了相应定义的“防止”。
+
+## 3. 当前代码级实现总览
 
 当前 21 个实现可以分成三类。第一类直接支配工具调用或副作用，具有较清楚的阻断语义。第二类提供策略、信息流、审批、扫描或 validator，但保证依赖宿主接线、配置和默认值。第三类在执行后检测结果或轨迹，它们能够给出合规证据，却通常不能撤销已经发生的副作用。这个分类比项目自称“guardrail”“firewall”或“harness”更重要，因为同一个名称可能对应完全不同的执行所有权。
 
-### 2.1 直接在线强制与代码所有的恢复
+### 3.1 直接在线强制与代码所有的恢复
 
 | 实现（固定提交） | 实现机制 | 具体代码证据 | 执行语义、边界与等级 |
 |---|---|---|---|
@@ -44,7 +84,7 @@
 
 这五个实现的共同点是，控制代码不只生成“建议”，而是能够决定执行是否发生或决定失败后的输出。ActPlane 最接近不可绕过的副作用边界；其余实现主要保护通过指定 dispatcher、tool wrapper 或 rail manager 的调用。因而，所谓“完整调解”不是项目拥有策略类即可，而是所有产生副作用的入口都必须通过同一个决策点。
 
-### 2.2 论文实现中的策略、能力、信息流和工具 gate
+### 3.2 论文实现中的策略、能力、信息流和工具 gate
 
 | 实现（固定提交） | 实现机制 | 具体代码证据 | 执行语义、边界与等级 |
 |---|---|---|---|
@@ -59,7 +99,7 @@
 
 这一组说明“内容不是权限”。AgentSpec 把规则编译为 action-loop 决策，CaMeL、Fides 与 PFI 跟踪数据来源，MCP PEP 使用 capability token 与信息流标签，Tool Forge 把验证信息附着到工具发布和调用链。它们的主要风险不是没有策略，而是策略覆盖面不完整、默认值偏 open，或者宿主可以从未经过 gate 的路径直接调用工具。
 
-### 2.3 SDK、策略决策源、审批与输出 validator
+### 3.3 SDK、策略决策源、审批与输出 validator
 
 | 实现（固定提交） | 实现机制 | 具体代码证据 | 执行语义、边界与等级 |
 |---|---|---|---|
@@ -74,7 +114,7 @@
 
 这一组不能被笼统写成“已经强制执行”。Google ADK、Microsoft Agent Framework 和 PydanticAI 有明确的暂停/恢复语义，但都需要调用方选择受控工具类型或安装 middleware。Invariant、Agent Policy Guard、Guardrails AI 和 LlamaFirewall 可以产生错误、effect 或 verdict；若宿主忽略结果，它们只是决策源。ToolSafe 的一条路径甚至把风险重新放回模型上下文，保证强度明显弱于确定性拒绝。
 
-## 3. 检测与后置验收型代码实现
+## 4. 检测与后置验收型代码实现
 
 除上述 21 个运行时或决策层实现外，当前证据集中还有两个与 harness 指令遵从直接相关、但主要在执行后工作的代码实现。它们应被保留，因为 postcondition 和 trace audit 是完整闭环的一部分；它们也必须被单独标记，因为检测失败不能自动撤销邮件、支付、删除或外部 API 调用。
 
@@ -85,7 +125,7 @@
 
 JSONSchemaBench、IFEval、AGENTIF、τ-bench 与 τ²-bench 同样含有大量可执行 checker，但本报告没有把它们计入 23 个 harness 相关实现。它们主要测量 JSON 结构、文本约束、任务成功或数据库终态，是评测基础设施而不是部署时控制平面。它们仍然适合成为 harness 的 postcondition test oracle，但不应被写成能够事前授权工具。
 
-## 4. 哪些材料不能声称已有代码级实现
+## 5. 哪些材料不能声称已有代码级实现
 
 | 材料 | 当前证据状态 | 最终处理 |
 |---|---|---|
@@ -98,37 +138,37 @@ JSONSchemaBench、IFEval、AGENTIF、τ-bench 与 τ²-bench 同样含有大量�
 
 这张反证表是最终结论的一部分。论文有仓库链接不等于仓库已经发布实现，项目名含 “harness” 或 “guardrail” 也不等于它支配真实执行。只有把固定提交、调用路径和副作用所有者连起来，才能避免把架构愿景写成已实现保证。
 
-## 5. 跨实现的代码级结论
+## 6. 跨实现的代码级结论
 
-### 5.1 完整调解比机制数量更重要
+### 6.1 完整调解比机制数量更重要
 
 当前实现中最常见的失效不是完全没有 guardrail，而是 guardrail 只覆盖一条调用路径。OpenAI Agents 的直接 callable、AgentSpec 的 executor 外工具调用、CaMeL 的 interpreter 外路径、Google ADK 的非 `FunctionTool`、Microsoft Agent Framework 的 middleware 外路径，以及 Guardrails AI 的 provider 直调，都能让策略失去执行所有权。因此，评估 harness 时应首先枚举所有副作用入口，再证明每个入口都经过同一个 policy-enforcement point。
 
-### 5.2 默认值决定“安装后是否真的受保护”
+### 6.2 默认值决定“安装后是否真的受保护”
 
 默认 open 在代码中反复出现：PFI 默认 `UNSAFE_DATAFLOW_YES`，Google ADK 默认 `require_confirmation=False`，PydanticAI 默认 `requires_approval=False`，Agent Policy Guard 在无匹配时返回 `ask` 而不负责 dispatch，CUGA 的顶层异常会继续无策略执行，LlamaFirewall 的空 scanner 默认允许。文档中存在 deny 或 approval 能力并不能说明部署默认安全，必须核对构造函数默认值、无匹配分支和异常分支。
 
-### 5.3 审批是控制流程，不等于最终授权
+### 6.3 审批是控制流程，不等于最终授权
 
 OpenAI Agents、Google ADK、Microsoft Agent Framework 和 PydanticAI 都实现了暂停、审批和恢复，但审批记录本身仍可能被错误绑定、自动批准或由不可信客户端伪造。可靠部署需要把审批与调用 ID、工具身份、精确参数、主体、session 和过期时间绑定，并在工具内部继续做最终鉴权。只按工具名持久化 standing approval 会扩大同名工具或参数变化的风险。
 
-### 5.4 provenance、capability 和信息流弥补纯内容过滤的不足
+### 6.4 provenance、capability 和信息流弥补纯内容过滤的不足
 
 CaMeL、Fides、PFI 与 MCP PEP 的共同价值在于，它们不只问一段文本“看起来是否安全”，还问数据来自哪里、工具具有什么能力、信息能否从低可信源流向高影响 sink。该方向比另一个 LLM scanner 更接近安全系统中的权限模型。不过，标签传播、工具 metadata 和 trusted/untrusted 分类本身也必须覆盖所有 adapter，否则遗漏来源会变成新的旁路。
 
-### 5.5 扫描器、validator 和 postcondition 必须支配后续动作
+### 6.5 扫描器、validator 和 postcondition 必须支配后续动作
 
 LlamaFirewall、Guardrails AI、Invariant 和 Agent Policy Guard 能产生结构化决策，但它们不天然拥有执行器。HarnessAudit、AgentDojo、IFEval 与 τ-bench 更明确地属于运行后检测。工程上应把检测结果映射成确定的状态转换，例如阻断、请求批准、回滚、隔离、重规划或终止；仅记录 warning、reward 或 trace 不足以实现指令遵从。
 
-### 5.6 最强保证来自分层组合
+### 6.6 最强保证来自分层组合
 
 没有单一实现同时覆盖规范编译、参数级 provenance、跨步时序、所有 provider 路径、可信审批、系统隔离、后置条件和不可截断审计。合理组合是：AgentSpec 或 policy-as-code 负责规范，CaMeL/Fides/PFI/MCP PEP 负责能力与来源，SDK middleware 负责统一工具 gate，ActPlane 或容器 sandbox 约束真实副作用，HarnessAudit/AgentDojo 类 checker 验证终态，再由 hash-chain audit 和受策略约束的 recovery 形成闭环。
 
-## 6. 推荐的实现验收清单
+## 7. 推荐的实现验收清单
 
 一个 harness 若要声称“以代码实现指令遵从”，至少需要证明五件事。第一，所有工具、外部 API、文件、网络和进程入口都经过统一 gate。第二，规则的无匹配、解析失败、策略服务不可用和超时分支具有明确且经过测试的 fail-open/fail-closed 语义。第三，审批绑定主体、工具、精确参数、调用 ID 和 session，且不把客户端历史当作可信授权。第四，策略状态、来源标签、调用次数和时序约束能跨步持久化。第五，拒绝、批准、执行、结果、恢复和旁路尝试均进入不可静默丢失的审计链。缺少任一项时，应把保证降级为“部分控制”而不是“强制遵从”。
 
-## 7. 可复现性与局限
+## 8. 可复现性与局限
 
 本报告基于固定提交的静态代码审计、仓库内测试和少量本地测试，而不是对 23 个项目统一安装依赖后的全量动态复现。MCP PEP 的 42 项测试有 39 项通过，其余三项对应 Windows symlink 权限与 POSIX 路径假设；Enterprise harness 的 guardrail 子集通过但全量测试仍有失败；Agent Policy Guard 因本地缺少 pytest 未运行；PydanticAI 只从 immutable Git object 读取；TrustAgent 与 ToolSafe 分别受到 Windows 文件名和大小写碰撞影响。不同论文使用不同任务、模型、威胁模型和指标，证据等级不可被理解为统一排行榜。
 
@@ -138,12 +178,12 @@ LlamaFirewall、Guardrails AI、Invariant 和 Agent Policy Guard 能产生结构
 
 *图 4　补充检索的 PRISMA 风格筛选流程。数字由 `sources/supplement/screening_flow.json` 确定性生成。*
 
-## 8. 最终结论
+## 9. 最终结论
 
-截至 2026-08-20，当前仓库能够点名并给出代码证据的 agent 指令遵从实现共有 21 个运行时/决策层项目，以及 2 个直接相关的检测/后置验收项目。最成熟的工程模式不是让模型重复规则，而是把规则编译为由代码所有的 verdict，并让 verdict 在工具或副作用发生前不可绕过地生效。ActPlane 代表系统级副作用控制，Governance Toolkit、OpenAI Agents、NeMo、Google ADK 和 Microsoft Agent Framework 代表 SDK/middleware 执行门，AgentSpec、CaMeL、Fides、PFI、CUGA 和 MCP PEP 代表规范、capability 与信息流控制，Tool Forge、AgentGuard、PydanticAI、Guardrails AI、Invariant、Agent Policy Guard、LlamaFirewall 和 ToolSafe 提供不同强度的验证、审批、扫描或策略组件，AgentDojo 与 HarnessAudit 则补足终态与轨迹验收。
+论文层面，本报告把 agent 指令不遵从操作化为 U1-U10：从原子输出、条件和结构约束，延伸到动作安全、时序状态、最小权限、来源与信息流、执行保真、资源边界以及合同稳定性与恢复。其中 U1-U7 主要继承论文明确概念，U8-U10 的统一命名属于跨论文综合。实现层面，截至 2026-08-20，当前仓库能够点名并给出代码证据的项目共有 21 个运行时/决策层实现，以及 2 个检测/后置验收实现。最成熟的工程模式不是让模型重复规则，而是把这些判据编译为由代码所有的 verdict，并让 verdict 在工具或副作用发生前不可绕过地生效。ActPlane 代表系统级副作用控制，Governance Toolkit、OpenAI Agents、NeMo、Google ADK 和 Microsoft Agent Framework 代表 SDK/middleware 执行门，AgentSpec、CaMeL、Fides、PFI、CUGA 和 MCP PEP 代表规范、capability 与信息流控制，Tool Forge、AgentGuard、PydanticAI、Guardrails AI、Invariant、Agent Policy Guard、LlamaFirewall 和 ToolSafe 提供不同强度的验证、审批、扫描或策略组件，AgentDojo 与 HarnessAudit 则补足终态与轨迹验收。
 
 最需要避免的表述是“项目有 guardrail，所以 agent 会遵从指令”。代码证据支持的更准确结论是：指令遵从是一条由 specification、validation、authorization、execution、postcondition、recovery 和 audit 共同构成的控制链；链中任一阶段由模型或可绕过调用方所有，整体保证就只能按最弱环节降级。
 
 ## 附录：本地证据入口
 
-完整论文题名、状态与 PDF 对照见 `sources/paper_index.md` 和 `papers/supplement/manifest.json`；主仓库的 remote、commit 和状态见 `sources/repo_manifest.json`，补充仓库见 `repos/supplement/manifest.json`。原始与补充代码取证分别见 `reports/code_evidence_matrix.md` 和 `reports/supplement_harness_instruction_compliance_review.md`，测试边界见 `reports/test_results.md` 与 `sources/supplement/local_test_results.md`，检索协议和逐条筛选见 `reports/supplement_search_protocol.md` 与 `sources/supplement/screening_decisions.csv`。
+完整论文题名、状态与 PDF 对照见 `sources/paper_index.md` 和 `papers/supplement/manifest.json`；主仓库的 remote、commit 和状态见 `sources/repo_manifest.json`，补充仓库见 `repos/supplement/manifest.json`。原始与补充代码取证分别见 `reports/01_代码级证据矩阵.md` 和 `reports/06_补充性系统映射与代码证据综合报告.md`，测试边界见 `reports/02_本地验证记录.md` 与 `sources/supplement/local_test_results.md`，检索协议和逐条筛选见 `reports/05_补充性系统映射研究协议.md` 与 `sources/supplement/screening_decisions.csv`。

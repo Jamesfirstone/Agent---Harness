@@ -2,31 +2,17 @@
 
 本仓库保存《相关工作.pptx》对应的文献核验、论文原文、代码级证据与固定版本的开源仓库。
 
-## 主要交付物
+## 报告导航（按创建顺序编号）
 
-- `reports/agent_harness_related_work_report.pdf`：综合报告 PDF。
-- `reports/agent_harness_related_work_report.md`：可检索、可继续编辑的报告源文件。
-- `reports/code_evidence_matrix.md`：固定到文件与行号的代码证据矩阵。
-- `sources/paper_index.md`：论文元数据、官方入口与 PPT 校正。
-- `sources/paper_manifest.*`：本地 PDF 页数、大小和 SHA-256。
-- `sources/repo_manifest.*`：仓库 upstream、commit、分支与状态。
-- `figures/harness_control_chain.png`：控制生命周期概念图。
+`reports/` 的正式交付物已按首次进入 Git 的时间排序；同一提交内使用原始创建时间辅助排序。完整映射、内容说明和编号依据见 [`00_报告目录与编号说明.md`](reports/00_报告目录与编号说明.md)。
 
-### 最终代码级综述（2026-08-20）
+当前最终交付物是：
 
-- `reports/final_agent_harness_instruction_compliance_code_review.pdf`：汇总 PPT 内外证据的最终文档，区分 21 个运行时/决策层实现与 2 个检测/后置验收实现。
-- `reports/final_agent_harness_instruction_compliance_code_review.md`：最终文档源文件，逐项列出固定提交、代码路径、行号、执行语义与保证边界。
+- `reports/08_最终Agent指令不遵从定义与Harness代码级审查.md`：论文定义、证据边界和代码级实现的可检索源文档。
+- `reports/09_最终Agent指令不遵从定义与Harness代码级审查.pdf`：上述最终报告的排版版本。
 - `figures/final/enforcement_guarantee_ladder.svg`：从规则存在到完整调解、闭合控制链的保证等级图。
 
-### PPT 之外的补充系统映射（2026-08-20）
-
-- `reports/supplement_harness_instruction_compliance_review.pdf`：论文、工程实践与代码证据综合报告。
-- `reports/supplement_harness_instruction_compliance_review.md`：报告源文件。
-- `reports/supplement_search_protocol.md`：检索前冻结的研究问题、查询族、纳排标准与偏倚控制。
-- `sources/supplement/`：原始查询、650 条记录、去重候选、113 条详细筛选决定、下载/clone 清单与本地测试结果。
-- `papers/supplement/`：16 篇新增论文 PDF 及 SHA-256/页数清单。
-- `repos/supplement/`：18 个新增论文实现和工程实践的固定 commit。
-- `figures/supplement/`：PRISMA 风格筛选图与完整调解机制图。
+基础证据入口保持在 `sources/paper_index.*`、`sources/paper_manifest.*`、`sources/repo_manifest.*`、`sources/supplement/`、`papers/`、`papers/supplement/`、`repos/` 与 `repos/supplement/`。
 
 ## 第三方仓库
 
@@ -42,4 +28,4 @@ git clone --recurse-submodules git@github.com:Jamesfirstone/Agent---Harness.git
 
 ## 可复现性边界
 
-本仓库不保存浏览器 profile、PDF 渲染缓存、PPT 页图、全文文本抽取件和一次性解析脚本。这些内容可由原始 PDF/PPT 抽取重建，并不属于研究交付物。测试通过、缺依赖和失败结果统一记录在 `reports/test_results.md`。
+本仓库不保存浏览器 profile、PDF 渲染缓存、PPT 页图、全文文本抽取件和一次性解析脚本。这些内容可由原始 PDF/PPT 抽取重建，并不属于研究交付物。测试通过、缺依赖和失败结果统一记录在 `reports/02_本地验证记录.md`。
