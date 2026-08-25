@@ -1,0 +1,18 @@
+{
+  "name": "deny a path escaping the allowed resource scope",
+  "covers": ["U6", "U9"],
+  "action": {
+    "call_id": "call-004",
+    "session_id": "session-demo",
+    "actor": "researcher",
+    "tool": "read_file",
+    "args": {"path": "workspace/../secrets.txt"}
+  },
+  "expected": {
+    "verdict": "DENY",
+    "code": "OUT_OF_SCOPE",
+    "executed": false,
+    "effect_count": 0,
+    "audit_count": 1
+  }
+}

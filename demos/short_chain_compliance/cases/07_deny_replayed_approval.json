@@ -1,0 +1,19 @@
+{
+  "name": "deny a trusted approval replayed for different arguments",
+  "covers": ["U4", "U6"],
+  "action": {
+    "call_id": "call-007",
+    "session_id": "session-demo",
+    "actor": "researcher",
+    "tool": "delete_file",
+    "args": {"path": "workspace/new-target.txt"},
+    "approval_id": "approval-007"
+  },
+  "expected": {
+    "verdict": "DENY",
+    "code": "APPROVAL_MISMATCH",
+    "executed": false,
+    "effect_count": 0,
+    "audit_count": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "deny a tool absent from the registry",
+  "covers": ["U2", "U9"],
+  "action": {
+    "call_id": "call-002",
+    "session_id": "session-demo",
+    "actor": "researcher",
+    "tool": "run_shell",
+    "args": {}
+  },
+  "expected": {
+    "verdict": "DENY",
+    "code": "UNKNOWN_TOOL",
+    "executed": false,
+    "effect_count": 0,
+    "audit_count": 1
+  }
+}

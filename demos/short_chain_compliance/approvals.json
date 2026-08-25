@@ -1,0 +1,16 @@
+{
+  "approval-006": {
+    "call_id": "call-006",
+    "session_id": "session-demo",
+    "actor": "researcher",
+    "tool": "delete_file",
+    "args": {"path": "workspace/tmp.txt"}
+  },
+  "approval-007": {
+    "call_id": "call-007",
+    "session_id": "session-demo",
+    "actor": "researcher",
+    "tool": "delete_file",
+    "args": {"path": "workspace/old-target.txt"}
+  }
+}

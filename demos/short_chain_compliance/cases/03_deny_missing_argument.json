@@ -1,0 +1,18 @@
+{
+  "name": "deny a call missing a required argument",
+  "covers": ["U2", "U3"],
+  "action": {
+    "call_id": "call-003",
+    "session_id": "session-demo",
+    "actor": "researcher",
+    "tool": "read_file",
+    "args": {}
+  },
+  "expected": {
+    "verdict": "DENY",
+    "code": "INVALID_ARGUMENTS",
+    "executed": false,
+    "effect_count": 0,
+    "audit_count": 1
+  }
+}

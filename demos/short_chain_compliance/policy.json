@@ -1,0 +1,17 @@
+{
+  "default_verdict": "DENY",
+  "tools": {
+    "read_file": {
+      "required_args": {"path": "string"},
+      "optional_args": {},
+      "allowed_path_prefixes": ["workspace/"],
+      "approval_required": false
+    },
+    "delete_file": {
+      "required_args": {"path": "string"},
+      "optional_args": {},
+      "allowed_path_prefixes": ["workspace/"],
+      "approval_required": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "allow a trusted approval bound to the exact action",
+  "covers": ["U4", "U6"],
+  "action": {
+    "call_id": "call-006",
+    "session_id": "session-demo",
+    "actor": "researcher",
+    "tool": "delete_file",
+    "args": {"path": "workspace/tmp.txt"},
+    "approval_id": "approval-006"
+  },
+  "expected": {
+    "verdict": "ALLOW",
+    "code": "ALLOWED",
+    "executed": true,
+    "effect_count": 1,
+    "audit_count": 1
+  }
+}

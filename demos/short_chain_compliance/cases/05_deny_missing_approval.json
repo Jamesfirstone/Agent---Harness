@@ -1,0 +1,18 @@
+{
+  "name": "deny a sensitive action without approval",
+  "covers": ["U4", "U6"],
+  "action": {
+    "call_id": "call-005",
+    "session_id": "session-demo",
+    "actor": "researcher",
+    "tool": "delete_file",
+    "args": {"path": "workspace/tmp.txt"}
+  },
+  "expected": {
+    "verdict": "DENY",
+    "code": "APPROVAL_REQUIRED",
+    "executed": false,
+    "effect_count": 0,
+    "audit_count": 1
+  }
+}
